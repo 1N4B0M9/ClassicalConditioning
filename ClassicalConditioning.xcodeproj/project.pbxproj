@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CAE3E21D1E151C0B89D8330 /* Pods_ClassicalConditioning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAE4AAB853E569837BB9812 /* Pods_ClassicalConditioning.framework */; };
 		CBD6CE5829A79DEE0093DFF6 /* ClassicalConditioningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD6CE5729A79DEE0093DFF6 /* ClassicalConditioningApp.swift */; };
 		CBD6CE5A29A79DEE0093DFF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD6CE5929A79DEE0093DFF6 /* ContentView.swift */; };
 		CBD6CE5C29A79DF00093DFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD6CE5B29A79DF00093DFF6 /* Assets.xcassets */; };
@@ -14,11 +15,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AFAE4AAB853E569837BB9812 /* Pods_ClassicalConditioning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClassicalConditioning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA177245193472E4700B4633 /* Pods-ClassicalConditioning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassicalConditioning.release.xcconfig"; path = "Target Support Files/Pods-ClassicalConditioning/Pods-ClassicalConditioning.release.xcconfig"; sourceTree = "<group>"; };
 		CBD6CE5429A79DEE0093DFF6 /* ClassicalConditioning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassicalConditioning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD6CE5729A79DEE0093DFF6 /* ClassicalConditioningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicalConditioningApp.swift; sourceTree = "<group>"; };
 		CBD6CE5929A79DEE0093DFF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CBD6CE5B29A79DF00093DFF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBD6CE5E29A79DF00093DFF6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E9B0AE2069ED77896E4C8D80 /* Pods-ClassicalConditioning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassicalConditioning.debug.xcconfig"; path = "Target Support Files/Pods-ClassicalConditioning/Pods-ClassicalConditioning.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +30,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CAE3E21D1E151C0B89D8330 /* Pods_ClassicalConditioning.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		210DCC3AACFA459FDBC34262 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AFAE4AAB853E569837BB9812 /* Pods_ClassicalConditioning.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CBD6CE4B29A79DEE0093DFF6 = {
 			isa = PBXGroup;
 			children = (
 				CBD6CE5629A79DEE0093DFF6 /* ClassicalConditioning */,
 				CBD6CE5529A79DEE0093DFF6 /* Products */,
+				EBFD5CC744337EFFD7CD2D94 /* Pods */,
+				210DCC3AACFA459FDBC34262 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		EBFD5CC744337EFFD7CD2D94 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E9B0AE2069ED77896E4C8D80 /* Pods-ClassicalConditioning.debug.xcconfig */,
+				BA177245193472E4700B4633 /* Pods-ClassicalConditioning.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBD6CE6229A79DF00093DFF6 /* Build configuration list for PBXNativeTarget "ClassicalConditioning" */;
 			buildPhases = (
+				31C421D4684527DC6F786E81 /* [CP] Check Pods Manifest.lock */,
 				CBD6CE5029A79DEE0093DFF6 /* Sources */,
 				CBD6CE5129A79DEE0093DFF6 /* Frameworks */,
 				CBD6CE5229A79DEE0093DFF6 /* Resources */,
+				51618AD158BCEC3AA141600C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		31C421D4684527DC6F786E81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ClassicalConditioning-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51618AD158BCEC3AA141600C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ClassicalConditioning/Pods-ClassicalConditioning-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ClassicalConditioning/Pods-ClassicalConditioning-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ClassicalConditioning/Pods-ClassicalConditioning-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CBD6CE5029A79DEE0093DFF6 /* Sources */ = {
@@ -261,6 +330,7 @@
 		};
 		CBD6CE6329A79DF00093DFF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9B0AE2069ED77896E4C8D80 /* Pods-ClassicalConditioning.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -290,6 +360,7 @@
 		};
 		CBD6CE6429A79DF00093DFF6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA177245193472E4700B4633 /* Pods-ClassicalConditioning.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

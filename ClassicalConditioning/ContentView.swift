@@ -6,11 +6,21 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Button {
+            let utterance = AVSpeechUtterance(string: "Hello world")
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+            utterance.rate = 0.6
+
+            let synthesizer = AVSpeechSynthesizer()
+            synthesizer.speak(utterance)
+        } label :  {
+            Text("Push me")
+            
+        }
     }
 }
 
