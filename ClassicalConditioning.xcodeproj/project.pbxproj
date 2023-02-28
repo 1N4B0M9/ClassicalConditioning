@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6CAE3E21D1E151C0B89D8330 /* Pods_ClassicalConditioning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAE4AAB853E569837BB9812 /* Pods_ClassicalConditioning.framework */; };
+		CB7165C329AE2FEA00D1A6DE /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C229AE2FEA00D1A6DE /* TrackView.swift */; };
 		CBD6CE5829A79DEE0093DFF6 /* ClassicalConditioningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD6CE5729A79DEE0093DFF6 /* ClassicalConditioningApp.swift */; };
 		CBD6CE5A29A79DEE0093DFF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD6CE5929A79DEE0093DFF6 /* ContentView.swift */; };
 		CBD6CE5C29A79DF00093DFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD6CE5B29A79DF00093DFF6 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* Begin PBXFileReference section */
 		AFAE4AAB853E569837BB9812 /* Pods_ClassicalConditioning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClassicalConditioning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA177245193472E4700B4633 /* Pods-ClassicalConditioning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassicalConditioning.release.xcconfig"; path = "Target Support Files/Pods-ClassicalConditioning/Pods-ClassicalConditioning.release.xcconfig"; sourceTree = "<group>"; };
+		CB7165C229AE2FEA00D1A6DE /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 		CBD6CE5429A79DEE0093DFF6 /* ClassicalConditioning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassicalConditioning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD6CE5729A79DEE0093DFF6 /* ClassicalConditioningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicalConditioningApp.swift; sourceTree = "<group>"; };
 		CBD6CE5929A79DEE0093DFF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +61,14 @@
 			path = Track;
 			sourceTree = "<group>";
 		};
+		CB7165C129AE2FCB00D1A6DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB7165C229AE2FEA00D1A6DE /* TrackView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CBD6CE4B29A79DEE0093DFF6 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +90,7 @@
 		CBD6CE5629A79DEE0093DFF6 /* ClassicalConditioning */ = {
 			isa = PBXGroup;
 			children = (
+				CB7165C129AE2FCB00D1A6DE /* Views */,
 				CB7165C029AE2F9200D1A6DE /* Track */,
 				CB7165BF29AE2F8900D1A6DE /* Voice */,
 				CBD6CE5729A79DEE0093DFF6 /* ClassicalConditioningApp.swift */,
@@ -222,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBD6CE5A29A79DEE0093DFF6 /* ContentView.swift in Sources */,
+				CB7165C329AE2FEA00D1A6DE /* TrackView.swift in Sources */,
 				CBD6CE5829A79DEE0093DFF6 /* ClassicalConditioningApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
