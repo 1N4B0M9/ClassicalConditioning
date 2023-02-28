@@ -45,6 +45,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CB7165BF29AE2F8900D1A6DE /* Voice */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Voice;
+			sourceTree = "<group>";
+		};
+		CB7165C029AE2F9200D1A6DE /* Track */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Track;
+			sourceTree = "<group>";
+		};
 		CBD6CE4B29A79DEE0093DFF6 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +80,8 @@
 		CBD6CE5629A79DEE0093DFF6 /* ClassicalConditioning */ = {
 			isa = PBXGroup;
 			children = (
+				CB7165C029AE2F9200D1A6DE /* Track */,
+				CB7165BF29AE2F8900D1A6DE /* Voice */,
 				CBD6CE5729A79DEE0093DFF6 /* ClassicalConditioningApp.swift */,
 				CBD6CE5929A79DEE0093DFF6 /* ContentView.swift */,
 				CBD6CE5B29A79DF00093DFF6 /* Assets.xcassets */,
@@ -88,7 +104,6 @@
 				E9B0AE2069ED77896E4C8D80 /* Pods-ClassicalConditioning.debug.xcconfig */,
 				BA177245193472E4700B4633 /* Pods-ClassicalConditioning.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
