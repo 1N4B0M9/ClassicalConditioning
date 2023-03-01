@@ -20,9 +20,9 @@ class Tracker: ObservableObject {
     init() {
         self.pedometer.startUpdates(from: self.date) { value, error in
             if let data = value {
-                self.steps = data.numberOfSteps
-                self.cadence = data.currentCadence
-                self.distance = data.distance
+                self.steps = data.numberOfSteps.intValue
+                self.cadence = data.currentCadence?.intValue
+                self.distance = data.distance?.intValue
             }
         }
     }

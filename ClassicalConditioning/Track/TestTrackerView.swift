@@ -29,9 +29,9 @@ struct TestTrackerView: View {
             }
             if let tracker = tracker {
                 HStack {
-                    Text("steps: \(tracker.$steps)")
-                    Text("cadence: \(tracker.$cadence)")
-                    Text("disance: \(tracker.$distance)")
+                    Text("steps: \(tracker.steps)")
+                    Text("cadence: \(tracker.cadence)")
+                    Text("disance: \(tracker.distance)")
                 }
             }
         }
