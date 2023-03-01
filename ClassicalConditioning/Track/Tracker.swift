@@ -6,3 +6,28 @@
 //
 
 import Foundation
+import CoreMotion
+//import CoreLocation
+
+class Tracker: ObservableObject {
+    private let pedometer: CMPedometer = CMPedometer()
+    //private let location: CLLocationManager = CLLocationManager()
+    private let date: Date = Date()
+    @Published var steps: Int? //total steps
+    @Published var cadence: Int? //steps per second
+    @Published var distance: Int? //total distance traveled in meters
+    
+    init() {
+        self.pedometer.startUpdates(from: self.date) { value, error in
+            if let data = value {
+                self.steps = data.numberOfSteps
+                self.cadence = data.currentCadence
+                self.distance = data.distance
+            }
+        }
+    }
+    
+    func stop() {
+        self.pedometer.stopUpdates()
+    }
+}

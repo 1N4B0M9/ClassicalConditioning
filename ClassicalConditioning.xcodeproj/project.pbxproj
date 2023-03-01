@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1675236529AF8D510052D404 /* TestTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675236429AF8D510052D404 /* TestTrackerView.swift */; };
 		6CAE3E21D1E151C0B89D8330 /* Pods_ClassicalConditioning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAE4AAB853E569837BB9812 /* Pods_ClassicalConditioning.framework */; };
 		CB7165C329AE2FEA00D1A6DE /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C229AE2FEA00D1A6DE /* TrackView.swift */; };
 		CB7165C529AE361600D1A6DE /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C429AE361600D1A6DE /* Tracker.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1675236429AF8D510052D404 /* TestTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTrackerView.swift; sourceTree = "<group>"; };
 		AFAE4AAB853E569837BB9812 /* Pods_ClassicalConditioning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClassicalConditioning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA177245193472E4700B4633 /* Pods-ClassicalConditioning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassicalConditioning.release.xcconfig"; path = "Target Support Files/Pods-ClassicalConditioning/Pods-ClassicalConditioning.release.xcconfig"; sourceTree = "<group>"; };
 		CB7165C229AE2FEA00D1A6DE /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				CB7165C429AE361600D1A6DE /* Tracker.swift */,
+				1675236429AF8D510052D404 /* TestTrackerView.swift */,
 			);
 			path = Track;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB7165C529AE361600D1A6DE /* Tracker.swift in Sources */,
+				1675236529AF8D510052D404 /* TestTrackerView.swift in Sources */,
 				CBD6CE5A29A79DEE0093DFF6 /* ContentView.swift in Sources */,
 				CB7165C329AE2FEA00D1A6DE /* TrackView.swift in Sources */,
 				CB7165C729AE362F00D1A6DE /* VoiceSynth.swift in Sources */,
