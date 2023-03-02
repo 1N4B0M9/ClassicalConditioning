@@ -14,6 +14,9 @@
 		CB7165C729AE362F00D1A6DE /* VoiceSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C629AE362F00D1A6DE /* VoiceSynth.swift */; };
 		CB85441E29AF949D00CB75F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85441D29AF949D00CB75F8 /* Constants.swift */; };
 		CB85442029AF96DA00CB75F8 /* Faces.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85441F29AF96DA00CB75F8 /* Faces.swift */; };
+		CB85442229B0F28500CB75F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85442129B0F28500CB75F8 /* MapView.swift */; };
+		CB85442429B0F2A300CB75F8 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85442329B0F2A300CB75F8 /* InformationView.swift */; };
+		CB85442629B0F96600CB75F8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85442529B0F96600CB75F8 /* HomeView.swift */; };
 		CBD6CE5829A79DEE0093DFF6 /* ClassicalConditioningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD6CE5729A79DEE0093DFF6 /* ClassicalConditioningApp.swift */; };
 		CBD6CE5A29A79DEE0093DFF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD6CE5929A79DEE0093DFF6 /* ContentView.swift */; };
 		CBD6CE5C29A79DF00093DFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD6CE5B29A79DF00093DFF6 /* Assets.xcassets */; };
@@ -29,6 +32,9 @@
 		CB7165C629AE362F00D1A6DE /* VoiceSynth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSynth.swift; sourceTree = "<group>"; };
 		CB85441D29AF949D00CB75F8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CB85441F29AF96DA00CB75F8 /* Faces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faces.swift; sourceTree = "<group>"; };
+		CB85442129B0F28500CB75F8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		CB85442329B0F2A300CB75F8 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		CB85442529B0F96600CB75F8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CBD6CE5429A79DEE0093DFF6 /* ClassicalConditioning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassicalConditioning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD6CE5729A79DEE0093DFF6 /* ClassicalConditioningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicalConditioningApp.swift; sourceTree = "<group>"; };
 		CBD6CE5929A79DEE0093DFF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +85,9 @@
 			children = (
 				CB7165C229AE2FEA00D1A6DE /* TrackView.swift */,
 				CB85441F29AF96DA00CB75F8 /* Faces.swift */,
+				CB85442129B0F28500CB75F8 /* MapView.swift */,
+				CB85442329B0F2A300CB75F8 /* InformationView.swift */,
+				CB85442529B0F96600CB75F8 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,8 +269,11 @@
 				1675236529AF8D510052D404 /* TestTrackerView.swift in Sources */,
 				CBD6CE5A29A79DEE0093DFF6 /* ContentView.swift in Sources */,
 				CB7165C329AE2FEA00D1A6DE /* TrackView.swift in Sources */,
+				CB85442629B0F96600CB75F8 /* HomeView.swift in Sources */,
+				CB85442429B0F2A300CB75F8 /* InformationView.swift in Sources */,
 				CB85441E29AF949D00CB75F8 /* Constants.swift in Sources */,
 				CB7165C729AE362F00D1A6DE /* VoiceSynth.swift in Sources */,
+				CB85442229B0F28500CB75F8 /* MapView.swift in Sources */,
 				CBD6CE5829A79DEE0093DFF6 /* ClassicalConditioningApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
