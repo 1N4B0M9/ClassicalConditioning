@@ -30,9 +30,6 @@ struct ContentView: View {
             Color.DarkBlue
                 .ignoresSafeArea()
             Faces()
-            
-            
-        
         }
     }
 }

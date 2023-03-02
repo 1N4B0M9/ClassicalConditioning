@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		165BC01829B0F93F0038AE7A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165BC01729B0F93F0038AE7A /* Utils.swift */; };
+		165BC01A29B0FA300038AE7A /* gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 165BC01929B0FA300038AE7A /* gitignore */; };
 		1675236529AF8D510052D404 /* TestTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675236429AF8D510052D404 /* TestTrackerView.swift */; };
 		6CAE3E21D1E151C0B89D8330 /* Pods_ClassicalConditioning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAE4AAB853E569837BB9812 /* Pods_ClassicalConditioning.framework */; };
 		CB7165C329AE2FEA00D1A6DE /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C229AE2FEA00D1A6DE /* TrackView.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		165BC01729B0F93F0038AE7A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		165BC01929B0FA300038AE7A /* gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gitignore; sourceTree = "<group>"; };
 		1675236429AF8D510052D404 /* TestTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTrackerView.swift; sourceTree = "<group>"; };
 		AFAE4AAB853E569837BB9812 /* Pods_ClassicalConditioning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClassicalConditioning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA177245193472E4700B4633 /* Pods-ClassicalConditioning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassicalConditioning.release.xcconfig"; path = "Target Support Files/Pods-ClassicalConditioning/Pods-ClassicalConditioning.release.xcconfig"; sourceTree = "<group>"; };
@@ -49,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		165BC01629B0F7DF0038AE7A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				165BC01729B0F93F0038AE7A /* Utils.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		210DCC3AACFA459FDBC34262 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +106,7 @@
 		CBD6CE4B29A79DEE0093DFF6 = {
 			isa = PBXGroup;
 			children = (
+				165BC01929B0FA300038AE7A /* gitignore */,
 				CBD6CE5629A79DEE0093DFF6 /* ClassicalConditioning */,
 				CBD6CE5529A79DEE0093DFF6 /* Products */,
 				EBFD5CC744337EFFD7CD2D94 /* Pods */,
@@ -112,6 +125,7 @@
 		CBD6CE5629A79DEE0093DFF6 /* ClassicalConditioning */ = {
 			isa = PBXGroup;
 			children = (
+				165BC01629B0F7DF0038AE7A /* Utilities */,
 				CB85441C29AF948D00CB75F8 /* Models */,
 				CB7165C129AE2FCB00D1A6DE /* Views */,
 				CB7165C029AE2F9200D1A6DE /* Track */,
@@ -202,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBD6CE5F29A79DF00093DFF6 /* Preview Assets.xcassets in Resources */,
+				165BC01A29B0FA300038AE7A /* gitignore in Resources */,
 				CBD6CE5C29A79DF00093DFF6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +272,7 @@
 			files = (
 				CB85442029AF96DA00CB75F8 /* Faces.swift in Sources */,
 				CB7165C529AE361600D1A6DE /* Tracker.swift in Sources */,
+				165BC01829B0F93F0038AE7A /* Utils.swift in Sources */,
 				1675236529AF8D510052D404 /* TestTrackerView.swift in Sources */,
 				CBD6CE5A29A79DEE0093DFF6 /* ContentView.swift in Sources */,
 				CB7165C329AE2FEA00D1A6DE /* TrackView.swift in Sources */,
@@ -395,6 +411,7 @@
 				DEVELOPMENT_TEAM = 2L7WB896ZB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMotionUsageDescription = "You're movement is used to track your steps and pacing";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -425,6 +442,7 @@
 				DEVELOPMENT_TEAM = 2L7WB896ZB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMotionUsageDescription = "You're movement is used to track your steps and pacing";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
