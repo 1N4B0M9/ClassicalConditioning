@@ -11,6 +11,8 @@ struct TestTrackerView: View {
     @State var tracker: Tracker?
     
     var body: some View {
+        Text("Hey")
+        /*
         VStack {
             HStack {
                 Button {
@@ -35,6 +37,7 @@ struct TestTrackerView: View {
                 }
             }
         }
+         */
     }
 }
 

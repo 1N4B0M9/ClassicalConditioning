@@ -12,6 +12,8 @@
 		CB7165C329AE2FEA00D1A6DE /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C229AE2FEA00D1A6DE /* TrackView.swift */; };
 		CB7165C529AE361600D1A6DE /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C429AE361600D1A6DE /* Tracker.swift */; };
 		CB7165C729AE362F00D1A6DE /* VoiceSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C629AE362F00D1A6DE /* VoiceSynth.swift */; };
+		CB85441E29AF949D00CB75F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85441D29AF949D00CB75F8 /* Constants.swift */; };
+		CB85442029AF96DA00CB75F8 /* Faces.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85441F29AF96DA00CB75F8 /* Faces.swift */; };
 		CBD6CE5829A79DEE0093DFF6 /* ClassicalConditioningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD6CE5729A79DEE0093DFF6 /* ClassicalConditioningApp.swift */; };
 		CBD6CE5A29A79DEE0093DFF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD6CE5929A79DEE0093DFF6 /* ContentView.swift */; };
 		CBD6CE5C29A79DF00093DFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD6CE5B29A79DF00093DFF6 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 		CB7165C229AE2FEA00D1A6DE /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 		CB7165C429AE361600D1A6DE /* Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
 		CB7165C629AE362F00D1A6DE /* VoiceSynth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSynth.swift; sourceTree = "<group>"; };
+		CB85441D29AF949D00CB75F8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CB85441F29AF96DA00CB75F8 /* Faces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faces.swift; sourceTree = "<group>"; };
 		CBD6CE5429A79DEE0093DFF6 /* ClassicalConditioning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassicalConditioning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBD6CE5729A79DEE0093DFF6 /* ClassicalConditioningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicalConditioningApp.swift; sourceTree = "<group>"; };
 		CBD6CE5929A79DEE0093DFF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,8 +78,17 @@
 			isa = PBXGroup;
 			children = (
 				CB7165C229AE2FEA00D1A6DE /* TrackView.swift */,
+				CB85441F29AF96DA00CB75F8 /* Faces.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CB85441C29AF948D00CB75F8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB85441D29AF949D00CB75F8 /* Constants.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CBD6CE4B29A79DEE0093DFF6 = {
@@ -99,6 +112,7 @@
 		CBD6CE5629A79DEE0093DFF6 /* ClassicalConditioning */ = {
 			isa = PBXGroup;
 			children = (
+				CB85441C29AF948D00CB75F8 /* Models */,
 				CB7165C129AE2FCB00D1A6DE /* Views */,
 				CB7165C029AE2F9200D1A6DE /* Track */,
 				CB7165BF29AE2F8900D1A6DE /* Voice */,
@@ -241,10 +255,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB85442029AF96DA00CB75F8 /* Faces.swift in Sources */,
 				CB7165C529AE361600D1A6DE /* Tracker.swift in Sources */,
 				1675236529AF8D510052D404 /* TestTrackerView.swift in Sources */,
 				CBD6CE5A29A79DEE0093DFF6 /* ContentView.swift in Sources */,
 				CB7165C329AE2FEA00D1A6DE /* TrackView.swift in Sources */,
+				CB85441E29AF949D00CB75F8 /* Constants.swift in Sources */,
 				CB7165C729AE362F00D1A6DE /* VoiceSynth.swift in Sources */,
 				CBD6CE5829A79DEE0093DFF6 /* ClassicalConditioningApp.swift in Sources */,
 			);

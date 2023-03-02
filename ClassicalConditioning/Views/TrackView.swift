@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct TrackView: View {
+    @State var track : Tracker?
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Hello, World!")
+        HStack {
+            
+            
+            
+        }
     }
 }
 
