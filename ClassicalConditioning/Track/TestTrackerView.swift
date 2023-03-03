@@ -11,12 +11,12 @@ struct TestTrackerView: View {
     @State var tracker: Tracker?
     
     var body: some View {
-        Text("Hey")
-        /*
         VStack {
             HStack {
                 Button {
-                    tracker = Tracker()
+                    if tracker == nil {
+                        tracker = Tracker()
+                    }
                 } label: {
                     Text("Start tracker")
                 }
@@ -29,15 +29,14 @@ struct TestTrackerView: View {
                     Text("Stop tracker")
                 }
             }
-            if let tracker = tracker {
+            if let t = tracker {
                 HStack {
-                    Text("steps: \(tracker.steps)")
-                    Text("cadence: \(tracker.cadence)")
-                    Text("disance: \(tracker.distance)")
+                    Text("steps: \($tracker.convert(t).steps.convert(-1))" as String)
+                    Text("cadence: \($tracker.convert(t).cadence.convert(-1))" as String)
+                    Text("disance: \($tracker.convert(t).distance.convert(-1))" as String)
                 }
             }
         }
-         */
     }
 }
 
