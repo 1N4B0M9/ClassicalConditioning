@@ -33,7 +33,25 @@ struct ContentView: View {
         ZStack {
             Color.DarkBlue
                 .ignoresSafeArea()
-            Faces()
+            TabView {
+                MapView()
+                    .tabItem {
+                        Image(systemName: "mappin" )
+                    }
+                HomeView()
+                    .tabItem {
+                        Image(systemName: "house" )
+
+                    }
+            
+            
+                InformationView()
+                    .tabItem {
+                        Image(systemName: "info")
+                    }
+            }
+            .background(Color.red)
+            
         }
     }
 }
