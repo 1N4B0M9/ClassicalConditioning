@@ -12,7 +12,8 @@ import SwiftUI
 extension Binding {
     func convert<T>(_ fallback: T) -> Binding<T> where Value == T? {
         return Binding<T> {
-            self.wrappedValue == nil ? fallback : self.wrappedValue!
+            print(self.wrappedValue == nil ? "used fallback" : "used wrapped value")
+            return self.wrappedValue == nil ? fallback : self.wrappedValue!
         } set: {
             self.wrappedValue = $0
         }
