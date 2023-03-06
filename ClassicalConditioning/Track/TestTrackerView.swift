@@ -34,6 +34,7 @@ struct TestTrackerView: View {
                     Text("steps: \($tracker.convert(t).steps.convert(-1))" as String)
                     Text("cadence: \($tracker.convert(t).cadence.convert(-1))" as String)
                     Text("disance: \($tracker.convert(t).distance.convert(-1))" as String)
+                    Text("intervals: \($tracker.convert(t).intervals)" as String)
                 }
             }
         }
