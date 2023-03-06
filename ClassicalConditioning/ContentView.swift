@@ -10,8 +10,8 @@ import AVFoundation
 import CoreMotion
 struct ContentView: View {
     init() {
-   // UITabBar.appearance().backgroundColor = UIColor.red
-        
+        UITabBar.appearance().backgroundColor = UIColor.red
+        UITabBar.appearance().barTintColor = .black
 
     }
 
@@ -33,10 +33,10 @@ struct ContentView: View {
         ZStack {
             Color.DarkBlue
                 .ignoresSafeArea()
-                .onAppear() {
-                    UITabBar.appearance().barTintColor = .black
+               // .onAppear() {
+                    
 
-                }
+               // }
             TabView {
                 MapView()
                     .tabItem {
