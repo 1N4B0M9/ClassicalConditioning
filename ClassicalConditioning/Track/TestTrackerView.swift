@@ -31,11 +31,11 @@ struct TestTrackerView: View {
             }
             if let t = tracker {
                 HStack {
-                    Text("steps: \($tracker.convert(t).steps.convert(-1))" as String)
-                    Text("cadence: \($tracker.convert(t).cadence.convert(-1))" as String)
-                    Text("disance: \($tracker.convert(t).distance.convert(-1))" as String)
-                    Text("intervals: \($tracker.convert(t).intervals)" as String)
-                    Text("intervalsFailed: \($tracker.convert(t).intervalsFailed)" as String)
+                    Text("steps: \(String(describing: $tracker.convert(t).steps))")
+                    Text("cadence: \(String(describing: $tracker.convert(t).cadence))")
+                    Text("disance: \(String(describing: $tracker.convert(t).distance))")
+                    Text("intervals: \(String(describing: $tracker.convert(t).intervals))")
+                    Text("intervalsFailed: \(String(describing: $tracker.convert(t).intervalsFailed))")
                 }
             }
         }

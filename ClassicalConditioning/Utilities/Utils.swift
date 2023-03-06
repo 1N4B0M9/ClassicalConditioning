@@ -21,7 +21,7 @@ extension Binding {
 
 //allow bindings to be used in string interpolation
 extension String.StringInterpolation {
-    mutating func appendInterpolation<T>(_ value: Binding<T>) {
-        appendInterpolation("\(value.wrappedValue)")
+    mutating func appendInterpolation<T>(_ value: Binding<T?>) {
+        appendInterpolation(value.wrappedValue == nil ? "nil" : "\(value.wrappedValue!)")
     }
 }
