@@ -33,6 +33,10 @@ struct ContentView: View {
         ZStack {
             Color.DarkBlue
                 .ignoresSafeArea()
+                .onAppear() {
+                    UITabBar.appearance().barTintColor = .black
+
+                }
             TabView {
                 MapView()
                     .tabItem {
