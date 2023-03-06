@@ -16,8 +16,8 @@ class Tracker: ObservableObject {
     @Published var steps: Int? //total steps
     @Published var cadence: Int? //steps per second
     @Published var distance: Int? //total distance traveled in meters
-    @Published var intervals: Int = 0
-    @Published var intervalsFailed: Int = 0
+    @Published var intervals: Int = 0 //testing value
+    @Published var intervalsFailed: Int = 0 //testing value
     
     init() {
         self.pedometer.startUpdates(from: self.date) { value, error in
