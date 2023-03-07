@@ -8,21 +8,29 @@
 import Foundation
 import SwiftUI
 
-//convert binding of type Binding<T?> to type Binding<T>?
-extension Binding {
-    func convert<T>(_ fallback: T) -> Binding<T> where Value == T? {
-        return Binding<T> {
-            print(self.wrappedValue == nil ? "used fallback" : "used wrapped value")
-            return self.wrappedValue == nil ? fallback : self.wrappedValue!
-        } set: {
-            self.wrappedValue = $0
-        }
+//allow bindings to be used in string interpolation
+extension String.StringInterpolation {
+    public mutating func appendInterpolation(_ binding: Binding<Int>) {
+        //appendLiteral(binding == nil || binding!.wrappedValue == nil ? "nil" : String(describing: binding!.wrappedValue!))
+        appendLiteral("\(binding.wrappedValue)")
     }
 }
 
-//allow bindings to be used in string interpolation
-extension String.StringInterpolation {
-    mutating func appendInterpolation<T>(_ value: Binding<T?>) {
-        appendInterpolation(value.wrappedValue == nil ? "nil" : "\(value.wrappedValue!)")
+//convert binding of type Binding<T?> to type Binding<T>?
+extension Binding: CustomStringConvertible {
+    public var description: String {
+        String(describing: self.wrappedValue)
+    }
+    
+    func convert<T>() -> Binding<T>? where Value == T? {
+        guard let wrapped = self.wrappedValue else {
+            return nil
+        }
+        
+        return Binding<T> {
+            wrapped
+        } set: {
+            self.wrappedValue = $0
+        }
     }
 }
