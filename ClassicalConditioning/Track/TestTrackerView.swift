@@ -31,11 +31,11 @@ struct TestTrackerView: View {
             }
             if tracker != nil {
                 HStack {
-                    Text("steps: \(String(describing: $tracker.wrappedValue?.steps))")
-                    Text("cadence: \(String(describing: $tracker.wrappedValue?.cadence))")
-                    Text("distance: \(String(describing: $tracker.wrappedValue?.distance))")
-                    Text("intervals: \(String(describing: $tracker.wrappedValue?.intervals))")
-                    Text("intervalsFailed: \(String(describing: $tracker.wrappedValue?.intervalsFailed))")
+                    Text("steps: \($tracker.wrappedValue?.steps ?? -1)")
+                    Text("cadence: \($tracker.wrappedValue?.cadence ?? -1)")
+                    Text("distance: \($tracker.wrappedValue?.distance ?? -1)")
+                    Text("intervals: \($tracker.wrappedValue?.intervals ?? -1)")
+                    Text("intervalsFailed: \($tracker.wrappedValue?.intervalsFailed ?? -1)")
                 }
             }
         }
