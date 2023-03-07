@@ -10,9 +10,9 @@ import SwiftUI
 
 //allow bindings to be used in string interpolation
 extension String.StringInterpolation {
-    public mutating func appendInterpolation(_ binding: Binding<Int>) {
+    public mutating func appendInterpolation(_ binding: Binding<Int?>) {
         //appendLiteral(binding == nil || binding!.wrappedValue == nil ? "nil" : String(describing: binding!.wrappedValue!))
-        appendLiteral("\(binding.wrappedValue)")
+        appendLiteral("\(binding.wrappedValue == nil ? "nil" : String(describing: binding.wrappedValue!))")
     }
 }
 
