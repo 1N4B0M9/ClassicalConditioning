@@ -13,7 +13,6 @@ struct Faces: View {
     var body: some View {
         VStack {
             //coin flip
-            TestTrackerView()
             Button {
                 isAnimating = true
                 coolor = true

@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct MapView: View {
+    @State var playORStop = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            
+            Button {
+                if playORStop == false {
+                    playORStop = true
+                }
+                else {
+                    playORStop = false
+
+                }
+                
+                
+            } label: {
+                if playORStop == false {
+                    Image(systemName: "play.fill")
+                }
+                else {
+                    Image(systemName: "pause.circle.fill")
+                }
+            }
+        }
     }
 }
 

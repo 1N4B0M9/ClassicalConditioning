@@ -35,12 +35,11 @@ struct ContentView: View {
             Color.DarkBlue
                 .ignoresSafeArea()
                // .onAppear() {
+                
                     
 
                // }
             TabView {
-                ZStack {
-                    Color.red
                 MapView()
                     .tabItem {
                         Image(systemName: "mappin" )
@@ -58,11 +57,13 @@ struct ContentView: View {
                         Image(systemName: "info")
                     }
             }
-            }
+            
             
         }
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
