@@ -10,8 +10,8 @@ import AVFoundation
 import CoreMotion
 struct ContentView: View {
     init() {
-        UITabBar.appearance().backgroundColor = UIColor.red
-        UITabBar.appearance().barTintColor = .black
+     //   UITabBar.appearance().backgroundColor = UIColor.red
+    //    UITabBar.appearance().barTintColor = .black
 
     }
 
@@ -31,6 +31,7 @@ struct ContentView: View {
         }
         */
         ZStack {
+            
             Color.DarkBlue
                 .ignoresSafeArea()
                // .onAppear() {
@@ -38,10 +39,13 @@ struct ContentView: View {
 
                // }
             TabView {
+                ZStack {
+                    Color.red
                 MapView()
                     .tabItem {
                         Image(systemName: "mappin" )
                     }
+                
                 HomeView()
                     .tabItem {
                         Image(systemName: "house" )
@@ -54,7 +58,7 @@ struct ContentView: View {
                         Image(systemName: "info")
                     }
             }
-            .background(Color.red)
+            }
             
         }
     }
