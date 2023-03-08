@@ -29,7 +29,7 @@ struct TestTrackerView: View {
                     Text("Stop tracker")
                 }
             }
-            if tracker != nil {
+            if $tracker.wrappedValue != nil {
                 HStack {
                     Text("steps: \($tracker.wrappedValue?.steps ?? -1)")
                     Text("cadence: \($tracker.wrappedValue?.cadence ?? -1)")
