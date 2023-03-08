@@ -4,30 +4,34 @@
 //
 //  Created by Nathan Morelli (student LM) on 2/28/23.
 //
-
-import Foundation
+import SwiftUI
 import AVFoundation
+import CoreMotion
+import Foundation
+import AVKit
 
-class AudioPlayer {
+class Sound {
+    
+    static let instance = Sound()
+    
     var player: AVAudioPlayer?
     
-    func playAudio() {
-        guard let path = Bundle.main.path(forResource: "audio", ofType: "mp3") else {
-            print("Audio file not found!")
-            return
-        }
+    enum SoundOption: String {
+        case v1
+    }
+    
+    func play(sound: SoundOption) {
         
-        let url = URL(fileURLWithPath: path)
+        guard let url = Bundle.main.url(forResource: sound.rawValue, withExtension: ".mp3") else { return}
         
         do {
             player = try AVAudioPlayer(contentsOf: url)
-            player?.prepareToPlay()
             player?.play()
-        } catch {
-            print("Error playing audio file: \(error.localizedDescription)")
+        } catch let error {
+            print("Error playing sound. \(error.localizedDescription)")
         }
     }
 }
 
-// To play the audio, simply call the playAudio() method of the AudioPlayer class:
-
+// Use  Sound.instance.play(sound: .v1) to play the sound. Replace v1 with the name of the sound you're using.
+// add sounds you want to use with the exact name in the the SoundOption enum
