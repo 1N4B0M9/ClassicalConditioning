@@ -40,11 +40,11 @@ struct TestTrackerView: View {
         
         var body: some View {
             HStack {
-                Text("steps: \($tracker.steps.wrappedValue ?? -1)")
-                Text("cadence: \($tracker.cadence.wrappedValue ?? -1)")
-                Text("distance: \($tracker.distance.wrappedValue ?? -1)")
-                Text("intervals: \($tracker.intervals.wrappedValue)")
-                Text("intervalsFailed: \($tracker.intervalsFailed.wrappedValue)")
+                Text("steps: \($tracker.steps.wrappedValue ?? 0)")
+                Text("cadence: \($tracker.cadence.wrappedValue ?? 0)")
+                Text("distance: \($tracker.distance.wrappedValue ?? 0)")
+                Text("intervals: \($tracker.intervals.wrappedValue)") //debug
+                Text("intervalsFailed: \($tracker.intervalsFailed.wrappedValue)") //debug
             }
         }
     }

@@ -29,6 +29,7 @@ class Tracker: ObservableObject {
             } else {
                 self.intervalsFailed += 1
             }
+            /*
             print("____________________________________")
             print("steps \(self.steps ?? -1)")
             print("cadnece \(self.cadence ?? -1)")
@@ -36,6 +37,7 @@ class Tracker: ObservableObject {
             print("intervals \(self.intervals)")
             print("failedIntervals \(self.intervalsFailed)")
             print("____________________________________")
+            */
         }
     }
     
