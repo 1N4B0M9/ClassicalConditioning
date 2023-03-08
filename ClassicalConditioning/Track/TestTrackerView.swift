@@ -29,14 +29,22 @@ struct TestTrackerView: View {
                     Text("Stop tracker")
                 }
             }
-            if $tracker.wrappedValue != nil {
-                HStack {
-                    Text("steps: \($tracker.wrappedValue?.steps ?? -1)")
-                    Text("cadence: \($tracker.wrappedValue?.cadence ?? -1)")
-                    Text("distance: \($tracker.wrappedValue?.distance ?? -1)")
-                    Text("intervals: \($tracker.wrappedValue?.intervals ?? -1)")
-                    Text("intervalsFailed: \($tracker.wrappedValue?.intervalsFailed ?? -1)")
-                }
+            if let tracker = tracker {
+                DisplayView(tracker: tracker)
+            }
+        }
+    }
+    
+    private struct DisplayView: View {
+        @ObservedObject var tracker: Tracker
+        
+        var body: some View {
+            HStack {
+                Text("steps: \($tracker.steps.wrappedValue ?? -1)")
+                Text("cadence: \($tracker.cadence.wrappedValue ?? -1)")
+                Text("distance: \($tracker.distance.wrappedValue ?? -1)")
+                Text("intervals: \($tracker.intervals.wrappedValue)")
+                Text("intervalsFailed: \($tracker.intervalsFailed.wrappedValue)")
             }
         }
     }
