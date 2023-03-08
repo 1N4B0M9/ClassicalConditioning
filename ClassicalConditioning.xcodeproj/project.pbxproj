@@ -11,6 +11,7 @@
 		165BC01A29B0FA300038AE7A /* gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 165BC01929B0FA300038AE7A /* gitignore */; };
 		1675236529AF8D510052D404 /* TestTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675236429AF8D510052D404 /* TestTrackerView.swift */; };
 		6CAE3E21D1E151C0B89D8330 /* Pods_ClassicalConditioning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAE4AAB853E569837BB9812 /* Pods_ClassicalConditioning.framework */; };
+		CB3C195129B79D8C002185AE /* audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB3C195029B79D8C002185AE /* audio.mp3 */; };
 		CB7165C329AE2FEA00D1A6DE /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C229AE2FEA00D1A6DE /* TrackView.swift */; };
 		CB7165C529AE361600D1A6DE /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C429AE361600D1A6DE /* Tracker.swift */; };
 		CB7165C729AE362F00D1A6DE /* VoiceSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C629AE362F00D1A6DE /* VoiceSynth.swift */; };
@@ -31,6 +32,7 @@
 		1675236429AF8D510052D404 /* TestTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTrackerView.swift; sourceTree = "<group>"; };
 		AFAE4AAB853E569837BB9812 /* Pods_ClassicalConditioning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClassicalConditioning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA177245193472E4700B4633 /* Pods-ClassicalConditioning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassicalConditioning.release.xcconfig"; path = "Target Support Files/Pods-ClassicalConditioning/Pods-ClassicalConditioning.release.xcconfig"; sourceTree = "<group>"; };
+		CB3C195029B79D8C002185AE /* audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio.mp3; sourceTree = "<group>"; };
 		CB7165C229AE2FEA00D1A6DE /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 		CB7165C429AE361600D1A6DE /* Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
 		CB7165C629AE362F00D1A6DE /* VoiceSynth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSynth.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		CBD6CE4B29A79DEE0093DFF6 = {
 			isa = PBXGroup;
 			children = (
+				CB3C195029B79D8C002185AE /* audio.mp3 */,
 				165BC01929B0FA300038AE7A /* gitignore */,
 				CBD6CE5629A79DEE0093DFF6 /* ClassicalConditioning */,
 				CBD6CE5529A79DEE0093DFF6 /* Products */,
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBD6CE5F29A79DF00093DFF6 /* Preview Assets.xcassets in Resources */,
+				CB3C195129B79D8C002185AE /* audio.mp3 in Resources */,
 				165BC01A29B0FA300038AE7A /* gitignore in Resources */,
 				CBD6CE5C29A79DF00093DFF6 /* Assets.xcassets in Resources */,
 			);

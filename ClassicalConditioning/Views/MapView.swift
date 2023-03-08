@@ -20,6 +20,8 @@ struct MapView: View {
                     playORStop = false
 
                 }
+                let audioPlayer = AudioPlayer()
+                audioPlayer.playAudio()
                 
                 
             } label: {
