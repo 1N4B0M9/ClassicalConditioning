@@ -6,33 +6,19 @@
 //
 
 import SwiftUI
-
+import MapKit
+import CoreLocation
+import CoreLocationUI
 struct MapView: View {
-    @State var playORStop = false
+    @State private var region = MKCoordinateRegion(
+         center: CLLocationCoordinate2D(latitude: 37.334_900,
+                                        longitude: -122.009_020),
+         latitudinalMeters: 750,
+         longitudinalMeters: 750
+     )
     var body: some View {
-        HStack {
-            
-            Button {
-                if playORStop == false {
-                    playORStop = true
-                }
-                else {
-                    playORStop = false
+        Map(coordinateRegion: $region)
 
-                }
-                let audioPlayer = AudioPlayer()
-                audioPlayer.playAudio()
-                
-                
-            } label: {
-                if playORStop == false {
-                    Image(systemName: "play.fill")
-                }
-                else {
-                    Image(systemName: "pause.circle.fill")
-                }
-            }
-        }
     }
 }
 
