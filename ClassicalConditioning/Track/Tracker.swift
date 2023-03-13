@@ -19,7 +19,7 @@ class Tracker: ObservableObject {
     @Published var intervals: Int = 0 //testing value
     @Published var intervalsFailed: Int = 0 //testing value
     private var ticks = 0 //ticks and updates every 30 updates
-    private var progress: TrackerProgress = TrackerProgress(steps: 0, cadence: 0, distance: 0)
+    private var progress: TrackerProgress = TrackerProgress()
     
     init() {
         self.pedometer.startUpdates(from: self.date) { value, error in
@@ -62,25 +62,29 @@ class Tracker: ObservableObject {
         
         if let steps = self.steps, let cadence = self.cadence, let distance = self.distance, self.progress.meetsConditions(steps: steps, cadence: cadence, distance: distance) {
             //read out "good job" in a straightforward or backhand way based on mode
-            self.progress = TrackerProgress(steps: steps, cadence: cadence, distance: distance)
         } else {
             //read out encourement that user "can do better" based on mode
         }
+        
+        self.progress = TrackerProgress(steps: self.steps, cadence: self.cadence, distance: self.distance)
     }
 }
 
 private struct TrackerProgress {
-    let steps: Int
-    let cadence: Int
-    let distance: Int
+    let steps: Int?
+    let cadence: Int?
+    let distance: Int?
     
-    init(steps: Int, cadence: Int, distance: Int) {
+    init(steps: Int? = nil, cadence: Int? = nil, distance: Int? = nil) {
         self.steps = steps
         self.cadence = cadence
         self.distance = distance
     }
     
     func meetsConditions(steps: Int, cadence: Int, distance: Int) -> Bool {
-        return true //determine if current values meet conditions
+        //if internal steps is null or new steps is at least 20 higher
+        //if internal cadance is null or new cadnece is at least 1 higher or meets threshold of 5 steps per second
+        //if internal distance is null or new distance is at least 10 higher
+        return (self.steps == nil || steps >= self.steps! + 20) && (self.cadence == nil || cadence >= self.cadence! + 1 || cadence >= 5) && (self.distance == nil || distance >= self.distance! + 10)
     }
 }
