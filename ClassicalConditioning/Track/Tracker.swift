@@ -18,6 +18,8 @@ class Tracker: ObservableObject {
     @Published var distance: Int? //total distance traveled in meters
     @Published var intervals: Int = 0 //testing value
     @Published var intervalsFailed: Int = 0 //testing value
+    @Published var promptsPositive: Int = 0 //testing value
+    @Published var promptsNegative: Int = 0 //testing value
     private var ticks = 0 //ticks and updates every 30 updates
     private var progress: TrackerProgress = TrackerProgress()
     
@@ -62,8 +64,10 @@ class Tracker: ObservableObject {
         
         if let steps = self.steps, let cadence = self.cadence, let distance = self.distance, self.progress.meetsConditions(steps: steps, cadence: cadence, distance: distance) {
             //read out "good job" in a straightforward or backhand way based on mode
+            self.promptsPositive += 1
         } else {
             //read out encourement that user "can do better" based on mode
+            self.promptsNegative += 1
         }
         
         self.progress = TrackerProgress(steps: self.steps, cadence: self.cadence, distance: self.distance)
