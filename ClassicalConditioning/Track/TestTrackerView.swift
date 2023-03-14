@@ -43,8 +43,12 @@ struct TestTrackerView: View {
                 Text("steps: \($tracker.steps.wrappedValue ?? 0)")
                 Text("cadence: \($tracker.cadence.wrappedValue ?? 0)")
                 Text("distance: \($tracker.distance.wrappedValue ?? 0)")
+                /*
                 Text("intervals: \($tracker.intervals.wrappedValue)") //debug
                 Text("intervalsFailed: \($tracker.intervalsFailed.wrappedValue)") //debug
+                 */
+                Text("positive: \($tracker.promptsPositive.wrappedValue)") //debug
+                Text("negative: \($tracker.promptsNegative.wrappedValue)") //debug
             }
         }
     }
