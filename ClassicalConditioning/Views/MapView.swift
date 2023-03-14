@@ -10,6 +10,7 @@ import MapKit
 import CoreLocation
 import CoreLocationUI
 struct MapView: View {
+    @ObservedObject var locationManager = LocationManager.shared
     @State private var region = MKCoordinateRegion(
          center: CLLocationCoordinate2D(latitude: 37.334_900,
                                         longitude: -122.009_020),
@@ -17,7 +18,16 @@ struct MapView: View {
          longitudinalMeters: 750
      )
     var body: some View {
-        Map(coordinateRegion: $region)
+        Group {
+            if locationManager.userLocation == nil {
+                LocationRequestView()
+            }
+            else {
+                Map(coordinateRegion: $region)
+
+            }
+        }
+        
 
     }
 }
