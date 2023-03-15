@@ -136,4 +136,13 @@ struct OutputTrackerProgress: Codable {
         self.averageCadence = progress.averageCadence
         self.distance = progress.distance
     }
+    
+    /*
+     https://developer.apple.com/tutorials/app-dev-training/persisting-data
+     */
+    /*
+    private static func url() throws -> URL {
+        
+    }
+     */
 }
