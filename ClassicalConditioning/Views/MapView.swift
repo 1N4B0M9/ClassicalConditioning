@@ -21,7 +21,9 @@ struct MapView: View {
                 LocationRequestView()
             }
             else {
-                Map(coordinateRegion: $region)
+                Map(coordinateRegion: $region, interactionModes: MapInteractionModes.all,
+                    showsUserLocation: true,
+                    userTrackingMode: $tracking)
                     .onAppear {
                         if locationManager.userLocation?.coordinate.latitude != nil && locationManager.userLocation?.coordinate.longitude != nil {
                             region.center = CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.longitude ?? 0)
