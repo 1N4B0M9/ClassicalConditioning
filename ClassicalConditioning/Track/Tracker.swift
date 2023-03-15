@@ -20,10 +20,17 @@ class Tracker: ObservableObject {
     @Published var intervalsFailed: Int = 0 //testing value
     @Published var promptsPositive: Int = 0 //testing value
     @Published var promptsNegative: Int = 0 //testing value
-    private var progress: TrackerProgress = TrackerProgress()
+    private var progress: TrackerProgress = TrackerProgress() //tracks progress of current interval
     private var cancelled: Bool = false
+    private let total: SummativeTrackerProgress = SummativeTrackerProgress() //tracks total progress
     
-    init() {
+    init(_ progress: OutputTrackerProgress? = nil) {
+        if let progress = progress {
+            self.total.steps += progress.steps
+            self.total.averageCadence += progress.averageCadence
+            self.total.distance += progress.distance
+        }
+        
         self.pedometer.startUpdates(from: self.date) { value, error in
             if let data = value {
                 self.steps = data.numberOfSteps.intValue
@@ -65,9 +72,10 @@ class Tracker: ObservableObject {
     /*
      Called when tracker is no longer used
      */
-    func stop() {
+    func stop() -> OutputTrackerProgress {
         self.cancelled = true
         self.pedometer.stopUpdates()
+        return OutputTrackerProgress(progress: total)
     }
 }
 
@@ -87,5 +95,45 @@ private struct TrackerProgress {
         //if internal cadance is null or new cadnece is at least .25 higher or meets threshold of 5 steps per second
         //if internal distance is null or new distance is at least 10 higher
         return (self.steps == nil || steps >= self.steps! + 20) && (self.cadence == nil || cadence >= self.cadence! + 0.25 || cadence >= 5) && (self.distance == nil || distance >= self.distance! + 10)
+    }
+}
+
+class SummativeTrackerProgress {
+    var steps: Int
+    var averageCadence: Double
+    var distance: Int
+    private var calls: Double = 0
+    
+    init(steps: Int = 0, averageCadence: Double = 0.0, distance: Int = 0) {
+        self.steps = steps
+        self.averageCadence = averageCadence
+        self.distance = distance
+    }
+    
+    func push(steps: Int? = nil, cadence: Double? = nil, distance: Int? = nil) {
+        if let steps = steps {
+            self.steps += steps
+        }
+        
+        if let cadence = cadence {
+            calls += 1
+            self.averageCadence = Double(averageCadence + cadence) / calls
+        }
+        
+        if let distance = distance {
+            self.distance += distance
+        }
+    }
+}
+
+struct OutputTrackerProgress: Codable {
+    let steps: Int
+    let averageCadence: Double
+    let distance: Int
+    
+    init(progress: SummativeTrackerProgress) {
+        self.steps = progress.steps
+        self.averageCadence = progress.averageCadence
+        self.distance = progress.distance
     }
 }
