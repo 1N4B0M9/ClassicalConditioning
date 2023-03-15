@@ -11,22 +11,25 @@ import CoreLocation
 import CoreLocationUI
 struct MapView: View {
     @ObservedObject var locationManager = LocationManager.shared
-    @State private var region = MKCoordinateRegion(
-         center: CLLocationCoordinate2D(latitude: 37.334_900,
-                                        longitude: -122.009_020),
-         latitudinalMeters: 750,
-         longitudinalMeters: 750
-     )
+    @State private var region = MKCoordinateRegion()
+       
     var body: some View {
         Group {
-            if locationManager.userLocation == nil {
+            if locationManager.userLocation == nil{
                 LocationRequestView()
             }
             else {
                 Map(coordinateRegion: $region)
+                    .onAppear {
+                        
+                        region.center = CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.longitude ?? 0)
+                        region.span.latitudeDelta = 750
+                        region.span.longitudeDelta = 750
+                    }
 
             }
         }
+        
         
 
     }
