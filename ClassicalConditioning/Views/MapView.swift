@@ -12,6 +12,8 @@ import CoreLocationUI
 struct MapView: View {
     @ObservedObject var locationManager = LocationManager.shared
     @State private var region = MKCoordinateRegion()
+    @State var tracking:MapUserTrackingMode = .follow
+
        
     var body: some View {
         Group {
