@@ -52,13 +52,8 @@ struct OutputTrackerProgress: Codable {
     static func load(_ completion: @escaping ([OutputTrackerProgress]?) -> ()) {
         background {
             do {
-                guard let file = try? FileHandle(forReadingFrom: url()) else {
-                    main {
-                        completion(nil)
-                    }
-                    return
-                }
-                
+                let url = try url()
+                let file = try FileHandle(forReadingFrom: url)
                 let data = try JSONDecoder().decode([OutputTrackerProgress].self, from: file.availableData)
                 
                 main {
