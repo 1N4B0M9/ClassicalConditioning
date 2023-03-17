@@ -75,7 +75,9 @@ class Tracker: ObservableObject {
     func stop() -> OutputTrackerProgress {
         self.cancelled = true
         self.pedometer.stopUpdates()
-        return OutputTrackerProgress(progress: total)
+        let output = OutputTrackerProgress(progress: total)
+        TrackerManager.instance.push(output)
+        return output
     }
 }
 
@@ -124,25 +126,4 @@ class SummativeTrackerProgress {
             self.distance += distance
         }
     }
-}
-
-struct OutputTrackerProgress: Codable {
-    let steps: Int
-    let averageCadence: Double
-    let distance: Int
-    
-    init(progress: SummativeTrackerProgress) {
-        self.steps = progress.steps
-        self.averageCadence = progress.averageCadence
-        self.distance = progress.distance
-    }
-    
-    /*
-     https://developer.apple.com/tutorials/app-dev-training/persisting-data
-     */
-    /*
-    private static func url() throws -> URL {
-        
-    }
-     */
 }

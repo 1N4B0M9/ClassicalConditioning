@@ -10,6 +10,7 @@
 		165BC01829B0F93F0038AE7A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165BC01729B0F93F0038AE7A /* Utils.swift */; };
 		165BC01A29B0FA300038AE7A /* gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 165BC01929B0FA300038AE7A /* gitignore */; };
 		1675236529AF8D510052D404 /* TestTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675236429AF8D510052D404 /* TestTrackerView.swift */; };
+		1692CB5329C48EB80005CC8F /* TrackerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1692CB5229C48EB80005CC8F /* TrackerManager.swift */; };
 		4EE88F0829B8DB85006A412F /* v1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4EE88F0729B8DB85006A412F /* v1.mp3 */; };
 		6CAE3E21D1E151C0B89D8330 /* Pods_ClassicalConditioning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAE4AAB853E569837BB9812 /* Pods_ClassicalConditioning.framework */; };
 		CB3C195429B8E17E002185AE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3C195329B8E17E002185AE /* LocationManager.swift */; };
@@ -32,6 +33,7 @@
 		165BC01729B0F93F0038AE7A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		165BC01929B0FA300038AE7A /* gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gitignore; sourceTree = "<group>"; };
 		1675236429AF8D510052D404 /* TestTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTrackerView.swift; sourceTree = "<group>"; };
+		1692CB5229C48EB80005CC8F /* TrackerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerManager.swift; sourceTree = "<group>"; };
 		4EE88F0729B8DB85006A412F /* v1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = v1.mp3; sourceTree = "<group>"; };
 		AFAE4AAB853E569837BB9812 /* Pods_ClassicalConditioning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClassicalConditioning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA177245193472E4700B4633 /* Pods-ClassicalConditioning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassicalConditioning.release.xcconfig"; path = "Target Support Files/Pods-ClassicalConditioning/Pods-ClassicalConditioning.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				CB7165C429AE361600D1A6DE /* Tracker.swift */,
 				1675236429AF8D510052D404 /* TestTrackerView.swift */,
+				1692CB5229C48EB80005CC8F /* TrackerManager.swift */,
 			);
 			path = Track;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				CB85442229B0F28500CB75F8 /* MapView.swift in Sources */,
 				CBD6CE5829A79DEE0093DFF6 /* ClassicalConditioningApp.swift in Sources */,
 				CB3C195429B8E17E002185AE /* LocationManager.swift in Sources */,
+				1692CB5329C48EB80005CC8F /* TrackerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
