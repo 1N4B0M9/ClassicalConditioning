@@ -19,9 +19,9 @@ struct TestRunDisplay: View {
                     .foregroundColor(.gray)
                     .frame(width: 200, height: 200)
                 VStack {
-                    Text("steps: \(output.steps)")
-                    Text("averageCadence: \(output.averageCadence, specifier: "%.3f")") //specifier used to round to three decimal places
-                    Text("distance: \(output.distance)")
+                    Text("steps: \(output.wrappedValue.steps)")
+                    Text("averageCadence: \(output.wrappedValue.averageCadence, specifier: "%.3f")") //specifier used to round to three decimal places
+                    Text("distance: \(output.wrappedValue.distance)")
                 }
             }
         }

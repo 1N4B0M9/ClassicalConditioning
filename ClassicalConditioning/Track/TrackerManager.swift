@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class TrackerManager {
     static let instance: TrackerManager = TrackerManager()
@@ -25,9 +26,13 @@ class TrackerManager {
         OutputTrackerProgress.save(trackers)
     }
     
-    func pull() -> [OutputTrackerProgress] {
-        let dupe = trackers //shallow copy
-        return dupe
+    func pull() -> Binding<[OutputTrackerProgress]> {
+        return Binding {
+            let dupe = self.trackers //shallow copy
+            return dupe
+        } set: { _ in
+            print("something went VERY WRONG")
+        }
     }
 }
 
