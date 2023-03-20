@@ -31,15 +31,23 @@ class TrackerManager {
     }
 }
 
-struct OutputTrackerProgress: Codable {
+struct OutputTrackerProgress: Codable, Identifiable {
     let steps: Int
     let averageCadence: Double
     let distance: Int
+    let id: UUID = UUID()
     
     init(progress: SummativeTrackerProgress) {
         self.steps = progress.steps
         self.averageCadence = progress.averageCadence
         self.distance = progress.distance
+    }
+    
+    /*
+     Exclude id from encoding and decoding
+     */
+    private enum CodingKeys: String, CodingKey {
+        case steps, averageCadence, distance
     }
     
     /*
