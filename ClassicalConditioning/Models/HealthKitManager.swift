@@ -39,5 +39,8 @@ class HealthKitManager:NSObject, ObservableObject {
         return ok
 
     }
+    func getWalk(){
+        print(HKObjectType.characteristicType(forIdentifier: .dateOfBirth) ?? "not born")
+    }
 }
 

@@ -9,6 +9,9 @@ import SwiftUI
 
 struct HomeView: View {
     @State var anim = false
+    @ObservedObject var hkManager = HealthKitManager()
+
+    
     var body: some View {
         ZStack{
             Color.red
@@ -23,6 +26,18 @@ struct HomeView: View {
                 TrackView()
                // TestTrackerView()
                 Spacer()
+                Button {
+                    if hkManager.isActive == false {
+                        hkManager.requestAccess()
+                        
+                    }
+                    else {
+                        hkManager.getWalk()
+                    }
+                } label: {
+                    Text("PRESS ME")
+                }
+            
 
             }
         }
