@@ -469,9 +469,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ClassicalConditioning/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please let us share your health data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please let us update your health data";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSMotionUsageDescription = "You're movement is used to track your steps and pacing";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -506,9 +507,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ClassicalConditioning/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please let us share your health data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please let us update your health data";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSMotionUsageDescription = "You're movement is used to track your steps and pacing";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

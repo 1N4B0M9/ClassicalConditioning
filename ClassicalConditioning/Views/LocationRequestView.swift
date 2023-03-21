@@ -16,7 +16,6 @@ struct LocationRequestView: View {
             VStack {
                 Button{
                     LocationManager.shared.requestLocation()
-                    hkManager.requestAccess()
 
                 } label : {
                     Text("Allow Location")
