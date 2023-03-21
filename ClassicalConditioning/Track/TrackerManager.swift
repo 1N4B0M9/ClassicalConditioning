@@ -11,7 +11,7 @@ import SwiftUI
 class TrackerManager {
     static let instance: TrackerManager = TrackerManager()
     
-    private var trackers: [OutputTrackerProgress] = []
+    @Binding private var trackers: [OutputTrackerProgress] = []
     
     private init() {
         OutputTrackerProgress.load {

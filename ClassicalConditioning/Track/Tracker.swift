@@ -40,6 +40,7 @@ class Tracker: ObservableObject {
             } else {
                 self.intervalsFailed += 1
             }
+            self.total.push(steps: self.steps, cadence: self.cadence, distance: self.distance)
             /*
             print("____________________________________")
             print("steps \(self.steps ?? -1)")
@@ -66,6 +67,7 @@ class Tracker: ObservableObject {
             }
             
             self.progress = TrackerProgress(steps: self.steps, cadence: self.cadence, distance: self.distance)
+            self.total.push(steps: self.steps, cadence: self.cadence, distance: self.distance)
         }
     }
     
@@ -114,7 +116,7 @@ class SummativeTrackerProgress {
     
     func push(steps: Int? = nil, cadence: Double? = nil, distance: Int? = nil) {
         if let steps = steps {
-            self.steps += steps
+            self.steps = steps
         }
         
         if let cadence = cadence {
@@ -123,7 +125,7 @@ class SummativeTrackerProgress {
         }
         
         if let distance = distance {
-            self.distance += distance
+            self.distance = distance
         }
     }
 }
