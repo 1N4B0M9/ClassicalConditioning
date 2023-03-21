@@ -13,23 +13,30 @@ struct MapView: View {
     @ObservedObject var locationManager = LocationManager.shared
     @State private var region = MKCoordinateRegion()
     @State var tracking:MapUserTrackingMode = .follow
-
+    @ObservedObject var hkManager = HealthKitManager()
+    
        
     var body: some View {
         Group {
-            if locationManager.userLocation == nil{
+            if locationManager.userLocation == nil && hkManager.isActive == false{
                 LocationRequestView()
             }
             else {
-                Map(coordinateRegion: $region, interactionModes: MapInteractionModes.all,
-                    showsUserLocation: true,
-                    userTrackingMode: $tracking)
+              //  MapView(coordinateRegion: $region, interactionModes: MapInteractionModes.all,
+                     //   showsUserLocation: true,
+                       // userTrackingMode: $tracking)
+               Map(coordinateRegion: $region, interactionModes: MapInteractionModes.all,
+                   showsUserLocation: true,
+                   userTrackingMode: $tracking)
+                
                     .onAppear {
                         if locationManager.userLocation?.coordinate.latitude != nil && locationManager.userLocation?.coordinate.longitude != nil {
                             region.center = CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.longitude ?? 0)
                             //region.span.latitudeDelta = 750
                             //region.span.longitudeDelta = 750
+                            
                         }
+
                     }
 
             }

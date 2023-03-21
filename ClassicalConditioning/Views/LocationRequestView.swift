@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LocationRequestView: View {
+    @ObservedObject var hkManager = HealthKitManager()
     var body: some View {
         ZStack {
             Color.red
@@ -15,6 +16,8 @@ struct LocationRequestView: View {
             VStack {
                 Button{
                     LocationManager.shared.requestLocation()
+                    hkManager.requestAccess()
+
                 } label : {
                     Text("Allow Location")
                         .padding()

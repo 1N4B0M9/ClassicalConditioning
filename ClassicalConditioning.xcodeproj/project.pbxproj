@@ -19,6 +19,9 @@
 		CB7165C329AE2FEA00D1A6DE /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C229AE2FEA00D1A6DE /* TrackView.swift */; };
 		CB7165C529AE361600D1A6DE /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C429AE361600D1A6DE /* Tracker.swift */; };
 		CB7165C729AE362F00D1A6DE /* VoiceSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C629AE362F00D1A6DE /* VoiceSynth.swift */; };
+		CB7BC8C629C48B7F006C57DD /* ReadRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BC8C529C48B7F006C57DD /* ReadRoute.swift */; };
+		CB7BC8C929C89233006C57DD /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7BC8C829C89233006C57DD /* HealthKit.framework */; };
+		CB7BC8CB29C89321006C57DD /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BC8CA29C89321006C57DD /* HealthKitManager.swift */; };
 		CB85441E29AF949D00CB75F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85441D29AF949D00CB75F8 /* Constants.swift */; };
 		CB85442029AF96DA00CB75F8 /* Faces.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85441F29AF96DA00CB75F8 /* Faces.swift */; };
 		CB85442229B0F28500CB75F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85442129B0F28500CB75F8 /* MapView.swift */; };
@@ -44,6 +47,11 @@
 		CB7165C229AE2FEA00D1A6DE /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 		CB7165C429AE361600D1A6DE /* Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
 		CB7165C629AE362F00D1A6DE /* VoiceSynth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSynth.swift; sourceTree = "<group>"; };
+		CB7BC8C529C48B7F006C57DD /* ReadRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadRoute.swift; sourceTree = "<group>"; };
+		CB7BC8C729C89233006C57DD /* ClassicalConditioning.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClassicalConditioning.entitlements; sourceTree = "<group>"; };
+		CB7BC8C829C89233006C57DD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		CB7BC8CA29C89321006C57DD /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		CB7BC8CC29C9E898006C57DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB85441D29AF949D00CB75F8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CB85441F29AF96DA00CB75F8 /* Faces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faces.swift; sourceTree = "<group>"; };
 		CB85442129B0F28500CB75F8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -63,6 +71,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CAE3E21D1E151C0B89D8330 /* Pods_ClassicalConditioning.framework in Frameworks */,
+				CB7BC8C929C89233006C57DD /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +89,7 @@
 		210DCC3AACFA459FDBC34262 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB7BC8C829C89233006C57DD /* HealthKit.framework */,
 				AFAE4AAB853E569837BB9812 /* Pods_ClassicalConditioning.framework */,
 			);
 			name = Frameworks;
@@ -131,6 +141,8 @@
 			children = (
 				CB85441D29AF949D00CB75F8 /* Constants.swift */,
 				CB3C195329B8E17E002185AE /* LocationManager.swift */,
+				CB7BC8C529C48B7F006C57DD /* ReadRoute.swift */,
+				CB7BC8CA29C89321006C57DD /* HealthKitManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -157,6 +169,8 @@
 		CBD6CE5629A79DEE0093DFF6 /* ClassicalConditioning */ = {
 			isa = PBXGroup;
 			children = (
+				CB7BC8CC29C9E898006C57DD /* Info.plist */,
+				CB7BC8C729C89233006C57DD /* ClassicalConditioning.entitlements */,
 				165BC01629B0F7DF0038AE7A /* Utilities */,
 				CB85441C29AF948D00CB75F8 /* Models */,
 				CB7165C129AE2FCB00D1A6DE /* Views */,
@@ -315,6 +329,8 @@
 				CB70F13D29C0A7E200EE7034 /* LocationRequestView.swift in Sources */,
 				1692CB5529C88AC40005CC8F /* TestRunDisplay.swift in Sources */,
 				CB7165C729AE362F00D1A6DE /* VoiceSynth.swift in Sources */,
+				CB7BC8CB29C89321006C57DD /* HealthKitManager.swift in Sources */,
+				CB7BC8C629C48B7F006C57DD /* ReadRoute.swift in Sources */,
 				CB85442229B0F28500CB75F8 /* MapView.swift in Sources */,
 				CBD6CE5829A79DEE0093DFF6 /* ClassicalConditioningApp.swift in Sources */,
 				CB3C195429B8E17E002185AE /* LocationManager.swift in Sources */,
@@ -445,13 +461,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ClassicalConditioning/ClassicalConditioning.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ClassicalConditioning/Preview Content\"";
 				DEVELOPMENT_TEAM = 2L7WB896ZB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ClassicalConditioning/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSMotionUsageDescription = "You're movement is used to track your steps and pacing";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -478,13 +498,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ClassicalConditioning/ClassicalConditioning.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ClassicalConditioning/Preview Content\"";
 				DEVELOPMENT_TEAM = 2L7WB896ZB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ClassicalConditioning/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSMotionUsageDescription = "You're movement is used to track your steps and pacing";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
