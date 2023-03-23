@@ -78,7 +78,7 @@ class Tracker: ObservableObject {
         self.cancelled = true
         self.pedometer.stopUpdates()
         let output = OutputTrackerProgress(progress: total)
-        TrackerManager.instance.push(output)
+        TrackerManager.instance.binding?.wrappedValue.append(output)
         return output
     }
 }

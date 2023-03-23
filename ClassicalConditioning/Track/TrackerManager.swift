@@ -12,26 +12,65 @@ class TrackerManager {
     static let instance: TrackerManager = TrackerManager()
     
     private var trackers: [OutputTrackerProgress] = []
+    var loaded: Bool = false
+    var binding: Binding<[OutputTrackerProgress]>?
     
     private init() {
-        OutputTrackerProgress.load {
+        TrackerManager.load {
             if let trackers = $0 {
                 self.trackers = trackers
             }
         }
+        
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
+            if self.loaded {
+                TrackerManager.save(self.trackers)
+            }
+        }
+        
+        self.binding = Binding() {
+            self.trackers
+        } set: {
+            TrackerManager.save($0)
+            self.trackers = $0
+        }
     }
     
-    func push(_ value: OutputTrackerProgress) {
-        trackers.append(value)
-        OutputTrackerProgress.save(trackers)
+    /*
+     https://developer.apple.com/tutorials/app-dev-training/persisting-data
+     */
+    private static func url() throws -> URL {
+        try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("runData.data")
     }
     
-    func pull() -> Binding<[OutputTrackerProgress]> {
-        return Binding {
-            let dupe = self.trackers //shallow copy
-            return dupe
-        } set: { _ in
-            print("something went VERY WRONG")
+    static func load(_ completion: @escaping ([OutputTrackerProgress]?) -> ()) {
+        background {
+            do {
+                let url = try url()
+                let file = try FileHandle(forReadingFrom: url)
+                let data = try JSONDecoder().decode([OutputTrackerProgress].self, from: file.availableData)
+                
+                main {
+                    completion(data)
+                    TrackerManager.instance.loaded = true
+                }
+            } catch {
+                main {
+                    completion(nil)
+                }
+            }
+        }
+    }
+    
+    static func save(_ value: [OutputTrackerProgress]) {
+        background {
+            do {
+                let data = try JSONEncoder().encode(value)
+                let output = try url()
+                try data.write(to: output)
+            } catch {
+                fatalError(error.localizedDescription)
+            }
         }
     }
 }
@@ -53,43 +92,6 @@ struct OutputTrackerProgress: Codable, Identifiable {
      */
     private enum CodingKeys: String, CodingKey {
         case steps, averageCadence, distance
-    }
-    
-    /*
-     https://developer.apple.com/tutorials/app-dev-training/persisting-data
-     */
-    private static func url() throws -> URL {
-        try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("runData.data")
-    }
-    
-    static func load(_ completion: @escaping ([OutputTrackerProgress]?) -> ()) {
-        background {
-            do {
-                let url = try url()
-                let file = try FileHandle(forReadingFrom: url)
-                let data = try JSONDecoder().decode([OutputTrackerProgress].self, from: file.availableData)
-                
-                main {
-                    completion(data)
-                }
-            } catch {
-                main {
-                    completion(nil)
-                }
-            }
-        }
-    }
-    
-    static func save(_ value: [OutputTrackerProgress]) {
-        background {
-            do {
-                let data = try JSONEncoder().encode(value)
-                let output = try url()
-                try data.write(to: output)
-            } catch {
-                fatalError(error.localizedDescription)
-            }
-        }
     }
 }
 

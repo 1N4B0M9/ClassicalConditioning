@@ -8,24 +8,25 @@
 import SwiftUI
 
 struct TestRunDisplay: View {
-    private var manager: TrackerManager {
-        TrackerManager.instance
-    }
     
     var body: some View {
-        HStack {
-            ForEach(manager.pull()) { output in
-                ZStack {
-                    Rectangle()
-                        .foregroundColor(.gray)
-                        .frame(width: 200, height: 200)
-                    VStack {
-                        Text("steps: \(output.wrappedValue.steps)")
-                        Text("averageCadence: \(output.wrappedValue.averageCadence, specifier: "%.3f")") //specifier used to round to three decimal places
-                        Text("distance: \(output.wrappedValue.distance)")
+        if let binding = TrackerManager.instance.binding {
+            HStack {
+                ForEach(binding) { output in
+                    ZStack {
+                        Rectangle()
+                            .foregroundColor(.gray)
+                            .frame(width: 200, height: 200)
+                        VStack {
+                            Text("steps: \(output.wrappedValue.steps)")
+                            Text("averageCadence: \(output.wrappedValue.averageCadence, specifier: "%.3f")") //specifier used to round to three decimal places
+                            Text("distance: \(output.wrappedValue.distance)")
+                        }
                     }
                 }
             }
+        } else {
+            Text("binding is null") //testing value
         }
     }
 }
