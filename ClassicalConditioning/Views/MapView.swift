@@ -14,20 +14,19 @@ struct MapView: View {
     @State private var region = MKCoordinateRegion()
     @State var tracking:MapUserTrackingMode = .follow
     @ObservedObject var hkManager = HealthKitManager()
-    
-       
+    @ObservedObject var locup = getLocationUpdates()
     var body: some View {
         Group {
-            if locationManager.userLocation == nil && hkManager.isActive == false{
+            if locationManager.userLocation == nil {
                 LocationRequestView()
             }
             else {
-              //  MapView(coordinateRegion: $region, interactionModes: MapInteractionModes.all,
-                     //   showsUserLocation: true,
-                       // userTrackingMode: $tracking)
-               Map(coordinateRegion: $region, interactionModes: MapInteractionModes.all,
-                   showsUserLocation: true,
-                   userTrackingMode: $tracking)
+                MapViews(coords: locup.coord, reg: region)
+                
+           // Map(coordinateRegion: $region, interactionModes: MapInteractionModes.all,
+              //   showsUserLocation: true,
+              //   userTrackingMode: $tracking)
+                
                 
                     .onAppear {
                         if locationManager.userLocation?.coordinate.latitude != nil && locationManager.userLocation?.coordinate.longitude != nil {
