@@ -15,13 +15,14 @@ struct MapView: View {
     @State var tracking:MapUserTrackingMode = .follow
     @ObservedObject var hkManager = HealthKitManager()
     @ObservedObject var locup = getLocationUpdates()
+    
     var body: some View {
         Group {
             if locationManager.userLocation == nil {
                 LocationRequestView()
             }
             else {
-                MapViews(coords: locup.coord, reg: region)
+                MapViews(coords: locup.coord)
                 
            // Map(coordinateRegion: $region, interactionModes: MapInteractionModes.all,
               //   showsUserLocation: true,
