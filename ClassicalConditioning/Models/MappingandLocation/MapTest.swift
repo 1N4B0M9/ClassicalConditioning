@@ -36,9 +36,11 @@ struct MapViews : UIViewRepresentable {
     
     func updateUIView(_ view: MKMapView, context: Context) {
         view.delegate = context.coordinator
-        for i in 0..<coords.count-1 {
-            view.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1]))
-            print("HI")
+        if coords.count != 0 {
+            for i in 0..<coords.count-1 {
+                view.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1]))
+                print("HI")
+            }
         }
 
     }
