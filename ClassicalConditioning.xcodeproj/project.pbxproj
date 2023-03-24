@@ -201,7 +201,6 @@
 		CBF7011A29CCE23F00827DFD /* OldMapFiles */ = {
 			isa = PBXGroup;
 			children = (
-				CB7BC8C529C48B7F006C57DD /* ReadRoute.swift */,
 				CB7BC8CA29C89321006C57DD /* HealthKitManager.swift */,
 				CBF7011529CC716500827DFD /* UpdatedMap.swift */,
 			);
@@ -211,6 +210,7 @@
 		CBF7011B29CCE25600827DFD /* MappingandLocation */ = {
 			isa = PBXGroup;
 			children = (
+				CB7BC8C529C48B7F006C57DD /* ReadRoute.swift */,
 				CBF7011829CC910F00827DFD /* MapTest.swift */,
 				CBF7011A29CCE23F00827DFD /* OldMapFiles */,
 			);

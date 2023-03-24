@@ -31,6 +31,8 @@ struct MapView: View {
                     .onAppear {
                         if locationManager.userLocation?.coordinate.latitude != nil && locationManager.userLocation?.coordinate.longitude != nil {
                             region.center = CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.longitude ?? 0)
+                            print(locationManager.userLocation ?? 0)
+                            
                             //region.span.latitudeDelta = 750
                             //region.span.longitudeDelta = 750
                             
