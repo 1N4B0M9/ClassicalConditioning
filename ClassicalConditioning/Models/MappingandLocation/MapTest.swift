@@ -24,6 +24,7 @@ struct MapViews : UIViewRepresentable {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
         mapView.region = reg
+        mapView.showsUserLocation = true
         if coords.count != 0{
             for i in 0..<coords.count-1 {
                 mapView.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1]))
@@ -40,11 +41,11 @@ struct MapViews : UIViewRepresentable {
         return mapView
     }
     
-    func updateUIView(_ view: MKMapView, context: Context) {
+    func updateUIView(_ mapView: MKMapView, context: Context) {
         //view.delegate = context.coordinator
         if coords.count != 0 {
             for i in 0..<coords.count-1 {
-                view.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1]))
+                mapView.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1]))
                 print("Print test update")
                 print(coords[i])
                 print(coords[i+1])
