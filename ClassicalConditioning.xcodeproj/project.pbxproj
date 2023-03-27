@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		165BC01829B0F93F0038AE7A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165BC01729B0F93F0038AE7A /* Utils.swift */; };
 		165BC01A29B0FA300038AE7A /* gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 165BC01929B0FA300038AE7A /* gitignore */; };
 		1675236529AF8D510052D404 /* TestTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675236429AF8D510052D404 /* TestTrackerView.swift */; };
 		1692CB5329C48EB80005CC8F /* TrackerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1692CB5229C48EB80005CC8F /* TrackerManager.swift */; };
@@ -37,8 +36,6 @@
 		CB7165C729AE362F00D1A6DE /* VoiceSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C629AE362F00D1A6DE /* VoiceSynth.swift */; };
 		CB7BC8C629C48B7F006C57DD /* ReadRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BC8C529C48B7F006C57DD /* ReadRoute.swift */; };
 		CB7BC8C929C89233006C57DD /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7BC8C829C89233006C57DD /* HealthKit.framework */; };
-		CB7BC8CB29C89321006C57DD /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BC8CA29C89321006C57DD /* HealthKitManager.swift */; };
-		CB7BC8CE29CB63C9006C57DD /* HealthKitTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BC8CD29CB63C9006C57DD /* HealthKitTestView.swift */; };
 		CB85441E29AF949D00CB75F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85441D29AF949D00CB75F8 /* Constants.swift */; };
 		CB85442029AF96DA00CB75F8 /* Faces.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85441F29AF96DA00CB75F8 /* Faces.swift */; };
 		CB85442229B0F28500CB75F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85442129B0F28500CB75F8 /* MapView.swift */; };
@@ -48,12 +45,10 @@
 		CBD6CE5A29A79DEE0093DFF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD6CE5929A79DEE0093DFF6 /* ContentView.swift */; };
 		CBD6CE5C29A79DF00093DFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD6CE5B29A79DF00093DFF6 /* Assets.xcassets */; };
 		CBD6CE5F29A79DF00093DFF6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBD6CE5E29A79DF00093DFF6 /* Preview Assets.xcassets */; };
-		CBF7011629CC716500827DFD /* UpdatedMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF7011529CC716500827DFD /* UpdatedMap.swift */; };
 		CBF7011929CC910F00827DFD /* MapTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF7011829CC910F00827DFD /* MapTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		165BC01729B0F93F0038AE7A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		165BC01929B0FA300038AE7A /* gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gitignore; sourceTree = "<group>"; };
 		1675236429AF8D510052D404 /* TestTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTrackerView.swift; sourceTree = "<group>"; };
 		1692CB5229C48EB80005CC8F /* TrackerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerManager.swift; sourceTree = "<group>"; };
@@ -85,9 +80,7 @@
 		CB7BC8C529C48B7F006C57DD /* ReadRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadRoute.swift; sourceTree = "<group>"; };
 		CB7BC8C729C89233006C57DD /* ClassicalConditioning.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClassicalConditioning.entitlements; sourceTree = "<group>"; };
 		CB7BC8C829C89233006C57DD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		CB7BC8CA29C89321006C57DD /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		CB7BC8CC29C9E898006C57DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		CB7BC8CD29CB63C9006C57DD /* HealthKitTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitTestView.swift; sourceTree = "<group>"; };
 		CB85441D29AF949D00CB75F8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CB85441F29AF96DA00CB75F8 /* Faces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faces.swift; sourceTree = "<group>"; };
 		CB85442129B0F28500CB75F8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -98,7 +91,6 @@
 		CBD6CE5929A79DEE0093DFF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CBD6CE5B29A79DF00093DFF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBD6CE5E29A79DF00093DFF6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CBF7011529CC716500827DFD /* UpdatedMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatedMap.swift; sourceTree = "<group>"; };
 		CBF7011829CC910F00827DFD /* MapTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTest.swift; sourceTree = "<group>"; };
 		E9B0AE2069ED77896E4C8D80 /* Pods-ClassicalConditioning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassicalConditioning.debug.xcconfig"; path = "Target Support Files/Pods-ClassicalConditioning/Pods-ClassicalConditioning.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,14 +108,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		165BC01629B0F7DF0038AE7A /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				165BC01729B0F93F0038AE7A /* Utils.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
 		210DCC3AACFA459FDBC34262 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +186,6 @@
 				CB85442329B0F2A300CB75F8 /* InformationView.swift */,
 				CB85442529B0F96600CB75F8 /* HomeView.swift */,
 				CB70F13C29C0A7E200EE7034 /* LocationRequestView.swift */,
-				CB7BC8CD29CB63C9006C57DD /* HealthKitTestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -241,7 +224,6 @@
 			children = (
 				CB7BC8CC29C9E898006C57DD /* Info.plist */,
 				CB7BC8C729C89233006C57DD /* ClassicalConditioning.entitlements */,
-				165BC01629B0F7DF0038AE7A /* Utilities */,
 				CB85441C29AF948D00CB75F8 /* Models */,
 				CB7165C129AE2FCB00D1A6DE /* Views */,
 				CB7165C029AE2F9200D1A6DE /* Track */,
@@ -262,21 +244,11 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		CBF7011A29CCE23F00827DFD /* OldMapFiles */ = {
-			isa = PBXGroup;
-			children = (
-				CB7BC8CA29C89321006C57DD /* HealthKitManager.swift */,
-				CBF7011529CC716500827DFD /* UpdatedMap.swift */,
-			);
-			path = OldMapFiles;
-			sourceTree = "<group>";
-		};
 		CBF7011B29CCE25600827DFD /* MappingandLocation */ = {
 			isa = PBXGroup;
 			children = (
 				CB7BC8C529C48B7F006C57DD /* ReadRoute.swift */,
 				CBF7011829CC910F00827DFD /* MapTest.swift */,
-				CBF7011A29CCE23F00827DFD /* OldMapFiles */,
 			);
 			path = MappingandLocation;
 			sourceTree = "<group>";
@@ -424,9 +396,7 @@
 			files = (
 				CB85442029AF96DA00CB75F8 /* Faces.swift in Sources */,
 				CB7165C529AE361600D1A6DE /* Tracker.swift in Sources */,
-				165BC01829B0F93F0038AE7A /* Utils.swift in Sources */,
 				1675236529AF8D510052D404 /* TestTrackerView.swift in Sources */,
-				CBF7011629CC716500827DFD /* UpdatedMap.swift in Sources */,
 				CBD6CE5A29A79DEE0093DFF6 /* ContentView.swift in Sources */,
 				CB7165C329AE2FEA00D1A6DE /* TrackView.swift in Sources */,
 				CB85442629B0F96600CB75F8 /* HomeView.swift in Sources */,
@@ -435,14 +405,12 @@
 				CB70F13D29C0A7E200EE7034 /* LocationRequestView.swift in Sources */,
 				1692CB5529C88AC40005CC8F /* TestRunDisplay.swift in Sources */,
 				CB7165C729AE362F00D1A6DE /* VoiceSynth.swift in Sources */,
-				CB7BC8CB29C89321006C57DD /* HealthKitManager.swift in Sources */,
 				CB7BC8C629C48B7F006C57DD /* ReadRoute.swift in Sources */,
 				CB85442229B0F28500CB75F8 /* MapView.swift in Sources */,
 				CBD6CE5829A79DEE0093DFF6 /* ClassicalConditioningApp.swift in Sources */,
 				CB3C195429B8E17E002185AE /* LocationManager.swift in Sources */,
 				CBF7011929CC910F00827DFD /* MapTest.swift in Sources */,
 				1692CB5329C48EB80005CC8F /* TrackerManager.swift in Sources */,
-				CB7BC8CE29CB63C9006C57DD /* HealthKitTestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,8 +13,7 @@ struct MapView: View {
     @ObservedObject var locationManager = LocationManager.shared
     @State private var region = MKCoordinateRegion()
     @State var tracking:MapUserTrackingMode = .follow
-    @ObservedObject var hkManager = HealthKitManager()
-    @ObservedObject var locup = getLocationUpdates()
+    @ObservedObject var locup = LocationUpdates()
     
     var body: some View {
         Group {

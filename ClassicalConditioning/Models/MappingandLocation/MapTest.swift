@@ -12,11 +12,10 @@ struct MapViews : UIViewRepresentable {
     var coords : [CLLocationCoordinate2D] = []
     var reg : MKCoordinateRegion = MKCoordinateRegion()
     var locationManager = LocationManager.shared
+    
     init(coords: [CLLocationCoordinate2D]){
         self.coords = coords
         reg.center = CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.longitude ?? 0)
-    
-        
     }
    
     

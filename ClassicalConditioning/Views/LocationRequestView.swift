@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct LocationRequestView: View {
-    @ObservedObject var hkManager = HealthKitManager()
     var body: some View {
         ZStack {
             Color.red
