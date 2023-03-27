@@ -18,6 +18,11 @@ class Sound {
     
     enum SoundOption: String {
         case v1
+        case m1
+        case m2
+        case m3
+        case m4
+        case m5
     }
     
     private init() {}

@@ -10,6 +10,16 @@ import SwiftUI
 struct InformationView: View {
     var body: some View {
         VStack {
+            
+            Button {
+                Sound.instance.play(sound: .m2)
+            } label: {
+                Text("BAKOKOAKAKAKAKwoAMksczx")
+                    .font(.largeTitle)
+                    
+            }
+            
+            
         TestRunDisplay()
         }
     }
