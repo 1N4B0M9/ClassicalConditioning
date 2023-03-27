@@ -11,7 +11,6 @@ struct InformationView: View {
     var body: some View {
         VStack {
         TestRunDisplay()
-        HealthKitTestView()
         }
     }
 }
