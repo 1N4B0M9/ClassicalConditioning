@@ -23,7 +23,7 @@ class getLocationUpdates : ObservableObject {
             return
         }
         index = index + 1
-        coord.append(CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.latitude ?? 0 ))
+        coord.append(CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.longitude ?? 0 ))
         /*
         if index == 1 {
             drawLine(coord1: coord[0], coord2: coord[0])
