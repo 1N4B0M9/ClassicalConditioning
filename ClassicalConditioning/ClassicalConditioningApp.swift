@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct ClassicalConditioningApp: App {
+    @StateObject var madOrHappy : HappyOrMad = HappyOrMad()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(madOrHappy)
         }
     }
 }
