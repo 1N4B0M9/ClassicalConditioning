@@ -27,10 +27,10 @@ struct MapViews : UIViewRepresentable {
         if coords.count != 0{
             for i in 0..<coords.count-1 {
                 mapView.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1]))
-                print("Test Init")
-                print(coords[i])
-                print(coords[i+1])
-                print("______________")
+               // print("Test Init")
+               // print(coords[i])
+               // print(coords[i+1])
+               // print("______________")
                 
             }
 
@@ -45,10 +45,10 @@ struct MapViews : UIViewRepresentable {
         if coords.count != 0 {
             for i in 0..<coords.count-1 {
                 mapView.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1]))
-                print("Print test update")
-                print(coords[i])
-                print(coords[i+1])
-                print("_______________")
+               // print("Print test update")
+               // print(coords[i])
+               // print(coords[i+1])
+               // print("_______________")
             }
         }
 
