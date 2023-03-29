@@ -52,7 +52,7 @@ class Tracker: ObservableObject {
             */
         }
         
-        Timer.scheduledTimer(withTimeInterval: 25, repeats: true) { [self] timer in
+        Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { [self] timer in
             guard !self.cancelled else {
                 timer.invalidate()
                 return
@@ -78,7 +78,7 @@ class Tracker: ObservableObject {
         self.cancelled = true
         self.pedometer.stopUpdates()
         let output = OutputTrackerProgress(progress: total)
-        TrackerManager.instance.binding?.wrappedValue.append(output)
+        TrackerManager.instance.binding!.wrappedValue.append(output) //for the sake of testing
         return output
     }
 }

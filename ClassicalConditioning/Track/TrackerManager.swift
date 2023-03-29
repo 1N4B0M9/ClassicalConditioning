@@ -31,8 +31,8 @@ class TrackerManager {
         self.binding = Binding() {
             self.trackers
         } set: {
-            TrackerManager.save($0)
             self.trackers = $0
+            TrackerManager.save(self.trackers)
         }
     }
     
