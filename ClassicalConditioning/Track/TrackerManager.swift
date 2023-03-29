@@ -11,12 +11,13 @@ import SwiftUI
 class TrackerManager {
     static let instance: TrackerManager = TrackerManager()
     
-    private var trackers: [OutputTrackerProgress] = []
-    var loaded: Bool = false
+    @State private var trackers: [OutputTrackerProgress] = []
+    private var loaded: Bool = false
     var binding: Binding<[OutputTrackerProgress]>?
     
     private init() {
         TrackerManager.load {
+            print("load complete: \($0)") //test
             if let trackers = $0 {
                 self.trackers = trackers
             }
@@ -31,8 +32,12 @@ class TrackerManager {
         self.binding = Binding() {
             self.trackers
         } set: {
-            self.trackers = $0
-            TrackerManager.save(self.trackers)
+            if self.loaded {
+                self.trackers = $0
+                TrackerManager.save(self.trackers)
+            } else {
+                print("not loaded") //test
+            }
         }
     }
     
@@ -43,7 +48,7 @@ class TrackerManager {
         try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("runData.data")
     }
     
-    static func load(_ completion: @escaping ([OutputTrackerProgress]?) -> ()) {
+    private static func load(_ completion: @escaping ([OutputTrackerProgress]?) -> ()) {
         background {
             do {
                 let url = try url()
@@ -62,12 +67,13 @@ class TrackerManager {
         }
     }
     
-    static func save(_ value: [OutputTrackerProgress]) {
+    private static func save(_ value: [OutputTrackerProgress]) {
         background {
             do {
                 let data = try JSONEncoder().encode(value)
                 let output = try url()
                 try data.write(to: output)
+                print("write complete")
             } catch {
                 fatalError(error.localizedDescription)
             }
