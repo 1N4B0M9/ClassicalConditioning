@@ -29,14 +29,20 @@ struct Faces: View {
 
 
                 } label :  {
-                    Image(madOrHappy.madHappy == false ? "mad" : "happy")
-                    .resizable()
-                    .frame(width: 450, height: 450)
-                    .foregroundColor(coolor ? .yellow : .red)
-                    .rotation3DEffect(
-                        .degrees(isAnimating ? 360 : 0),
-                        axis: (x: 1.0, y: 0.0, z: 0.0))
-                    .animation(.easeInOut(duration: 0.5))
+                    ZStack {
+                        Circle()
+                            .fill(.white)
+                            .frame(width: 500, height: 500, alignment: .center)
+                        Image(madOrHappy.madHappy == false ? "mad" : "happy")
+                        .resizable()
+                        .frame(width: 450, height: 450)
+                        .foregroundColor(coolor ? .yellow : .red)
+                        .rotation3DEffect(
+                            .degrees(isAnimating ? 360 : 0),
+                            axis: (x: 1.0, y: 0.0, z: 0.0))
+                        .animation(.easeInOut(duration: 0.5))
+                    }
+                    
             }
         }
     }
