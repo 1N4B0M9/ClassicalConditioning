@@ -58,6 +58,8 @@ class Tracker: ObservableObject {
                 return
             }
             
+            print("tracker update timer - fired") //test
+            
             if let steps = self.steps, let cadence = self.cadence, let distance = distance, self.progress.meetsConditions(steps: steps, cadence: cadence, distance: distance) {
                 //read out "good job" in a straightforward or backhand way based on mode
                 self.promptsPositive += 1
