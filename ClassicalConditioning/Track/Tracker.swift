@@ -32,15 +32,17 @@ class Tracker: ObservableObject {
         }
         
         self.pedometer.startUpdates(from: self.date) { value, error in
-            if let data = value {
-                self.steps = data.numberOfSteps.intValue
-                self.cadence = data.currentCadence?.doubleValue
-                self.distance = data.distance?.intValue
-                self.intervals += 1
-            } else {
-                self.intervalsFailed += 1
+            DispatchQueue.main.async {
+                if let data = value {
+                    self.steps = data.numberOfSteps.intValue
+                    self.cadence = data.currentCadence?.doubleValue
+                    self.distance = data.distance?.intValue
+                    self.intervals += 1
+                } else {
+                    self.intervalsFailed += 1
+                }
+                self.total.push(steps: self.steps, cadence: self.cadence, distance: self.distance)
             }
-            self.total.push(steps: self.steps, cadence: self.cadence, distance: self.distance)
             /*
             print("____________________________________")
             print("steps \(self.steps ?? -1)")

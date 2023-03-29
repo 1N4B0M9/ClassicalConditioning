@@ -101,13 +101,13 @@ struct OutputTrackerProgress: Codable, Identifiable {
     }
 }
 
-private func background(_ task: @escaping () -> ()) {
+func background(_ task: @escaping () -> ()) {
     DispatchQueue.global(qos: .background).async {
        task()
     }
 }
 
-private func main(_ task: @escaping () -> ()) {
+func main(_ task: @escaping () -> ()) {
     DispatchQueue.main.async {
        task()
     }
