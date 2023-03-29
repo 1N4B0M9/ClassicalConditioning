@@ -14,11 +14,11 @@ struct HomeView: View {
     var body: some View {
         ZStack{
             if madOrHappy.madHappy == false {
-                Color.blue
+                RadialGradient(gradient: Gradient(colors: [.red, .white]), center: .center, startRadius: 2, endRadius: 650)
                     .ignoresSafeArea()
             }
             else {
-                Color.red
+                RadialGradient(gradient: Gradient(colors: [.blue, .white]), center: .center, startRadius: 2, endRadius: 650)
                     .ignoresSafeArea()
 
             }
