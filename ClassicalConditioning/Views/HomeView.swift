@@ -13,8 +13,16 @@ struct HomeView: View {
     
     var body: some View {
         ZStack{
-            Color.red
-                .ignoresSafeArea()
+            if madOrHappy.madHappy == false {
+                Color.blue
+                    .ignoresSafeArea()
+            }
+            else {
+                Color.red
+                    .ignoresSafeArea()
+
+            }
+                
             
             VStack {
                 

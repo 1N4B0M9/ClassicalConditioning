@@ -31,7 +31,7 @@ struct Faces: View {
                 } label :  {
                     Image(madOrHappy.madHappy == false ? "mad" : "happy")
                     .resizable()
-                    .frame(width: 100, height: 100)
+                    .frame(width: 500, height: 500)
                     .foregroundColor(coolor ? .yellow : .red)
                     .rotation3DEffect(
                         .degrees(isAnimating ? 360 : 0),
