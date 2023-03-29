@@ -77,7 +77,7 @@
 		CB7165C229AE2FEA00D1A6DE /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 		CB7165C429AE361600D1A6DE /* Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
 		CB7165C629AE362F00D1A6DE /* VoiceSynth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSynth.swift; sourceTree = "<group>"; };
-		CB7BC8C529C48B7F006C57DD /* ReadRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadRoute.swift; sourceTree = "<group>"; };
+		CB7BC8C529C48B7F006C57DD /* ReadRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReadRoute.swift; path = MappingandLocation/ReadRoute.swift; sourceTree = "<group>"; };
 		CB7BC8C729C89233006C57DD /* ClassicalConditioning.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClassicalConditioning.entitlements; sourceTree = "<group>"; };
 		CB7BC8C829C89233006C57DD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		CB7BC8CC29C9E898006C57DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -108,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16651A1229D45A59008AD817 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CB85441D29AF949D00CB75F8 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		210DCC3AACFA459FDBC34262 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,8 +201,8 @@
 		CB85441C29AF948D00CB75F8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CBF7011B29CCE25600827DFD /* MappingandLocation */,
-				CB85441D29AF949D00CB75F8 /* Constants.swift */,
+				CB7BC8C529C48B7F006C57DD /* ReadRoute.swift */,
+				CBF7011829CC910F00827DFD /* MapTest.swift */,
 				CB3C195329B8E17E002185AE /* LocationManager.swift */,
 			);
 			path = Models;
@@ -224,6 +232,7 @@
 			children = (
 				CB7BC8CC29C9E898006C57DD /* Info.plist */,
 				CB7BC8C729C89233006C57DD /* ClassicalConditioning.entitlements */,
+				16651A1229D45A59008AD817 /* Utilities */,
 				CB85441C29AF948D00CB75F8 /* Models */,
 				CB7165C129AE2FCB00D1A6DE /* Views */,
 				CB7165C029AE2F9200D1A6DE /* Track */,
@@ -242,15 +251,6 @@
 				CBD6CE5E29A79DF00093DFF6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		CBF7011B29CCE25600827DFD /* MappingandLocation */ = {
-			isa = PBXGroup;
-			children = (
-				CB7BC8C529C48B7F006C57DD /* ReadRoute.swift */,
-				CBF7011829CC910F00827DFD /* MapTest.swift */,
-			);
-			path = MappingandLocation;
 			sourceTree = "<group>";
 		};
 		EBFD5CC744337EFFD7CD2D94 /* Pods */ = {
