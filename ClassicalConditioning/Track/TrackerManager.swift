@@ -20,6 +20,9 @@ class TrackerManager {
             print("load complete: \($0)") //test
             if let trackers = $0 {
                 self.trackers = trackers
+                print("set tracker to loaded value") //test
+            } else {
+                print("loaded value was nil") //test
             }
         }
         

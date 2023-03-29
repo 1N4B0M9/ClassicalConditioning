@@ -9,7 +9,8 @@ import Foundation
 import CoreMotion
 //import CoreLocation
 
-class Tracker: ObservableObject {
+//main actor decorator forces class to act only in main thread
+@MainActor class Tracker: ObservableObject {
     private let pedometer: CMPedometer = CMPedometer()
     //private let location: CLLocationManager = CLLocationManager()
     private let date: Date = Date()
