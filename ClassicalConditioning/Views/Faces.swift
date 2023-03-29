@@ -32,10 +32,10 @@ struct Faces: View {
                     ZStack {
                         Circle()
                             .fill(.white)
-                            .frame(width: 500, height: 500, alignment: .center)
+                            .frame(width: 400, height: 400, alignment: .center)
                         Image(madOrHappy.madHappy == false ? "mad" : "happy")
                         .resizable()
-                        .frame(width: 450, height: 450)
+                        .frame(width: 400, height: 400)
                         .foregroundColor(coolor ? .yellow : .red)
                         .rotation3DEffect(
                             .degrees(isAnimating ? 360 : 0),
