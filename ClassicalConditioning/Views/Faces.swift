@@ -32,7 +32,8 @@ struct Faces: View {
                     ZStack {
                         Circle()
                             .fill(.white)
-                            .frame(width: 400, height: 400, alignment: .center)
+                            .frame(width: 350, height: 350, alignment: .center)
+                            .shadow(color: .black, radius: 100, x: 100, y: 100)
                         Image(madOrHappy.madHappy == false ? "mad" : "happy")
                         .resizable()
                         .frame(width: 400, height: 400)
