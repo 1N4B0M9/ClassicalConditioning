@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State var anim = false
-
+    @EnvironmentObject var madOrHappy : HappyOrMad
     
     var body: some View {
         ZStack{

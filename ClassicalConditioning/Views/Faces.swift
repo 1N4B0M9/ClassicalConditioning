@@ -10,6 +10,7 @@ import SwiftUI
 struct Faces: View {
     @State private var isAnimating = false
     @State private var coolor = false
+    @EnvironmentObject var madOrHappy : HappyOrMad
     var body: some View {
         VStack {
             //coin flip
@@ -19,8 +20,16 @@ struct Faces: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     isAnimating = false
                 }
+                if madOrHappy.madHappy == false {
+                    madOrHappy.madHappy = true
+                }
+                else {
+                    madOrHappy.madHappy = false
+                }
+
+
                 } label :  {
-                Image(systemName: "circle.fill")
+                    Image(madOrHappy.madHappy == false ? "mad" : "happy")
                     .resizable()
                     .frame(width: 100, height: 100)
                     .foregroundColor(coolor ? .yellow : .red)
