@@ -82,6 +82,17 @@ import CoreMotion
     func stop() -> OutputTrackerProgress {
         self.cancelled = true
         self.pedometer.stopUpdates()
+        
+        print("-----------reading from singleton-----------")
+        for output in TrackerManager.instance.binding!.wrappedValue {
+            print("---")
+            print("steps: \(output.steps)")
+            print("cadence: \(output.averageCadence)")
+            print("distance: \(output.distance)")
+            print("---")
+        }
+        print("--------------------------------------------")
+        
         let output = OutputTrackerProgress(progress: total)
         TrackerManager.instance.binding!.wrappedValue.append(output) //for the sake of testing
         return output

@@ -20,6 +20,7 @@ class TrackerManager {
             print("load complete: \($0)") //test
             if let trackers = $0 {
                 self.trackers = trackers
+                self.loaded = true
                 print("set tracker to loaded value") //test
             } else {
                 print("loaded value was nil") //test
@@ -60,7 +61,6 @@ class TrackerManager {
                 
                 main {
                     completion(data)
-                    TrackerManager.instance.loaded = true
                 }
             } catch {
                 main {
