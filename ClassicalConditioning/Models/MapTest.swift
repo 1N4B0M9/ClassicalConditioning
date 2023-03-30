@@ -12,7 +12,7 @@ struct MapViews : UIViewRepresentable {
     var coords : [CLLocationCoordinate2D] = []
     var reg : MKCoordinateRegion = MKCoordinateRegion()
     var locationManager = LocationManager.shared
-    
+
     init(coords: [CLLocationCoordinate2D]){
         self.coords = coords
         reg.center = CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.longitude ?? 0)
@@ -69,10 +69,17 @@ struct MapViews : UIViewRepresentable {
     }
     
     class Coordinator: NSObject, MKMapViewDelegate {
+        @EnvironmentObject var madOrHappy : HappyOrMad
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             if let polyline = overlay as? MKPolyline {
                 let renderer = MKPolylineRenderer(polyline: polyline)
-                renderer.strokeColor = UIColor.blue
+                if madOrHappy.madHappy == true {
+                    renderer.strokeColor = UIColor.blue
+
+                }
+                else {
+                    renderer.strokeColor = UIColor.red
+                }
                 renderer.lineWidth = 3.0
                 return renderer
             }
