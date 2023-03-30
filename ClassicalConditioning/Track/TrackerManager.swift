@@ -8,10 +8,10 @@
 import Foundation
 import SwiftUI
 
-class TrackerManager {
+class TrackerManager: ObservableObject {
     static let instance: TrackerManager = TrackerManager()
     
-    @State private var trackers: [OutputTrackerProgress] = []
+    @Published private var trackers: [OutputTrackerProgress] = []
     private var loaded: Bool = false
     var binding: Binding<[OutputTrackerProgress]>?
     
@@ -24,12 +24,6 @@ class TrackerManager {
                 print("set tracker to loaded value") //test
             } else {
                 print("loaded value was nil") //test
-            }
-        }
-        
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
-            if self.loaded {
-                TrackerManager.save(self.trackers)
             }
         }
         
@@ -76,6 +70,9 @@ class TrackerManager {
                 let data = try JSONEncoder().encode(value)
                 let output = try url()
                 try data.write(to: output)
+                print("--------------data---------------")
+                print(data.description)
+                print("---------------------------------")
                 print("write complete")
             } catch {
                 fatalError(error.localizedDescription)
