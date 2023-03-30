@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct TestRunDisplay: View {
+    @ObservedObject private var manager = TrackerManager.instance
     
     var body: some View {
         HStack {
-            ForEach(TrackerManager.instance.$trackers) { output in
+            ForEach(self.$manager.trackers) { output in
                 ZStack {
                     Rectangle()
                         .foregroundColor(.gray)
