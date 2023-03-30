@@ -11,9 +11,8 @@ import SwiftUI
 class TrackerManager: ObservableObject {
     static let instance: TrackerManager = TrackerManager()
     
-    @Published private var trackers: [OutputTrackerProgress] = []
+    @Published var trackers: [OutputTrackerProgress] = []
     private var loaded: Bool = false
-    var binding: Binding<[OutputTrackerProgress]>?
     
     private init() {
         TrackerManager.load {
@@ -27,14 +26,9 @@ class TrackerManager: ObservableObject {
             }
         }
         
-        self.binding = Binding() {
-            self.trackers
-        } set: {
+        Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { _ in
             if self.loaded {
-                self.trackers = $0
                 TrackerManager.save(self.trackers)
-            } else {
-                print("not loaded") //test
             }
         }
     }
