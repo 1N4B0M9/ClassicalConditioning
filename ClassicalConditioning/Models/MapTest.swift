@@ -69,17 +69,18 @@ struct MapViews : UIViewRepresentable {
     }
     
     class Coordinator: NSObject, MKMapViewDelegate {
-        @EnvironmentObject var madOrHappy : HappyOrMad
+       // @EnvironmentObject var madOrHappy : HappyOrMad
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             if let polyline = overlay as? MKPolyline {
                 let renderer = MKPolylineRenderer(polyline: polyline)
-                if madOrHappy.madHappy == true {
-                    renderer.strokeColor = UIColor.blue
+             //   if madOrHappy.madHappy == true {
+                 //   renderer.strokeColor = UIColor.blue
 
-                }
-                else {
-                    renderer.strokeColor = UIColor.red
-                }
+             //   }
+              //  else {
+              //      renderer.strokeColor = UIColor.red
+              //  }
+                renderer.strokeColor = UIColor.blue
                 renderer.lineWidth = 3.0
                 return renderer
             }
