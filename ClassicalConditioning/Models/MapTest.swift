@@ -80,6 +80,7 @@ struct MapViews : UIViewRepresentable {
               //  else {
               //      renderer.strokeColor = UIColor.red
               //  }
+                
                 renderer.strokeColor = UIColor.blue
                 renderer.lineWidth = 3.0
                 return renderer

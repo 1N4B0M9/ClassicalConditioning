@@ -36,8 +36,8 @@ struct HomeView: View {
                 Spacer()
                 Faces()
                 Spacer()
-                //TrackView()
-                TestTrackerView()
+                TrackView()
+               // TestTrackerView()
                 Spacer()
             
 

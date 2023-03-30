@@ -9,16 +9,24 @@ import SwiftUI
 
 struct TrackView: View {
     @State var playORStop = false
+    @State var tracker: Tracker?
+
     var body: some View {
         
         HStack {
             Button {
                 if playORStop == false {
                     playORStop = true
+                    if tracker == nil {
+                        tracker = Tracker()
+                    }
                 }
                 else {
                     playORStop = false
-
+                    if let tracker = tracker {
+                        tracker.stop()
+                        self.tracker = nil
+                    }
                 }
                 
                 

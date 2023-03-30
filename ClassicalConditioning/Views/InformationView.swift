@@ -8,20 +8,32 @@
 import SwiftUI
 
 struct InformationView: View {
+    @EnvironmentObject var madOrHappy : HappyOrMad
+
     var body: some View {
-        VStack {
-            
-            Button {
-                Sound.instance.play(sound: .m2)
-            } label: {
-                Text("BAKOKOAKAKAKAKwoAMksczx")
-                    .font(.largeTitle)
-                    
+        ZStack {
+            if madOrHappy.madHappy == false {
+               // RadialGradient(gradient: Gradient(colors: [.white, .red]), center: .center, startRadius: 2, endRadius: 650)
+                Color.red
+                    .ignoresSafeArea()
+                
+            }
+            else {
+               // RadialGradient(gradient: Gradient(colors: [.white, .blue]), center: .center, startRadius: 2, endRadius: 650)
+                
+                Color.blue
+                    .ignoresSafeArea()
+
             }
             
-            
-        TestRunDisplay()
+                
+            VStack {
+            TestRunDisplay()
+            }
         }
+        .animation(Animation.easeInOut.speed(0.25), value : madOrHappy.madHappy)
+        
+        
     }
 }
 
