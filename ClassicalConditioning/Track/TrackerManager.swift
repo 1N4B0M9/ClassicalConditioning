@@ -41,20 +41,14 @@ class TrackerManager: ObservableObject {
     }
     
     private static func load(_ completion: @escaping ([OutputTrackerProgress]?) -> ()) {
-        background {
-            do {
-                let url = try url()
-                let file = try FileHandle(forReadingFrom: url)
-                let data = try JSONDecoder().decode([OutputTrackerProgress].self, from: file.availableData)
-                
-                main {
-                    completion(data)
-                }
-            } catch {
-                main {
-                    completion(nil)
-                }
-            }
+        do {
+            let url = try url()
+            let file = try FileHandle(forReadingFrom: url)
+            let data = try JSONDecoder().decode([OutputTrackerProgress].self, from: file.availableData)
+            
+            completion(data)
+        } catch {
+            completion(nil)
         }
     }
     

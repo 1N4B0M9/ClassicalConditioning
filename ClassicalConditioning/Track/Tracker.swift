@@ -94,7 +94,7 @@ import CoreMotion
         print("--------------------------------------------")
         
         let output = OutputTrackerProgress(progress: total)
-        TrackerManager.instance.binding!.wrappedValue.append(output) //for the sake of testing
+        TrackerManager.instance.trackers.append(output)
         return output
     }
 }
