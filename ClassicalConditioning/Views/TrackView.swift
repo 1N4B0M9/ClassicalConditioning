@@ -12,7 +12,6 @@ struct TrackView: View {
     @State var tracker: Tracker?
 
     var body: some View {
-        
         HStack {
             Button {
                 if playORStop == false {
@@ -49,6 +48,25 @@ struct TrackView: View {
 
         
     }
+    /*
+     private struct DisplayView: View {
+         @ObservedObject var tracker: Tracker
+         
+         var body: some View {
+             HStack {
+                 Text("steps: \($tracker.steps.wrappedValue ?? 0)")
+                 Text("cadence: \($tracker.cadence.wrappedValue ?? 0, specifier: "%.3f")")
+                 Text("distance: \($tracker.distance.wrappedValue ?? 0)")
+                 /*
+                 Text("intervals: \($tracker.intervals.wrappedValue)") //debug
+                 Text("intervalsFailed: \($tracker.intervalsFailed.wrappedValue)") //debug
+                 Text("positive: \($tracker.promptsPositive.wrappedValue)") //debug
+                 Text("negative: \($tracker.promptsNegative.wrappedValue)") //debug
+                 */
+             }
+         }
+     }
+     */
 }
 
 struct TrackView_Previews: PreviewProvider {

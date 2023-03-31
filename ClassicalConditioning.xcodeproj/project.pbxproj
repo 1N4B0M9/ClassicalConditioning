@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		165BC01A29B0FA300038AE7A /* gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 165BC01929B0FA300038AE7A /* gitignore */; };
-		1675236529AF8D510052D404 /* TestTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675236429AF8D510052D404 /* TestTrackerView.swift */; };
 		1692CB5329C48EB80005CC8F /* TrackerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1692CB5229C48EB80005CC8F /* TrackerManager.swift */; };
 		1692CB5529C88AC40005CC8F /* TestRunDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1692CB5429C88AC40005CC8F /* TestRunDisplay.swift */; };
 		4EE88F0829B8DB85006A412F /* v1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4EE88F0729B8DB85006A412F /* v1.mp3 */; };
@@ -50,7 +49,6 @@
 
 /* Begin PBXFileReference section */
 		165BC01929B0FA300038AE7A /* gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gitignore; sourceTree = "<group>"; };
-		1675236429AF8D510052D404 /* TestTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTrackerView.swift; sourceTree = "<group>"; };
 		1692CB5229C48EB80005CC8F /* TrackerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerManager.swift; sourceTree = "<group>"; };
 		1692CB5429C88AC40005CC8F /* TestRunDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRunDisplay.swift; sourceTree = "<group>"; };
 		4EE88F0729B8DB85006A412F /* v1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = v1.mp3; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				CB7165C429AE361600D1A6DE /* Tracker.swift */,
-				1675236429AF8D510052D404 /* TestTrackerView.swift */,
 				1692CB5229C48EB80005CC8F /* TrackerManager.swift */,
 				1692CB5429C88AC40005CC8F /* TestRunDisplay.swift */,
 			);
@@ -396,7 +393,6 @@
 			files = (
 				CB85442029AF96DA00CB75F8 /* Faces.swift in Sources */,
 				CB7165C529AE361600D1A6DE /* Tracker.swift in Sources */,
-				1675236529AF8D510052D404 /* TestTrackerView.swift in Sources */,
 				CBD6CE5A29A79DEE0093DFF6 /* ContentView.swift in Sources */,
 				CB7165C329AE2FEA00D1A6DE /* TrackView.swift in Sources */,
 				CB85442629B0F96600CB75F8 /* HomeView.swift in Sources */,

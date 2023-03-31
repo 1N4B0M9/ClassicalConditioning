@@ -27,9 +27,13 @@ class TrackerManager: ObservableObject {
         }
         
         Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { _ in
-            if self.loaded {
-                TrackerManager.save(self.trackers)
-            }
+            self.save()
+        }
+    }
+    
+    func save() {
+        if self.loaded {
+            TrackerManager.save(self.trackers)
         }
     }
     

@@ -94,7 +94,9 @@ import CoreMotion
         print("--------------------------------------------")
         
         let output = OutputTrackerProgress(progress: total)
-        TrackerManager.instance.trackers.append(output)
+        let manager = TrackerManager.instance
+        manager.trackers.append(output)
+        manager.save()
         return output
     }
 }
