@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		165BC01A29B0FA300038AE7A /* gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 165BC01929B0FA300038AE7A /* gitignore */; };
+		167695BD29E583F100E984D2 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167695BC29E583F100E984D2 /* LogoView.swift */; };
 		1692CB5329C48EB80005CC8F /* TrackerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1692CB5229C48EB80005CC8F /* TrackerManager.swift */; };
 		1692CB5529C88AC40005CC8F /* TestRunDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1692CB5429C88AC40005CC8F /* TestRunDisplay.swift */; };
 		4EE88F0829B8DB85006A412F /* v1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4EE88F0729B8DB85006A412F /* v1.mp3 */; };
@@ -22,7 +23,6 @@
 		4EE88F3229D1DD52006A412F /* m10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4EE88F2729D1DD51006A412F /* m10.mp3 */; };
 		4EE88F3329D1DD52006A412F /* m12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4EE88F2829D1DD51006A412F /* m12.mp3 */; };
 		4EE88F3429D1DD52006A412F /* m13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4EE88F2929D1DD51006A412F /* m13.mp3 */; };
-		6CAE3E21D1E151C0B89D8330 /* Pods_ClassicalConditioning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAE4AAB853E569837BB9812 /* Pods_ClassicalConditioning.framework */; };
 		CB04428829D1E1BF00A250E3 /* m5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB04428329D1E1BF00A250E3 /* m5.mp3 */; };
 		CB04428929D1E1BF00A250E3 /* m1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB04428429D1E1BF00A250E3 /* m1.mp3 */; };
 		CB04428A29D1E1BF00A250E3 /* m2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB04428529D1E1BF00A250E3 /* m2.mp3 */; };
@@ -36,7 +36,6 @@
 		CB7BC8C629C48B7F006C57DD /* ReadRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BC8C529C48B7F006C57DD /* ReadRoute.swift */; };
 		CB7BC8C929C89233006C57DD /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7BC8C829C89233006C57DD /* HealthKit.framework */; };
 		CB85441E29AF949D00CB75F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85441D29AF949D00CB75F8 /* Constants.swift */; };
-		CB85442029AF96DA00CB75F8 /* Faces.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85441F29AF96DA00CB75F8 /* Faces.swift */; };
 		CB85442229B0F28500CB75F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85442129B0F28500CB75F8 /* MapView.swift */; };
 		CB85442429B0F2A300CB75F8 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85442329B0F2A300CB75F8 /* InformationView.swift */; };
 		CB85442629B0F96600CB75F8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB85442529B0F96600CB75F8 /* HomeView.swift */; };
@@ -49,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		165BC01929B0FA300038AE7A /* gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gitignore; sourceTree = "<group>"; };
+		167695BC29E583F100E984D2 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		1692CB5229C48EB80005CC8F /* TrackerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerManager.swift; sourceTree = "<group>"; };
 		1692CB5429C88AC40005CC8F /* TestRunDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRunDisplay.swift; sourceTree = "<group>"; };
 		4EE88F0729B8DB85006A412F /* v1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = v1.mp3; sourceTree = "<group>"; };
@@ -63,7 +63,6 @@
 		4EE88F2729D1DD51006A412F /* m10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = m10.mp3; sourceTree = "<group>"; };
 		4EE88F2829D1DD51006A412F /* m12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = m12.mp3; sourceTree = "<group>"; };
 		4EE88F2929D1DD51006A412F /* m13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = m13.mp3; sourceTree = "<group>"; };
-		AFAE4AAB853E569837BB9812 /* Pods_ClassicalConditioning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClassicalConditioning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA177245193472E4700B4633 /* Pods-ClassicalConditioning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassicalConditioning.release.xcconfig"; path = "Target Support Files/Pods-ClassicalConditioning/Pods-ClassicalConditioning.release.xcconfig"; sourceTree = "<group>"; };
 		CB04428329D1E1BF00A250E3 /* m5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = m5.mp3; sourceTree = "<group>"; };
 		CB04428429D1E1BF00A250E3 /* m1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = m1.mp3; sourceTree = "<group>"; };
@@ -80,7 +79,6 @@
 		CB7BC8C829C89233006C57DD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		CB7BC8CC29C9E898006C57DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB85441D29AF949D00CB75F8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		CB85441F29AF96DA00CB75F8 /* Faces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faces.swift; sourceTree = "<group>"; };
 		CB85442129B0F28500CB75F8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		CB85442329B0F2A300CB75F8 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		CB85442529B0F96600CB75F8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CAE3E21D1E151C0B89D8330 /* Pods_ClassicalConditioning.framework in Frameworks */,
 				CB7BC8C929C89233006C57DD /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				CB7BC8C829C89233006C57DD /* HealthKit.framework */,
-				AFAE4AAB853E569837BB9812 /* Pods_ClassicalConditioning.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -186,11 +182,11 @@
 			isa = PBXGroup;
 			children = (
 				CB7165C229AE2FEA00D1A6DE /* TrackView.swift */,
-				CB85441F29AF96DA00CB75F8 /* Faces.swift */,
 				CB85442129B0F28500CB75F8 /* MapView.swift */,
 				CB85442329B0F2A300CB75F8 /* InformationView.swift */,
 				CB85442529B0F96600CB75F8 /* HomeView.swift */,
 				CB70F13C29C0A7E200EE7034 /* LocationRequestView.swift */,
+				167695BC29E583F100E984D2 /* LogoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,7 +266,6 @@
 				CBD6CE5029A79DEE0093DFF6 /* Sources */,
 				CBD6CE5129A79DEE0093DFF6 /* Frameworks */,
 				CBD6CE5229A79DEE0093DFF6 /* Resources */,
-				51618AD158BCEC3AA141600C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -367,23 +362,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		51618AD158BCEC3AA141600C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ClassicalConditioning/Pods-ClassicalConditioning-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ClassicalConditioning/Pods-ClassicalConditioning-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ClassicalConditioning/Pods-ClassicalConditioning-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -391,7 +369,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB85442029AF96DA00CB75F8 /* Faces.swift in Sources */,
 				CB7165C529AE361600D1A6DE /* Tracker.swift in Sources */,
 				CBD6CE5A29A79DEE0093DFF6 /* ContentView.swift in Sources */,
 				CB7165C329AE2FEA00D1A6DE /* TrackView.swift in Sources */,
@@ -401,6 +378,7 @@
 				CB70F13D29C0A7E200EE7034 /* LocationRequestView.swift in Sources */,
 				1692CB5529C88AC40005CC8F /* TestRunDisplay.swift in Sources */,
 				CB7165C729AE362F00D1A6DE /* VoiceSynth.swift in Sources */,
+				167695BD29E583F100E984D2 /* LogoView.swift in Sources */,
 				CB7BC8C629C48B7F006C57DD /* ReadRoute.swift in Sources */,
 				CB85442229B0F28500CB75F8 /* MapView.swift in Sources */,
 				CBD6CE5829A79DEE0093DFF6 /* ClassicalConditioningApp.swift in Sources */,
