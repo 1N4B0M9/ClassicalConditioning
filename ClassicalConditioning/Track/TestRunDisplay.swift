@@ -14,6 +14,7 @@ struct TestRunDisplay: View {
         HStack {
             ForEach(self.$manager.trackers) { output in
                 ZStack {
+                    
                     Rectangle()
                         .foregroundColor(.gray)
                         .frame(width: 200, height: 200)

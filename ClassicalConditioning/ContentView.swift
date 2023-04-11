@@ -9,6 +9,8 @@ import SwiftUI
 import AVFoundation
 import CoreMotion
 struct ContentView: View {
+    @State private var selectedTab = 1
+
     init() {
      //   UITabBar.appearance().backgroundColor = UIColor.red
     //    UITabBar.appearance().barTintColor = .black
@@ -39,23 +41,27 @@ struct ContentView: View {
                     
 
                // }
-            TabView {
+            TabView(selection: $selectedTab) {
                 MapView()
                     .tabItem {
                         Image(systemName: "mappin" )
                     }
+                        .tag(0)
+
                 
                 HomeView()
                     .tabItem {
                         Image(systemName: "house" )
 
                     }
+                        .tag(1)
             
             
                 InformationView()
                     .tabItem {
                         Image(systemName: "info")
                     }
+                    .tag(2)
             }
             
             
