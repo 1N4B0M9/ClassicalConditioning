@@ -84,7 +84,7 @@ import CoreMotion
         self.pedometer.stopUpdates()
         
         print("-----------reading from singleton-----------")
-        for output in TrackerManager.instance.binding!.wrappedValue {
+        for output in TrackerManager.instance.trackers {
             print("---")
             print("steps: \(output.steps)")
             print("cadence: \(output.averageCadence)")
