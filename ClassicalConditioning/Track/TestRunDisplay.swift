@@ -11,19 +11,24 @@ struct TestRunDisplay: View {
     @ObservedObject private var manager = TrackerManager.instance
     
     var body: some View {
-        HStack {
+        NavigationView {
+            List {
+            
             ForEach(self.$manager.trackers) { output in
-                ZStack {
+                NavigationLink {
                     
-                    Rectangle()
-                        .foregroundColor(.gray)
-                        .frame(width: 200, height: 200)
-                    VStack {
+                } label : {
+                    HStack {
                         Text("steps: \(output.wrappedValue.steps)")
                         Text("averageCadence: \(output.wrappedValue.averageCadence, specifier: "%.3f")") //specifier used to round to three decimal places
                         Text("distance: \(output.wrappedValue.distance)")
                     }
                 }
+                    
+                 
+               
+                
+            }
             }
         }
     }
