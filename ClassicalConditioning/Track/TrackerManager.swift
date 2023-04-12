@@ -73,7 +73,7 @@ class TrackerManager: ObservableObject {
     }
 }
 
-struct OutputTrackerProgress: Codable, Identifiable {
+struct OutputTrackerProgress: Codable, Identifiable{
     let steps: Int
     let averageCadence: Double
     let distance: Int
