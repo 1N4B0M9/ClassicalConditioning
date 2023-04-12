@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct TrackView: View {
+    @Binding var cords: [CLLocationCoordinate2D]
     @State var playORStop = false
     @State var tracker: Tracker?
 
@@ -17,7 +19,7 @@ struct TrackView: View {
                 if playORStop == false {
                     playORStop = true
                     if tracker == nil {
-                        tracker = Tracker()
+                        tracker = Tracker(cords)
                     }
                 }
                 else {
@@ -45,8 +47,6 @@ struct TrackView: View {
         .frame(width: UIScreen.screenWidth-30, height: 100)
         .border(.gray, width: 4)
         .cornerRadius(10)
-
-        
     }
     /*
      private struct DisplayView: View {
@@ -71,6 +71,6 @@ struct TrackView: View {
 
 struct TrackView_Previews: PreviewProvider {
     static var previews: some View {
-        TrackView()
+        TrackView(cords: .constant([]))
     }
 }

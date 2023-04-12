@@ -7,7 +7,7 @@
 
 import Foundation
 import CoreMotion
-//import CoreLocation
+import CoreLocation
 
 //main actor decorator forces class to act only in main thread
 @MainActor class Tracker: ObservableObject {
@@ -24,8 +24,11 @@ import CoreMotion
     private var progress: TrackerProgress = TrackerProgress() //tracks progress of current interval
     private var cancelled: Bool = false
     private let total: SummativeTrackerProgress = SummativeTrackerProgress() //tracks total progress
+    private let cords: [CLLocationCoordinate2D]
     
-    init(_ progress: OutputTrackerProgress? = nil) {
+    init(_ cords: [CLLocationCoordinate2D], progress: OutputTrackerProgress? = nil) {
+        self.cords = cords
+        
         if let progress = progress {
             self.total.steps += progress.steps
             self.total.averageCadence += progress.averageCadence
@@ -42,7 +45,7 @@ import CoreMotion
                 } else {
                     self.intervalsFailed += 1
                 }
-                self.total.push(steps: self.steps, cadence: self.cadence, distance: self.distance)
+                self.total.push(steps: self.steps, cadence: self.cadence, distance: self.distance, cords: self.cords)
             }
             /*
             print("____________________________________")
@@ -61,8 +64,6 @@ import CoreMotion
                 return
             }
             
-            print("tracker update timer - fired") //test
-            
             if let steps = self.steps, let cadence = self.cadence, let distance = distance, self.progress.meetsConditions(steps: steps, cadence: cadence, distance: distance) {
                 //read out "good job" in a straightforward or backhand way based on mode
                 self.promptsPositive += 1
@@ -72,7 +73,7 @@ import CoreMotion
             }
             
             self.progress = TrackerProgress(steps: self.steps, cadence: self.cadence, distance: self.distance)
-            self.total.push(steps: self.steps, cadence: self.cadence, distance: self.distance)
+            self.total.push(steps: self.steps, cadence: self.cadence, distance: self.distance, cords: self.cords)
         }
     }
     
@@ -83,6 +84,7 @@ import CoreMotion
         self.cancelled = true
         self.pedometer.stopUpdates()
         
+        /*
         print("-----------reading from singleton-----------")
         for output in TrackerManager.instance.trackers {
             print("---")
@@ -92,6 +94,7 @@ import CoreMotion
             print("---")
         }
         print("--------------------------------------------")
+        */
         
         let output = OutputTrackerProgress(progress: total)
         let manager = TrackerManager.instance
@@ -124,15 +127,17 @@ class SummativeTrackerProgress {
     var steps: Int
     var averageCadence: Double
     var distance: Int
+    var cords: [CLLocationCoordinate2D]
     private var calls: Double = 0
     
-    init(steps: Int = 0, averageCadence: Double = 0.0, distance: Int = 0) {
+    init(steps: Int = 0, averageCadence: Double = 0.0, distance: Int = 0, cords: [CLLocationCoordinate2D] = []) {
         self.steps = steps
         self.averageCadence = averageCadence
         self.distance = distance
+        self.cords = cords
     }
     
-    func push(steps: Int? = nil, cadence: Double? = nil, distance: Int? = nil) {
+    func push(steps: Int? = nil, cadence: Double? = nil, distance: Int? = nil, cords: [CLLocationCoordinate2D]) {
         if let steps = steps {
             self.steps = steps
         }
@@ -145,5 +150,7 @@ class SummativeTrackerProgress {
         if let distance = distance {
             self.distance = distance
         }
+        
+        self.cords = cords
     }
 }
