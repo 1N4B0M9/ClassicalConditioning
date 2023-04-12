@@ -45,6 +45,9 @@ struct MapViews : UIViewRepresentable {
         if coords.count != 0 {
             for i in 0..<coords.count-1 {
                 mapView.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1]))
+                mapView.mapType = MKMapType.hybrid
+                mapView.mapType = MKMapType.standard
+
                // print("Print test update")
                // print(coords[i])
                // print(coords[i+1])

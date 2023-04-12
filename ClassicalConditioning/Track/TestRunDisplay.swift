@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TestRunDisplay: View {
     @ObservedObject private var manager = TrackerManager.instance
-    @State var i = 0
     var body: some View {
         NavigationView {
             List {
@@ -22,7 +21,7 @@ struct TestRunDisplay: View {
                         Text("distance: \(output.wrappedValue.distance)")
                     }
                 } label : {
-                    Text("Run\(i+1)")
+                    Text("Run")
                 }
                
                 
