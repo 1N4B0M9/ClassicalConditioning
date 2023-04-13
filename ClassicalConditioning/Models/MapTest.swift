@@ -26,13 +26,13 @@ struct MapViews : UIViewRepresentable {
         mapView.showsUserLocation = true
         if coords.count != 0{
             for i in 0..<coords.count-1 {
-                mapView.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1], lineArr: &polylineArr))
+            mapView.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1], lineArr: &polylineArr))
                // print("Test Init")
                // print(coords[i])
                // print(coords[i+1])
                // print("______________")
                 
-            }
+           }
 
         }
         
@@ -44,6 +44,8 @@ struct MapViews : UIViewRepresentable {
         //view.delegate = context.coordinator
         if coords.count != 0 {
             for i in 0..<coords.count-1 {
+                mapView.removeOverlays(mapView.overlays)
+
                 mapView.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1], lineArr: &polylineArr))
              
 
