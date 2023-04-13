@@ -12,7 +12,7 @@ struct MapViews : UIViewRepresentable {
     var coords : [CLLocationCoordinate2D] = []
     var reg : MKCoordinateRegion = MKCoordinateRegion()
     var locationManager = LocationManager.shared
-
+    @State var polylineArr : [MKPolyline] = []
     init(coords: [CLLocationCoordinate2D]) {
         self.coords = coords
         reg.center = CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.longitude ?? 0)
@@ -26,7 +26,7 @@ struct MapViews : UIViewRepresentable {
         mapView.showsUserLocation = true
         if coords.count != 0{
             for i in 0..<coords.count-1 {
-                mapView.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1]))
+                mapView.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1], lineArr: &polylineArr))
                // print("Test Init")
                // print(coords[i])
                // print(coords[i+1])
@@ -44,9 +44,8 @@ struct MapViews : UIViewRepresentable {
         //view.delegate = context.coordinator
         if coords.count != 0 {
             for i in 0..<coords.count-1 {
-                mapView.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1]))
-                mapView.mapType = MKMapType.hybrid
-                mapView.mapType = MKMapType.standard
+                mapView.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1], lineArr: &polylineArr))
+             
 
                // print("Print test update")
                // print(coords[i])
@@ -60,13 +59,15 @@ struct MapViews : UIViewRepresentable {
     func makeCoordinator() -> Coordinator {
         Coordinator()
     }
-    func drawLine(coord1 : CLLocationCoordinate2D, coord2 : CLLocationCoordinate2D) -> MKPolyline {
+    func drawLine(coord1 : CLLocationCoordinate2D, coord2 : CLLocationCoordinate2D, lineArr : inout [MKPolyline]) -> MKMultiPolyline {
         let blueLocation1 = CLLocationCoordinate2D(latitude: coord1.latitude, longitude: coord1.longitude)
 
         let blueLocation2 = CLLocationCoordinate2D(latitude: coord2.latitude, longitude: coord2.longitude)
 
         let routeLine = MKPolyline(coordinates:[blueLocation1,blueLocation2], count:2)
-        return routeLine
+        lineArr.append(routeLine)
+        let lines = MKMultiPolyline(lineArr)
+        return lines
        // lines.append(routeLine)
         //self.mapView.add(routeLine)
     }
@@ -74,8 +75,9 @@ struct MapViews : UIViewRepresentable {
     class Coordinator: NSObject, MKMapViewDelegate {
        // @EnvironmentObject var madOrHappy : HappyOrMad
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-            if let polyline = overlay as? MKPolyline {
-                let renderer = MKPolylineRenderer(polyline: polyline)
+            if let polyline = overlay as? MKMultiPolyline {
+               // let renderer = MKMultiPolylineRenderer(polyline: polyline)
+                let renderer = MKMultiPolylineRenderer(multiPolyline: polyline)
              //   if madOrHappy.madHappy == true {
                  //   renderer.strokeColor = UIColor.blue
 
