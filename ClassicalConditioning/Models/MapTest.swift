@@ -24,7 +24,7 @@ struct MapViews : UIViewRepresentable {
         mapView.delegate = context.coordinator
         mapView.region = reg
         mapView.showsUserLocation = true
-        if coords.count != 0{
+        if coords.count > 2{
            // for i in 0..<coords.count-1 {
             mapView.addOverlay(drawLine(coord1: coords[coords.count-2], coord2: coords[coords.count-1], lineArr: &polylineArr))
                // print("Test Init")
@@ -42,17 +42,17 @@ struct MapViews : UIViewRepresentable {
     
     func updateUIView(_ mapView: MKMapView, context: Context) {
         //view.delegate = context.coordinator
-        if coords.count != 0 {
+        if coords.count > 2 {
             //for i in 0..<coords.count-1 {
             mapView.removeOverlays(mapView.overlays)
-
+            
             mapView.addOverlay(drawLine(coord1: coords[coords.count-2], coord2: coords[coords.count-1], lineArr: &polylineArr))
 
 
-               // print("Print test update")
-               // print(coords[i])
-               // print(coords[i+1])
-               // print("_______________")
+               //print("Print test update")
+              // print(coords[i])
+             //  print(coords[i+1])
+             //  print("_______________")
             //}
         }
 
@@ -69,6 +69,8 @@ struct MapViews : UIViewRepresentable {
         let routeLine = MKPolyline(coordinates:[blueLocation1,blueLocation2], count:2)
         lineArr.append(routeLine)
         let lines = MKMultiPolyline(lineArr)
+        print(coord1)
+        print(coord2)
         return lines
        // lines.append(routeLine)
         //self.mapView.add(routeLine)
