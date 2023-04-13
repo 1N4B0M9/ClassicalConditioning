@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		165683E429E8447900245174 /* PersistantMapTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165683E329E8447900245174 /* PersistantMapTest.swift */; };
 		165BC01A29B0FA300038AE7A /* gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 165BC01929B0FA300038AE7A /* gitignore */; };
 		167695BD29E583F100E984D2 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167695BC29E583F100E984D2 /* LogoView.swift */; };
 		1692CB5329C48EB80005CC8F /* TrackerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1692CB5229C48EB80005CC8F /* TrackerManager.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		165683E329E8447900245174 /* PersistantMapTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistantMapTest.swift; sourceTree = "<group>"; };
 		165BC01929B0FA300038AE7A /* gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gitignore; sourceTree = "<group>"; };
 		167695BC29E583F100E984D2 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		1692CB5229C48EB80005CC8F /* TrackerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerManager.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				CB85442529B0F96600CB75F8 /* HomeView.swift */,
 				CB70F13C29C0A7E200EE7034 /* LocationRequestView.swift */,
 				167695BC29E583F100E984D2 /* LogoView.swift */,
+				165683E329E8447900245174 /* PersistantMapTest.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				CB70F13D29C0A7E200EE7034 /* LocationRequestView.swift in Sources */,
 				1692CB5529C88AC40005CC8F /* TestRunDisplay.swift in Sources */,
 				CB7165C729AE362F00D1A6DE /* VoiceSynth.swift in Sources */,
+				165683E429E8447900245174 /* PersistantMapTest.swift in Sources */,
 				167695BD29E583F100E984D2 /* LogoView.swift in Sources */,
 				CB7BC8C629C48B7F006C57DD /* ReadRoute.swift in Sources */,
 				CB85442229B0F28500CB75F8 /* MapView.swift in Sources */,
