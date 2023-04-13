@@ -68,7 +68,7 @@ class TrackerManager: ObservableObject {
     }
 }
 
-struct OutputTrackerProgress: Codable, Identifiable{
+struct OutputTrackerProgress: Codable, Identifiable {
     let steps: Int
     let averageCadence: Double
     let distance: Int
@@ -78,6 +78,13 @@ struct OutputTrackerProgress: Codable, Identifiable{
         cords.map {
             CLLocationCoordinate2D($0)
         }
+    }
+    
+    init(steps: Int, averageCadnece: Double, distance: Int, cords: [Coordinate] = []) {
+        self.steps = steps
+        self.averageCadence = averageCadnece
+        self.distance = distance
+        self.cords = cords
     }
     
     init(progress: SummativeTrackerProgress) {
