@@ -93,11 +93,11 @@ struct OutputTrackerProgress: Codable, Identifiable {
         self.cords = cords
     }
     
-    init(progress: SummativeTrackerProgress) {
+    init(progress: SummativeTrackerProgress, cords: [CLLocationCoordinate2D]) {
         self.steps = progress.steps
         self.averageCadence = progress.averageCadence
         self.distance = progress.distance
-        self.cords = progress.cords.map {
+        self.cords = cords.map {
             Coordinate($0)
         }
     }

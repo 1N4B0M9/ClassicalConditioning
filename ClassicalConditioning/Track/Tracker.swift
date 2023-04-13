@@ -24,11 +24,8 @@ import CoreLocation
     private var progress: TrackerProgress = TrackerProgress() //tracks progress of current interval
     private var cancelled: Bool = false
     private let total: SummativeTrackerProgress = SummativeTrackerProgress() //tracks total progress
-    private let cords: [CLLocationCoordinate2D]
     
-    init(_ cords: [CLLocationCoordinate2D], progress: OutputTrackerProgress? = nil) {
-        self.cords = cords
-        
+    init(progress: OutputTrackerProgress? = nil) {
         if let progress = progress {
             self.total.steps += progress.steps
             self.total.averageCadence += progress.averageCadence
@@ -45,7 +42,7 @@ import CoreLocation
                 } else {
                     self.intervalsFailed += 1
                 }
-                self.total.push(steps: self.steps, cadence: self.cadence, distance: self.distance, cords: self.cords)
+                self.total.push(steps: self.steps, cadence: self.cadence, distance: self.distance)
             }
             /*
             print("____________________________________")
@@ -73,14 +70,14 @@ import CoreLocation
             }
             
             self.progress = TrackerProgress(steps: self.steps, cadence: self.cadence, distance: self.distance)
-            self.total.push(steps: self.steps, cadence: self.cadence, distance: self.distance, cords: self.cords)
+            self.total.push(steps: self.steps, cadence: self.cadence, distance: self.distance)
         }
     }
     
     /*
      Called when tracker is no longer used
      */
-    func stop() -> OutputTrackerProgress {
+    func stop(_ cords: [CLLocationCoordinate2D]) -> OutputTrackerProgress {
         self.cancelled = true
         self.pedometer.stopUpdates()
         
@@ -96,7 +93,7 @@ import CoreLocation
         print("--------------------------------------------")
         */
         
-        let output = OutputTrackerProgress(progress: total)
+        let output = OutputTrackerProgress(progress: total, cords: cords)
         let manager = TrackerManager.instance
         manager.trackers.append(output)
         manager.save()
@@ -127,17 +124,15 @@ class SummativeTrackerProgress {
     var steps: Int
     var averageCadence: Double
     var distance: Int
-    var cords: [CLLocationCoordinate2D]
     private var calls: Double = 0
     
-    init(steps: Int = 0, averageCadence: Double = 0.0, distance: Int = 0, cords: [CLLocationCoordinate2D] = []) {
+    init(steps: Int = 0, averageCadence: Double = 0.0, distance: Int = 0) {
         self.steps = steps
         self.averageCadence = averageCadence
         self.distance = distance
-        self.cords = cords
     }
     
-    func push(steps: Int? = nil, cadence: Double? = nil, distance: Int? = nil, cords: [CLLocationCoordinate2D]) {
+    func push(steps: Int? = nil, cadence: Double? = nil, distance: Int? = nil) {
         if let steps = steps {
             self.steps = steps
         }
@@ -150,7 +145,5 @@ class SummativeTrackerProgress {
         if let distance = distance {
             self.distance = distance
         }
-        
-        self.cords = cords
     }
 }

@@ -19,13 +19,13 @@ struct TrackView: View {
                 if playORStop == false {
                     playORStop = true
                     if tracker == nil {
-                        tracker = Tracker(cords)
+                        tracker = Tracker()
                     }
                 }
                 else {
                     playORStop = false
                     if let tracker = tracker {
-                        tracker.stop()
+                        tracker.stop(cords)
                         self.tracker = nil
                     }
                 }
