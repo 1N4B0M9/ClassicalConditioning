@@ -19,10 +19,15 @@ class TrackerManager: ObservableObject {
         TrackerManager.load {
             if let trackers = $0 {
                 self.trackers = trackers
-                self.loaded = true
             } else {
-                fatalError("Returned value from disk was null, something has gone VERY wrong")
+                do {
+                    try FileManager.default.removeItem(at: TrackerManager.url())
+                } catch let error {
+                    print(error)
+                }
             }
+            
+            self.loaded = true
         }
         
         Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { _ in
