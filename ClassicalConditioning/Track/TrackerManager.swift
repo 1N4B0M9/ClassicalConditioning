@@ -22,6 +22,7 @@ class TrackerManager: ObservableObject {
             } else {
                 do {
                     try FileManager.default.removeItem(at: TrackerManager.url())
+                    print("deleted file on disk because there was an error parsing the file")
                 } catch let error {
                     print(error)
                 }
