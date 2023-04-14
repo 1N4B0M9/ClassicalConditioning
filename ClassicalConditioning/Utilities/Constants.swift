@@ -35,3 +35,6 @@ extension UIScreen{
 class HappyOrMad : ObservableObject {
     @Published var madHappy : Bool = false
 }
+class onOrOff : ObservableObject {
+    @Published var oof : Bool = false
+}

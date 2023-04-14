@@ -10,20 +10,20 @@ import CoreLocation
 
 struct TrackView: View {
     @Binding var cords: [CLLocationCoordinate2D]
-    @State var playORStop = false
     @State var tracker: Tracker?
+    @EnvironmentObject var onoff : onOrOff
 
     var body: some View {
         HStack {
             Button {
-                if playORStop == false {
-                    playORStop = true
+                if onoff.oof == false {
+                    onoff.oof = true
                     if tracker == nil {
                         tracker = Tracker()
                     }
                 }
                 else {
-                    playORStop = false
+                    onoff.oof = false
                     if let tracker = tracker {
                         tracker.stop(cords)
                         self.tracker = nil
@@ -32,7 +32,7 @@ struct TrackView: View {
                 
                 
             } label: {
-                if playORStop == false {
+                if onoff.oof == false {
                     Image(systemName: "play.fill")
                         .frame(width: 50, height: 50)
                 }

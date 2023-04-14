@@ -10,10 +10,12 @@ import SwiftUI
 @main
 struct ClassicalConditioningApp: App {
     @StateObject var madOrHappy : HappyOrMad = HappyOrMad()
+    @StateObject var onoff : onOrOff = onOrOff()
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(madOrHappy)
+                .environmentObject(onoff)
         }
     }
 }
