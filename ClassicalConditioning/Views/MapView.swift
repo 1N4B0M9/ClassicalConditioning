@@ -23,7 +23,7 @@ struct MapView: View {
                 Group {
                     if onoff.oof == true {
                         VStack {
-                            TrackView(cords: $locup.coord)
+                           // TrackView(cords: $locup.coord)
                             MapViews(coords: locup.coord).onAppear {
                                 if locationManager.userLocation?.coordinate.latitude != nil && locationManager.userLocation?.coordinate.longitude != nil {
                                     region.center = CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.longitude ?? 0)
