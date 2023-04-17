@@ -10,7 +10,8 @@ import SwiftUI
 struct HomeView: View {
     @State private var anim = false
     @EnvironmentObject var madOrHappy : HappyOrMad
-    
+    @ObservedObject var locup = LocationUpdates()
+    @EnvironmentObject var onoff : onOrOff
     var body: some View {
         ZStack{
             
@@ -36,6 +37,7 @@ struct HomeView: View {
                 Spacer()
                 LogoView()
                 Spacer()
+                TrackView(cords: $locup.coord, onoff: _onoff)
                 Spacer()
             
 
