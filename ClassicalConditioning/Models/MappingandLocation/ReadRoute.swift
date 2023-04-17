@@ -15,14 +15,15 @@ class LocationUpdates : ObservableObject {
     private var locationManager = LocationManager.shared
     @Published var coord : [CLLocationCoordinate2D] = []
     var lines: [MKPolyline] = []
-    
+
+
     init() {
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { [self] timer in
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [self] timer in
             guard !self.cancelled else {
                 timer.invalidate()
                 return
             }
-            
+           
             coord.append(CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.longitude ?? 0 ))
             /*
             if index == 1 {
@@ -44,6 +45,7 @@ class LocationUpdates : ObservableObject {
     func stop() {
         self.cancelled = true
     }
+ 
     
     func drawLine(coord1 : CLLocationCoordinate2D, coord2 : CLLocationCoordinate2D) -> MKPolyline {
         let blueLocation1 = CLLocationCoordinate2D(latitude: coord1.latitude, longitude: coord1.longitude)

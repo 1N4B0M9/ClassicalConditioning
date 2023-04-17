@@ -29,6 +29,7 @@
 		CB04428A29D1E1BF00A250E3 /* m2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB04428529D1E1BF00A250E3 /* m2.mp3 */; };
 		CB04428B29D1E1BF00A250E3 /* m3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB04428629D1E1BF00A250E3 /* m3.mp3 */; };
 		CB04428C29D1E1BF00A250E3 /* m4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB04428729D1E1BF00A250E3 /* m4.mp3 */; };
+		CB04429029ED6D6F00A250E3 /* MapDisk.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB04428F29ED6D6F00A250E3 /* MapDisk.swift */; };
 		CB3C195429B8E17E002185AE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3C195329B8E17E002185AE /* LocationManager.swift */; };
 		CB70F13D29C0A7E200EE7034 /* LocationRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB70F13C29C0A7E200EE7034 /* LocationRequestView.swift */; };
 		CB7165C329AE2FEA00D1A6DE /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C229AE2FEA00D1A6DE /* TrackView.swift */; };
@@ -71,6 +72,7 @@
 		CB04428529D1E1BF00A250E3 /* m2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = m2.mp3; sourceTree = "<group>"; };
 		CB04428629D1E1BF00A250E3 /* m3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = m3.mp3; sourceTree = "<group>"; };
 		CB04428729D1E1BF00A250E3 /* m4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = m4.mp3; sourceTree = "<group>"; };
+		CB04428F29ED6D6F00A250E3 /* MapDisk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDisk.swift; sourceTree = "<group>"; };
 		CB3C195329B8E17E002185AE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		CB70F13C29C0A7E200EE7034 /* LocationRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRequestView.swift; sourceTree = "<group>"; };
 		CB7165C229AE2FEA00D1A6DE /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				CB7BC8C529C48B7F006C57DD /* ReadRoute.swift */,
 				CBF7011829CC910F00827DFD /* MapTest.swift */,
 				CB3C195329B8E17E002185AE /* LocationManager.swift */,
+				CB04428F29ED6D6F00A250E3 /* MapDisk.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				CB3C195429B8E17E002185AE /* LocationManager.swift in Sources */,
 				CBF7011929CC910F00827DFD /* MapTest.swift in Sources */,
 				1692CB5329C48EB80005CC8F /* TrackerManager.swift in Sources */,
+				CB04429029ED6D6F00A250E3 /* MapDisk.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

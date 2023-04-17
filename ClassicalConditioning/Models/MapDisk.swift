@@ -1,21 +1,26 @@
 //
-//  MapTest.swift
+//  MapDisk.swift
 //  ClassicalConditioning
 //
-//  Created by Nathan Morelli (student LM) on 3/23/23.
+//  Created by Nathan Morelli (student LM) on 4/17/23.
 //
 
 import SwiftUI
 import MapKit
 
-struct MapViews : UIViewRepresentable {
+struct MapViewDisk : UIViewRepresentable {
     var coords : [CLLocationCoordinate2D] = []
     var reg : MKCoordinateRegion = MKCoordinateRegion()
     var locationManager = LocationManager.shared
+    var primCoord : [Coordinate]
     @State var polylineArr : [MKPolyline] = []
-    init(coords: [CLLocationCoordinate2D]) {
-        self.coords = coords
-        reg.center = CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.longitude ?? 0)
+    init(primCoord : [Coordinate]) {
+        self.primCoord = primCoord
+        for i in 0 ..< primCoord.count - 1{
+            coords.append(CLLocationCoordinate2D(primCoord[i]))
+        }
+        reg.center = CLLocationCoordinate2D(latitude: coords[0].latitude, longitude: coords[0].longitude)
+        
     }
     
     func makeUIView(context: Context) -> MKMapView {

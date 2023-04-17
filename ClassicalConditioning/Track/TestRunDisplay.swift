@@ -19,6 +19,7 @@ struct TestRunDisplay: View {
                         Text("steps: \(output.wrappedValue.steps)")
                         Text("averageCadence: \(output.wrappedValue.averageCadence, specifier: "%.3f")") //specifier used to round to three decimal places
                         Text("distance: \(output.wrappedValue.distance)")
+                        MapViewDisk(primCoord: output.wrappedValue.cords)
                     }
                 } label : {
                     Text("Run")
