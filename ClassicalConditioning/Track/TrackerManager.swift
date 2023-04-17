@@ -78,7 +78,7 @@ struct OutputTrackerProgress: Codable, Identifiable {
     let steps: Int
     let averageCadence: Double
     let distance: Int
-    let cords: [Coordinate]
+    private let cords: [Coordinate]
     let id: UUID = UUID()
     var locationCords: [CLLocationCoordinate2D] {
         cords.map {

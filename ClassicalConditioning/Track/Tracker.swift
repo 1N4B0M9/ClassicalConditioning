@@ -19,13 +19,14 @@ import CoreLocation
     @Published var distance: Int? //total distance traveled in meters
     @Published var intervals: Int = 0 //testing value
     @Published var intervalsFailed: Int = 0 //testing value
-    @Published var promptsPositive: Int = 0 //testing value
-    @Published var promptsNegative: Int = 0 //testing value
     private var progress: TrackerProgress = TrackerProgress() //tracks progress of current interval
     private var cancelled: Bool = false
     private let total: SummativeTrackerProgress = SummativeTrackerProgress() //tracks total progress
+    private var happyOrMad: HappyOrMad
     
-    init(progress: OutputTrackerProgress? = nil) {
+    init(progress: OutputTrackerProgress? = nil, happyOrMad: HappyOrMad) {
+        self.happyOrMad = happyOrMad
+        
         if let progress = progress {
             self.total.steps += progress.steps
             self.total.averageCadence += progress.averageCadence
@@ -61,12 +62,9 @@ import CoreLocation
                 return
             }
             
-            if let steps = self.steps, let cadence = self.cadence, let distance = distance, self.progress.meetsConditions(steps: steps, cadence: cadence, distance: distance) {
-                //read out "good job" in a straightforward or backhand way based on mode
-                self.promptsPositive += 1
-            } else {
-                //read out encourement that user "can do better" based on mode
-                self.promptsNegative += 1
+            let index = Int.random(in: 1...16)
+            if let steps = self.steps, let cadence = self.cadence, let distance = distance, !self.progress.meetsConditions(steps: steps, cadence: cadence, distance: distance) {
+                Sound.instance.play(self.happyOrMad.madHappy)
             }
             
             self.progress = TrackerProgress(steps: self.steps, cadence: self.cadence, distance: self.distance)

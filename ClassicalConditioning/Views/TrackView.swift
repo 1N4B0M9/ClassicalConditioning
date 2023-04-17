@@ -11,7 +11,8 @@ import CoreLocation
 struct TrackView: View {
     @Binding var cords: [CLLocationCoordinate2D]
     @State var tracker: Tracker?
-    @EnvironmentObject var onoff : onOrOff
+    @EnvironmentObject var onoff: onOrOff
+    @EnvironmentObject var happyOrMad: HappyOrMad
 
     var body: some View {
         HStack {
@@ -19,7 +20,7 @@ struct TrackView: View {
                 if onoff.oof == false {
                     onoff.oof = true
                     if tracker == nil {
-                        tracker = Tracker()
+                        tracker = Tracker(happyOrMad: happyOrMad)
                     }
                 }
                 else {
