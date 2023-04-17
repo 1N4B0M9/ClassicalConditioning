@@ -12,13 +12,10 @@ struct MapViewDisk : UIViewRepresentable {
     var coords : [CLLocationCoordinate2D] = []
     var reg : MKCoordinateRegion = MKCoordinateRegion()
     var locationManager = LocationManager.shared
-    var primCoord : [Coordinate]
     @State var polylineArr : [MKPolyline] = []
-    init(primCoord : [Coordinate]) {
-        self.primCoord = primCoord
-        for i in 0 ..< primCoord.count - 1{
-            coords.append(CLLocationCoordinate2D(primCoord[i]))
-        }
+    init(coords : [CLLocationCoordinate2D]) {
+        self.coords = coords
+    
         reg.center = CLLocationCoordinate2D(latitude: coords[0].latitude, longitude: coords[0].longitude)
         
     }
