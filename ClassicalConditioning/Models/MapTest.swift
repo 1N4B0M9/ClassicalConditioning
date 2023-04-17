@@ -17,7 +17,6 @@ struct MapViews : UIViewRepresentable {
         self.coords = coords
         reg.center = CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.longitude ?? 0)
     }
-   
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
@@ -31,7 +30,7 @@ struct MapViews : UIViewRepresentable {
                // print(coords[i])
                // print(coords[i+1])
                // print("______________")
-                
+                print("Helllo")
           // }
 
         }
@@ -42,9 +41,11 @@ struct MapViews : UIViewRepresentable {
     
     func updateUIView(_ mapView: MKMapView, context: Context) {
         //view.delegate = context.coordinator
+        
         if coords.count > 2 {
             //for i in 0..<coords.count-1 {
-            mapView.removeOverlays(mapView.overlays)
+            //mapView.removeOverlays(mapView.overlays)
+            //test
             
             mapView.addOverlay(drawLine(coord1: coords[coords.count-2], coord2: coords[coords.count-1], lineArr: &polylineArr))
 
