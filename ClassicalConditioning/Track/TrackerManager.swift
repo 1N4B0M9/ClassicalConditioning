@@ -42,7 +42,7 @@ class TrackerManager: ObservableObject {
         }
     }
     
-    func indexOf(info: OutputTrackerProgress) -> Int? {
+    func indexOf(_ info: OutputTrackerProgress) -> Int? {
         for i in 0..<self.trackers.count {
             if self.trackers[i].id == info.id {
                 return i
