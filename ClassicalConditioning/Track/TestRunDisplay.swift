@@ -34,7 +34,7 @@ struct TestRunDisplay: View {
                     }
                     
                 } label : {
-                    Text("Run")
+                    Text("Run \(self.$manager.trackers.count)")
                 }
                
                 
