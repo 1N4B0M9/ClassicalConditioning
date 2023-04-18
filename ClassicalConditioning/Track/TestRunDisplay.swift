@@ -15,12 +15,24 @@ struct TestRunDisplay: View {
             
             ForEach(self.$manager.trackers) { output in
                 NavigationLink {
-                    VStack {
-                        Text("steps: \(output.wrappedValue.steps)")
-                        Text("averageCadence: \(output.wrappedValue.averageCadence, specifier: "%.3f")") //specifier used to round to three decimal places
-                        Text("distance: \(output.wrappedValue.distance)")
-                        MapViewDisk(coords: output.wrappedValue.locationCords)
+                    Group {
+                        VStack {
+                            Text("steps: \(output.wrappedValue.steps)")
+                            Text("averageCadence: \(output.wrappedValue.averageCadence, specifier: "%.3f")") //specifier used to round to three decimal places
+                            Text("distance: \(output.wrappedValue.distance)")
+                            if output.wrappedValue.locationCords.count == 0 {
+                                Text("No Enough Data")
+                            }
+                            else {
+                                MapViewDisk(coords: output.wrappedValue.locationCords)
+
+                            }
+                            
+                                    
+                            }
+                        
                     }
+                    
                 } label : {
                     Text("Run")
                 }
@@ -29,6 +41,7 @@ struct TestRunDisplay: View {
             }
             }
         }
+        
     }
 }
 

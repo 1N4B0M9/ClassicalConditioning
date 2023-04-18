@@ -15,6 +15,7 @@ struct TrackView: View {
     @EnvironmentObject var happyOrMad: HappyOrMad
 
     var body: some View {
+       
         HStack {
             Button {
                 if onoff.oof == false {
