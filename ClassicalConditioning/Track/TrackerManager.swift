@@ -67,6 +67,17 @@ class TrackerManager: ObservableObject {
                 let data = try JSONEncoder().encode(value)
                 let output = try url()
                 try data.write(to: output)
+                
+                //all debug
+                for o in value {
+                    print("-----------------")
+                    print("steps = \(o.steps)")
+                    print("cadence = \(o.averageCadence)")
+                    print("distance = \(o.distance)")
+                    print("cords = \(o.locationCords)")
+                    print("-----------------")
+                }
+                
             } catch {
                 fatalError(error.localizedDescription)
             }
