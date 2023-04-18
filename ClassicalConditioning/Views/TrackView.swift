@@ -13,6 +13,7 @@ struct TrackView: View {
     @State var tracker: Tracker?
     @EnvironmentObject var onoff: onOrOff
     @EnvironmentObject var happyOrMad: HappyOrMad
+    @ObservedObject var locup = LocationUpdates()
 
     var body: some View {
        
@@ -28,6 +29,7 @@ struct TrackView: View {
                     onoff.oof = false
                     if let tracker = tracker {
                         tracker.stop(cords)
+                        locup.stop()
                         self.tracker = nil
                     }
                 }
