@@ -43,6 +43,7 @@ class LocationUpdates : ObservableObject {
     }
     
     func stop() {
+        coord.removeAll()
         self.cancelled = true
     }
  

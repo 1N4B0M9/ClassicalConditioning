@@ -58,7 +58,9 @@ struct MapViews : UIViewRepresentable {
         }
 
     }
-    
+    func stop(){
+        
+    }
     func makeCoordinator() -> Coordinator {
         Coordinator()
     }
