@@ -42,6 +42,16 @@ class TrackerManager: ObservableObject {
         }
     }
     
+    func indexOf(info: OutputTrackerProgress) -> Int? {
+        for i in 0..<self.trackers.count {
+            if self.trackers[i].id == info.id {
+                return i
+            }
+        }
+        
+        return nil
+    }
+    
     /*
      https://developer.apple.com/tutorials/app-dev-training/persisting-data
      */
