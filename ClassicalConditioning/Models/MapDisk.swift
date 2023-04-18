@@ -15,6 +15,8 @@ struct MapViewDisk : UIViewRepresentable {
     @State var polylineArr : [MKPolyline] = []
     init(coords : [CLLocationCoordinate2D]) {
         self.coords = coords
+        print("cords size = \(self.coords.count)") //debug
+        print("cords = \(self.coords)") //debug
     
         reg.center = CLLocationCoordinate2D(latitude: coords[0].latitude, longitude: coords[0].longitude)
         
