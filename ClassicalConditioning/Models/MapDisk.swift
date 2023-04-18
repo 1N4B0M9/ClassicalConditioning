@@ -18,7 +18,7 @@ struct MapViewDisk : UIViewRepresentable {
         print("cords size = \(self.coords.count)") //debug
         print("cords = \(self.coords)") //debug
     
-        reg.center = CLLocationCoordinate2D(latitude: coords[0].latitude, longitude: coords[0].longitude)
+        reg.center = CLLocationCoordinate2D(latitude: coords[1].latitude, longitude: coords[1].longitude)
         
     }
     
@@ -28,14 +28,15 @@ struct MapViewDisk : UIViewRepresentable {
         mapView.region = reg
         mapView.showsUserLocation = true
         if coords.count > 2{
-           // for i in 0..<coords.count-1 {
-            mapView.addOverlay(drawLine(coord1: coords[coords.count-2], coord2: coords[coords.count-1], lineArr: &polylineArr))
+         for i in 0..<coords.count-1 {
+        
+            mapView.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1], lineArr: &polylineArr))
                // print("Test Init")
                // print(coords[i])
                // print(coords[i+1])
                // print("______________")
               //  print("Helllo")
-          // }
+           }
 
         }
         

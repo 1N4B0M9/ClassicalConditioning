@@ -9,7 +9,9 @@ import SwiftUI
 
 struct TestRunDisplay: View {
     @ObservedObject private var manager = TrackerManager.instance
+    @State var i = 0
     var body: some View {
+        
         NavigationView {
             List {
             
@@ -34,7 +36,7 @@ struct TestRunDisplay: View {
                     }
                     
                 } label : {
-                    Text("Run \(self.$manager.trackers.count)")
+                    Text("Run \(TrackerManager.instance.indexOf(output.wrappedValue) ?? -1)")
                 }
                
                 
