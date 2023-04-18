@@ -78,6 +78,7 @@ import CoreLocation
     func stop(_ cords: [CLLocationCoordinate2D]) -> OutputTrackerProgress {
         self.cancelled = true
         self.pedometer.stopUpdates()
+        print("cords count = \(cords.count)") //debug
         
         /*
         print("-----------reading from singleton-----------")
