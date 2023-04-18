@@ -62,9 +62,14 @@ import CoreLocation
                 return
             }
             
-            let index = Int.random(in: 1...16)
-            if let steps = self.steps, let cadence = self.cadence, let distance = distance, !self.progress.meetsConditions(steps: steps, cadence: cadence, distance: distance) {
-                Sound.instance.play(self.happyOrMad.madHappy)
+            if let steps = self.steps, let cadence = self.cadence, let distance = distance {
+                let meetsConditions = self.progress.meetsConditions(steps: steps, cadence: cadence, distance: distance)
+                
+                if meetsConditions, self.happyOrMad.madHappy {
+                    Sound.instance.play(true) //encouragement
+                } else if !meetsConditions, !self.happyOrMad.madHappy {
+                    Sound.instance.play(false) //insult
+                }
             }
             
             self.progress = TrackerProgress(steps: self.steps, cadence: self.cadence, distance: self.distance)
