@@ -10,6 +10,33 @@ import SwiftUI
 struct TestRunDisplay: View {
     @ObservedObject private var manager = TrackerManager.instance
     @State var i = 0
+    @EnvironmentObject var madOrHappy : HappyOrMad
+    func getName () -> String {
+        var m : [String] = ["Awful", "Dreadful", "Horrible", "Abysmal", "Atrocious", "Ghastly", "Appalling", "Gruesome", "Dire", "Frightful", "Catastrophic", "Infernal", "Miserable", "Repugnant", "Unbearable","Wretched"]
+        var h : [String] = ["Awesome",
+                            "Astonishing",
+                            "Breathtaking",
+                            "Extraordinary",
+                            "Incredible",
+                            "Phenomenal",
+                            "Splendid",
+                            "Spectacular",
+                            "Marvelous",
+                            "Wonderful",
+                            "Fabulous",
+                            "Remarkable",
+                            "Exquisite",
+                            "Majestic",
+                            "Stupendous",
+                            "Sublime"]
+        if madOrHappy.madHappy == false {
+            return m[Int.random(in: 0..<15)]
+        }
+        else {
+            return h[Int.random(in: 0..<15)]
+
+        }
+    }
     var body: some View {
         
         NavigationView {
@@ -36,7 +63,7 @@ struct TestRunDisplay: View {
                     }
                     
                 } label : {
-                    Text("Run \(TrackerManager.instance.indexOf(output.wrappedValue) ?? -1)")
+                    Text("\(getName()) Run \(TrackerManager.instance.indexOf(output.wrappedValue) ?? -1)")
                 }
                
                 

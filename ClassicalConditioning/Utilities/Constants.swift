@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+
 extension Color {
     
      static let DarkBlue = Color("Dark Blue")
@@ -38,3 +39,4 @@ class HappyOrMad : ObservableObject {
 class onOrOff : ObservableObject {
     @Published var oof : Bool = false
 }
+
