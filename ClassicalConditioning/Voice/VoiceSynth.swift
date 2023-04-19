@@ -24,6 +24,7 @@ class Sound {
     private init() {}
     
     func play(_ happyOrMad: Bool) {
+        print("play audio") //debug
         let audio = self.randomSound(happyOrMad: happyOrMad)
         
         
@@ -35,10 +36,16 @@ class Sound {
         do {
             player = try AVAudioPlayer(contentsOf: url)
             player?.play()
+            
+            if player == nil {
+                print("player is null") //debug
+            }
+            
             self.lastSound = audio
         } catch let error {
             print("Error playing sound. \(error.localizedDescription)")
         }
+        print("audio played") //debug
     }
     
     func randomSound(happyOrMad: Bool) -> SoundOption {
