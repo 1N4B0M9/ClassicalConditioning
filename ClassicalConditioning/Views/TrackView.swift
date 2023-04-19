@@ -33,7 +33,7 @@ struct TrackView: View {
                         self.tracker = nil
                     }
                 }
-                
+                Sound.instance.play(false)
                 
             } label: {
                 if onoff.oof == false {
