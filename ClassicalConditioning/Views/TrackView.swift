@@ -16,42 +16,55 @@ struct TrackView: View {
     @ObservedObject var locup = LocationUpdates()
 
     var body: some View {
-       
-        HStack {
-            Button {
-                if onoff.oof == false {
-                    onoff.oof = true
-                    if tracker == nil {
-                        tracker = Tracker(happyOrMad: happyOrMad)
-                    }
-                }
-                else {
-                    onoff.oof = false
-                    if let tracker = tracker {
-                        tracker.stop(cords)
-                        locup.stop()
-                        self.tracker = nil
-                    }
-                }
-                Sound.instance.play(false)
-                
-            } label: {
-                if onoff.oof == false {
-                    Image(systemName: "play.fill")
-                        .frame(width: 50, height: 50)
-                }
-                else {
-                    Image(systemName: "pause.circle.fill")
-                        .frame(width: 50, height: 50)
-
-                }
+        VStack {
+            if let track = tracker {
+                DisplayView(tracker: track)
             }
-            Spacer()
+            HStack {
+                Button {
+                    if onoff.oof == false {
+                        onoff.oof = true
+                        if tracker == nil {
+                            tracker = Tracker(happyOrMad: happyOrMad)
+                        }
+                    }
+                    else {
+                        onoff.oof = false
+                        if let tracker = tracker {
+                            tracker.stop(cords)
+                            locup.stop()
+                            self.tracker = nil
+                        }
+                    }
+                    Sound.instance.play(false)
+                    
+                } label: {
+                    if onoff.oof == false {
+                        Image(systemName: "play.fill")
+                            .frame(width: 50, height: 50)
+                    }
+                    else {
+                        Image(systemName: "pause.circle.fill")
+                            .frame(width: 50, height: 50)
+
+                    }
+                }
+                Spacer()
+            }
+            .frame(width: UIScreen.screenWidth-30, height: 100)
+            .border(.gray, width: 4)
+            .cornerRadius(10)
         }
-        .frame(width: UIScreen.screenWidth-30, height: 100)
-        .border(.gray, width: 4)
-        .cornerRadius(10)
     }
+    
+    private struct DisplayView: View {
+        @ObservedObject var tracker: Tracker
+        
+        var body: some View {
+            Text($tracker.timeSince.wrappedValue)
+        }
+    }
+    
     /*
      private struct DisplayView: View {
          @ObservedObject var tracker: Tracker
