@@ -77,6 +77,8 @@ import CoreLocation
             self.progress = TrackerProgress(steps: self.steps, cadence: self.cadence, distance: self.distance)
             self.total.push(steps: self.steps, cadence: self.cadence, distance: self.distance)
         }
+        
+        Sound.instance.play(true) //always happy
     }
     
     /*
