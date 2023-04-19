@@ -31,6 +31,22 @@
 		CB04428C29D1E1BF00A250E3 /* m4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB04428729D1E1BF00A250E3 /* m4.mp3 */; };
 		CB04429029ED6D6F00A250E3 /* MapDisk.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB04428F29ED6D6F00A250E3 /* MapDisk.swift */; };
 		CB3C195429B8E17E002185AE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3C195329B8E17E002185AE /* LocationManager.swift */; };
+		CB69A49329F030880005E6AF /* h5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB69A48329F030880005E6AF /* h5.mp3 */; };
+		CB69A49429F030880005E6AF /* h12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB69A48429F030880005E6AF /* h12.mp3 */; };
+		CB69A49529F030880005E6AF /* h16.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB69A48529F030880005E6AF /* h16.mp3 */; };
+		CB69A49629F030880005E6AF /* h14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB69A48629F030880005E6AF /* h14.mp3 */; };
+		CB69A49729F030880005E6AF /* h11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB69A48729F030880005E6AF /* h11.mp3 */; };
+		CB69A49829F030880005E6AF /* h8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB69A48829F030880005E6AF /* h8.mp3 */; };
+		CB69A49929F030880005E6AF /* h10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB69A48929F030880005E6AF /* h10.mp3 */; };
+		CB69A49A29F030880005E6AF /* h4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB69A48A29F030880005E6AF /* h4.mp3 */; };
+		CB69A49B29F030880005E6AF /* h9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB69A48B29F030880005E6AF /* h9.mp3 */; };
+		CB69A49C29F030880005E6AF /* h3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB69A48C29F030880005E6AF /* h3.mp3 */; };
+		CB69A49D29F030880005E6AF /* h15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB69A48D29F030880005E6AF /* h15.mp3 */; };
+		CB69A49E29F030880005E6AF /* h1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB69A48E29F030880005E6AF /* h1.mp3 */; };
+		CB69A49F29F030880005E6AF /* h6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB69A48F29F030880005E6AF /* h6.mp3 */; };
+		CB69A4A029F030880005E6AF /* h13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB69A49029F030880005E6AF /* h13.mp3 */; };
+		CB69A4A129F030880005E6AF /* h2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB69A49129F030880005E6AF /* h2.mp3 */; };
+		CB69A4A229F030880005E6AF /* h7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB69A49229F030880005E6AF /* h7.mp3 */; };
 		CB70F13D29C0A7E200EE7034 /* LocationRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB70F13C29C0A7E200EE7034 /* LocationRequestView.swift */; };
 		CB7165C329AE2FEA00D1A6DE /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C229AE2FEA00D1A6DE /* TrackView.swift */; };
 		CB7165C529AE361600D1A6DE /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7165C429AE361600D1A6DE /* Tracker.swift */; };
@@ -74,6 +90,22 @@
 		CB04428729D1E1BF00A250E3 /* m4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = m4.mp3; sourceTree = "<group>"; };
 		CB04428F29ED6D6F00A250E3 /* MapDisk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDisk.swift; sourceTree = "<group>"; };
 		CB3C195329B8E17E002185AE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		CB69A48329F030880005E6AF /* h5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = h5.mp3; sourceTree = "<group>"; };
+		CB69A48429F030880005E6AF /* h12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = h12.mp3; sourceTree = "<group>"; };
+		CB69A48529F030880005E6AF /* h16.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = h16.mp3; sourceTree = "<group>"; };
+		CB69A48629F030880005E6AF /* h14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = h14.mp3; sourceTree = "<group>"; };
+		CB69A48729F030880005E6AF /* h11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = h11.mp3; sourceTree = "<group>"; };
+		CB69A48829F030880005E6AF /* h8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = h8.mp3; sourceTree = "<group>"; };
+		CB69A48929F030880005E6AF /* h10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = h10.mp3; sourceTree = "<group>"; };
+		CB69A48A29F030880005E6AF /* h4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = h4.mp3; sourceTree = "<group>"; };
+		CB69A48B29F030880005E6AF /* h9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = h9.mp3; sourceTree = "<group>"; };
+		CB69A48C29F030880005E6AF /* h3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = h3.mp3; sourceTree = "<group>"; };
+		CB69A48D29F030880005E6AF /* h15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = h15.mp3; sourceTree = "<group>"; };
+		CB69A48E29F030880005E6AF /* h1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = h1.mp3; sourceTree = "<group>"; };
+		CB69A48F29F030880005E6AF /* h6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = h6.mp3; sourceTree = "<group>"; };
+		CB69A49029F030880005E6AF /* h13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = h13.mp3; sourceTree = "<group>"; };
+		CB69A49129F030880005E6AF /* h2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = h2.mp3; sourceTree = "<group>"; };
+		CB69A49229F030880005E6AF /* h7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = h7.mp3; sourceTree = "<group>"; };
 		CB70F13C29C0A7E200EE7034 /* LocationRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRequestView.swift; sourceTree = "<group>"; };
 		CB7165C229AE2FEA00D1A6DE /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 		CB7165C429AE361600D1A6DE /* Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
@@ -159,6 +191,22 @@
 		4EE88F0A29CC799E006A412F /* Happy */ = {
 			isa = PBXGroup;
 			children = (
+				CB69A48E29F030880005E6AF /* h1.mp3 */,
+				CB69A49129F030880005E6AF /* h2.mp3 */,
+				CB69A48C29F030880005E6AF /* h3.mp3 */,
+				CB69A48A29F030880005E6AF /* h4.mp3 */,
+				CB69A48329F030880005E6AF /* h5.mp3 */,
+				CB69A48F29F030880005E6AF /* h6.mp3 */,
+				CB69A49229F030880005E6AF /* h7.mp3 */,
+				CB69A48829F030880005E6AF /* h8.mp3 */,
+				CB69A48B29F030880005E6AF /* h9.mp3 */,
+				CB69A48929F030880005E6AF /* h10.mp3 */,
+				CB69A48729F030880005E6AF /* h11.mp3 */,
+				CB69A48429F030880005E6AF /* h12.mp3 */,
+				CB69A49029F030880005E6AF /* h13.mp3 */,
+				CB69A48629F030880005E6AF /* h14.mp3 */,
+				CB69A48D29F030880005E6AF /* h15.mp3 */,
+				CB69A48529F030880005E6AF /* h16.mp3 */,
 			);
 			path = Happy;
 			sourceTree = "<group>";
@@ -320,25 +368,41 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB69A4A129F030880005E6AF /* h2.mp3 in Resources */,
+				CB69A49F29F030880005E6AF /* h6.mp3 in Resources */,
+				CB69A49829F030880005E6AF /* h8.mp3 in Resources */,
 				4EE88F3329D1DD52006A412F /* m12.mp3 in Resources */,
 				4EE88F2D29D1DD52006A412F /* m8.mp3 in Resources */,
 				4EE88F2C29D1DD52006A412F /* m11.mp3 in Resources */,
 				CB04428929D1E1BF00A250E3 /* m1.mp3 in Resources */,
+				CB69A49B29F030880005E6AF /* h9.mp3 in Resources */,
+				CB69A49529F030880005E6AF /* h16.mp3 in Resources */,
 				4EE88F3129D1DD52006A412F /* m7.mp3 in Resources */,
 				CB04428C29D1E1BF00A250E3 /* m4.mp3 in Resources */,
+				CB69A4A229F030880005E6AF /* h7.mp3 in Resources */,
+				CB69A49A29F030880005E6AF /* h4.mp3 in Resources */,
+				CB69A49D29F030880005E6AF /* h15.mp3 in Resources */,
 				4EE88F3429D1DD52006A412F /* m13.mp3 in Resources */,
+				CB69A49929F030880005E6AF /* h10.mp3 in Resources */,
 				4EE88F2F29D1DD52006A412F /* m6.mp3 in Resources */,
 				CB04428829D1E1BF00A250E3 /* m5.mp3 in Resources */,
 				CBD6CE5F29A79DF00093DFF6 /* Preview Assets.xcassets in Resources */,
+				CB69A49C29F030880005E6AF /* h3.mp3 in Resources */,
 				CB04428B29D1E1BF00A250E3 /* m3.mp3 in Resources */,
 				CB04428A29D1E1BF00A250E3 /* m2.mp3 in Resources */,
+				CB69A49729F030880005E6AF /* h11.mp3 in Resources */,
 				165BC01A29B0FA300038AE7A /* gitignore in Resources */,
 				4EE88F2E29D1DD52006A412F /* m16.mp3 in Resources */,
 				4EE88F2A29D1DD52006A412F /* m14.mp3 in Resources */,
 				4EE88F3029D1DD52006A412F /* m9.mp3 in Resources */,
+				CB69A4A029F030880005E6AF /* h13.mp3 in Resources */,
 				CBD6CE5C29A79DF00093DFF6 /* Assets.xcassets in Resources */,
+				CB69A49629F030880005E6AF /* h14.mp3 in Resources */,
 				4EE88F0829B8DB85006A412F /* v1.mp3 in Resources */,
 				4EE88F3229D1DD52006A412F /* m10.mp3 in Resources */,
+				CB69A49329F030880005E6AF /* h5.mp3 in Resources */,
+				CB69A49E29F030880005E6AF /* h1.mp3 in Resources */,
+				CB69A49429F030880005E6AF /* h12.mp3 in Resources */,
 				4EE88F2B29D1DD52006A412F /* m15.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
