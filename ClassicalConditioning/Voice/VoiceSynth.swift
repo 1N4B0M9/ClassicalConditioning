@@ -27,7 +27,10 @@ class Sound {
         let audio = self.randomSound(happyOrMad: happyOrMad)
         
         
-        guard let url = Bundle.main.url(forResource: audio.rawValue, withExtension: ".mp3") else {return}
+        guard let url = Bundle.main.url(forResource: audio.rawValue, withExtension: ".mp3") else {
+            print("could not find file")
+            return
+        }
         
         do {
             player = try AVAudioPlayer(contentsOf: url)

@@ -67,8 +67,10 @@ import CoreLocation
                 
                 if meetsConditions, self.happyOrMad.madHappy {
                     Sound.instance.play(true) //encouragement
+                    print("happy") //debug
                 } else if !meetsConditions, !self.happyOrMad.madHappy {
                     Sound.instance.play(false) //insult
+                    print("mad") //debug
                 }
             }
             
