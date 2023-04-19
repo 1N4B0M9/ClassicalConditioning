@@ -88,6 +88,7 @@ struct OutputTrackerProgress: Codable, Identifiable {
     let steps: Int
     let averageCadence: Double
     let distance: Int
+    let seconds: Int
     private let cords: [Coordinate]
     let id: UUID = UUID()
     var locationCords: [CLLocationCoordinate2D] {
@@ -96,10 +97,11 @@ struct OutputTrackerProgress: Codable, Identifiable {
         }
     }
     
-    init(steps: Int, averageCadnece: Double, distance: Int, cords: [Coordinate] = []) {
+    init(steps: Int, averageCadnece: Double, distance: Int, seconds: Int, cords: [Coordinate] = []) {
         self.steps = steps
         self.averageCadence = averageCadnece
         self.distance = distance
+        self.seconds = seconds
         self.cords = cords
     }
     
@@ -107,6 +109,7 @@ struct OutputTrackerProgress: Codable, Identifiable {
         self.steps = progress.steps
         self.averageCadence = progress.averageCadence
         self.distance = progress.distance
+        self.seconds = progress.seconds
         self.cords = cords.map {
             Coordinate($0)
         }
@@ -116,7 +119,7 @@ struct OutputTrackerProgress: Codable, Identifiable {
      Exclude id from encoding and decoding
      */
     private enum CodingKeys: String, CodingKey {
-        case steps, averageCadence, distance, cords
+        case steps, averageCadence, distance, seconds, cords
     }
 }
 

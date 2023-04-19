@@ -32,6 +32,7 @@ import CoreLocation
             self.total.steps += progress.steps
             self.total.averageCadence += progress.averageCadence
             self.total.distance += progress.distance
+            self.total.seconds += progress.seconds
         }
         
         self.pedometer.startUpdates(from: self.date) { value, error in
@@ -63,7 +64,8 @@ import CoreLocation
                 return
             }
             
-            let time = self.timePassedSince(date: self.date)
+            self.total.seconds += 1
+            let time = self.timePassed(self.total.seconds)
             
             self.timeSince = "\(time.0):\(time.1):\(time.2)"
         }
@@ -122,16 +124,10 @@ import CoreLocation
     /**
      THANKS CHATGPT
      */
-    private func timePassedSince(date: Date) -> (hours: Int, minutes: Int, seconds: Int) {
-        let calendar = Calendar.current
-        let now = Date()
-
-        let components = calendar.dateComponents([.hour, .minute, .second], from: date, to: now)
-        
-        let hours = components.hour ?? 0
-        let minutes = components.minute ?? 0
-        let seconds = components.second ?? 0
-
+    private func timePassed(_ seconds: Int) -> (hours: Int, minutes: Int, seconds: Int) {
+        let hours = seconds / 3600
+        let minutes = (seconds % 3600) / 60
+        let seconds = seconds % 60
         return (hours, minutes, seconds)
     }
 }
@@ -159,12 +155,14 @@ class SummativeTrackerProgress {
     var steps: Int
     var averageCadence: Double
     var distance: Int
+    var seconds: Int
     private var calls: Double = 0
     
-    init(steps: Int = 0, averageCadence: Double = 0.0, distance: Int = 0) {
+    init(steps: Int = 0, averageCadence: Double = 0.0, distance: Int = 0, seconds: Int = 0) {
         self.steps = steps
         self.averageCadence = averageCadence
         self.distance = distance
+        self.seconds = seconds
     }
     
     func push(steps: Int? = nil, cadence: Double? = nil, distance: Int? = nil) {
