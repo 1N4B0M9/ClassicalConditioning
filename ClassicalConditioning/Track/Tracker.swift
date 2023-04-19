@@ -19,6 +19,7 @@ import CoreLocation
     @Published var distance: Int? //total distance traveled in meters
     @Published var intervals: Int = 0 //testing value
     @Published var intervalsFailed: Int = 0 //testing value
+    @Published var timeSince: String = "" //time since run started
     private var progress: TrackerProgress = TrackerProgress() //tracks progress of current interval
     private var cancelled: Bool = false
     private let total: SummativeTrackerProgress = SummativeTrackerProgress() //tracks total progress
@@ -54,6 +55,17 @@ import CoreLocation
             print("failedIntervals \(self.intervalsFailed)")
             print("____________________________________")
             */
+        }
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [self] timer in
+            guard !self.cancelled else {
+                timer.invalidate()
+                return
+            }
+            
+            let time = self.timePassedSince(date: self.date)
+            
+            self.timeSince = "\(time.0):\(time.1):\(time.2)"
         }
         
         Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { [self] timer in
@@ -105,6 +117,22 @@ import CoreLocation
         manager.trackers.append(output)
         manager.save()
         return output
+    }
+    
+    /**
+     THANKS CHATGPT
+     */
+    private func timePassedSince(date: Date) -> (hours: Int, minutes: Int, seconds: Int) {
+        let calendar = Calendar.current
+        let now = Date()
+
+        let components = calendar.dateComponents([.hour, .minute, .second], from: date, to: now)
+        
+        let hours = components.hour ?? 0
+        let minutes = components.minute ?? 0
+        let seconds = components.second ?? 0
+
+        return (hours, minutes, seconds)
     }
 }
 
