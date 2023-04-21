@@ -9,6 +9,9 @@ import Foundation
 import CoreMotion
 import CoreLocation
 
+/**
+ Constructs a new instance of a tracker
+ */
 //main actor decorator forces class to act only in main thread
 @MainActor class Tracker: ObservableObject {
     private let pedometer: CMPedometer = CMPedometer()
@@ -25,6 +28,13 @@ import CoreLocation
     private let total: SummativeTrackerProgress = SummativeTrackerProgress() //tracks total progress
     private var happyOrMad: HappyOrMad
     
+    
+    /**
+     Constructs a new instance of a tracker
+     
+     - Parameter: progress - an optional progress output that this tracker will continue off from
+     - Parameter: happyOrMad - the instance of the boolean wrapper that is used to determine what "mode" the app is on
+     */
     init(progress: OutputTrackerProgress? = nil, happyOrMad: HappyOrMad) {
         self.happyOrMad = happyOrMad
         
@@ -89,14 +99,18 @@ import CoreLocation
             }
             
             self.progress = TrackerProgress(steps: self.steps, cadence: self.cadence, distance: self.distance)
-            self.total.push(steps: self.steps, cadence: self.cadence, distance: self.distance)
+
         }
         
         Sound.instance.play(true) //always happy
     }
     
-    /*
-     Called when tracker is no longer used
+    /**
+     Ends the current instance of the run and outputs the run information
+     
+     - Parameter: cords - an array that contains the coordinates they went during their run that will be used to draw lines on the map
+     
+     - Returns: the output containing the information with the run that will be saved to disk
      */
     func stop(_ cords: [CLLocationCoordinate2D]) -> OutputTrackerProgress {
         self.cancelled = true
@@ -121,8 +135,13 @@ import CoreLocation
         return output
     }
     
+    
     /**
-     THANKS CHATGPT
+     (THANKS CHATGPT)
+     A function that converts seconds to the format (hh:mm:ss)
+     
+     - Parameter: seconds - how many seconds has passed since the start of the run
+     - Returns: a tuple that contains integers that represent the hours, minutes, and seconds that have passed
      */
     private func timePassed(_ seconds: Int) -> (hours: Int, minutes: Int, seconds: Int) {
         let hours = seconds / 3600
@@ -132,6 +151,9 @@ import CoreLocation
     }
 }
 
+/**
+ A class that is used to keep track of a users movement every "interval" used for audio prompting
+ */
 private struct TrackerProgress {
     let steps: Int?
     let cadence: Double?
@@ -143,6 +165,15 @@ private struct TrackerProgress {
         self.distance = distance
     }
     
+    /**
+     A function used to check if the conditions have been met to provide a positive audio prompt
+     
+     - Parameter: steps - the current amount of steps they have taken in the interval to compared to the previous interval
+     - Parameter: cadence - the current cadence they have in the interval to compared to the previous interval
+     - Parameter: distance - the current amount of distance they have moved in the interval to compared to the previous interval
+     
+     - Returns: whether or not the conditions were met
+     */
     func meetsConditions(steps: Int, cadence: Double, distance: Int) -> Bool {
         //if internal steps is null or new steps is at least 20 higher
         //if internal cadance is null or new cadnece is at least .25 higher or meets threshold of 5 steps per second
@@ -151,6 +182,9 @@ private struct TrackerProgress {
     }
 }
 
+/**
+ A class used to store information of user progress across the entire run
+ */
 class SummativeTrackerProgress {
     var steps: Int
     var averageCadence: Double
@@ -165,18 +199,25 @@ class SummativeTrackerProgress {
         self.seconds = seconds
     }
     
+    /**
+     A function used to add information to the total progress after each interval used for audio prompting
+     
+     - Parameter: steps - the current amount of steps they have taken in the interval
+     - Parameter: cadence - the current cadence they have in the interval
+     - Parameter: distance - the current amount of distance they have moved in the interval
+     */
     func push(steps: Int? = nil, cadence: Double? = nil, distance: Int? = nil) {
         if let steps = steps {
-            self.steps = steps
+            self.steps += steps
         }
         
         if let cadence = cadence {
             calls += 1
-            self.averageCadence = Double(averageCadence + cadence) / calls
+            self.averageCadence = Double(self.averageCadence + cadence) / calls
         }
         
         if let distance = distance {
-            self.distance = distance
+            self.distance += distance
         }
     }
 }

@@ -8,6 +8,9 @@
 import CoreLocation
 import MapKit
 
+/**
+ A class that is used to get the user's location
+ */
 class LocationManager : NSObject, ObservableObject {
     private let manager = CLLocationManager()
     @Published var userLocation: CLLocation?
@@ -27,9 +30,11 @@ class LocationManager : NSObject, ObservableObject {
         super.init()
         manager.delegate = self
         manager.startUpdatingLocation()
-        
-        
     }
+    
+    /**
+     A function called when the app must request the user's location information
+     */
     func requestLocation(){
         manager.requestWhenInUseAuthorization()
     }
@@ -50,8 +55,6 @@ extension LocationManager: CLLocationManagerDelegate {
         @unknown default:
             break
         }
-        
-        
     }
     func locationManager(_ manager : CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {return}

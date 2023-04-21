@@ -8,6 +8,9 @@
 import SwiftUI
 import MapKit
 
+/**
+ A structure that will be adapted into a map view
+ */
 struct MapViews : UIViewRepresentable {
     var coords : [CLLocationCoordinate2D] = []
     var reg : MKCoordinateRegion = MKCoordinateRegion()
@@ -18,6 +21,12 @@ struct MapViews : UIViewRepresentable {
         reg.center = CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.longitude ?? 0)
     }
     
+    /**
+     A function that creates an instance of a view from this structures information
+     
+     - Parameter: context - the context in which this view must be created
+     - Returns: an instance of the representing view
+     */
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
@@ -39,6 +48,13 @@ struct MapViews : UIViewRepresentable {
         
         return mapView
     }
+    
+    /**
+     A function called when the view needs to be updated
+     
+     - Parameter: mapView - the instance of the view
+     - Parameter: context - the context in which the view needs to be updated
+     */
     func updateUIView(_ mapView: MKMapView, context: Context) {
         //view.delegate = context.coordinator
         
@@ -60,12 +76,23 @@ struct MapViews : UIViewRepresentable {
         }
 
     }
-    func stop(){
-        
-    }
+    
+    /**
+     A utility function used to build a new instance of a custom implementation of a context coordinator
+     - Returns:a new instance of a context coordinator
+     */
     func makeCoordinator() -> Coordinator {
         Coordinator()
     }
+    
+    /**
+     A utility function used to draw a multipolyline from an array of polylines
+     
+     - Parameter: coord1 - the first point to be drawn
+     - Parameter: coord2 - the last point to be drawn
+     - Parameter: lineArr - the array of lines
+     - Returns: A multpolyline to be drawn
+     */
     func drawLine(coord1 : CLLocationCoordinate2D, coord2 : CLLocationCoordinate2D, lineArr : inout [MKPolyline]) -> MKMultiPolyline {
         let blueLocation1 = CLLocationCoordinate2D(latitude: coord1.latitude, longitude: coord1.longitude)
 
@@ -81,6 +108,9 @@ struct MapViews : UIViewRepresentable {
         //self.mapView.add(routeLine)
     }
     
+    /**
+     A custom implementatio of a context coordinator
+     */
     class Coordinator: NSObject, MKMapViewDelegate {
        // @EnvironmentObject var madOrHappy : HappyOrMad
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {

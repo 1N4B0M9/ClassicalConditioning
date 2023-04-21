@@ -37,9 +37,17 @@ extension UIScreen{
    static let screenHeight = UIScreen.main.bounds.size.height
    static let screenSize = UIScreen.main.bounds.size
 }
+
+/**
+ A wrapper class used to store a boolean in the form of an enviromental object
+ */
 class HappyOrMad : ObservableObject {
     @Published var madHappy : Bool = false
 }
+
+/**
+ A wrapper class used to store a boolean in the form of an enviromental object
+ */
 class onOrOff : ObservableObject {
     @Published var oof : Bool = false
 }
