@@ -30,13 +30,17 @@ struct TrackView: View {
                     VStack {
                         HStack {
                             Text("Time: ---")
-                                .font(.system(size: 36))
+                                //.font(.system(size: 36))
+                                .font(Constants.TitleFont)
+
                             Text("Cadence: ---")
                                 .font(.system(size: 36))
                         }
                         HStack {
                             Text("Distance: ---")
+                                .font(.system(size: 36))
                             Text("Steps: ---")
+                                .font(.system(size: 36))
                         }
                     }
                     
@@ -117,12 +121,26 @@ struct TrackView: View {
                 VStack {
                     HStack {
                         Text("Time: \($tracker.timeSince.wrappedValue)")
+                            .font(Constants.TitleFont)
+
+                            //.font(.system(size: 36))
+                            .foregroundColor(Color.white)
                         Text("Cadence: \($tracker.cadence.wrappedValue ?? 0, specifier: "%.3f")")
+                            .font(Constants.TitleFont)
+                            .foregroundColor(Color.white)
+
                     }
                     HStack {
                         Text("Distance: \($tracker.distance.wrappedValue ?? 0)")
+                            .font(.system(size: 36))
+                            .foregroundColor(Color.white)
+
                         Text("Steps: \($tracker.steps.wrappedValue ?? 0)")
+                            .font(.system(size: 36))
+                            .foregroundColor(Color.white)
+
                     }
+                    
                 }
                 
             }
