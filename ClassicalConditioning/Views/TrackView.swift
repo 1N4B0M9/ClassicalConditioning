@@ -26,6 +26,7 @@ struct TrackView: View {
                         .fill(happyOrMad.madHappy == false ? Color.red : Color.blue)
                         .frame(height: 150)
                         .padding(10)
+                        .opacity(0.5)
                     VStack {
                         HStack {
                             Text("Time: ---")
@@ -73,12 +74,12 @@ struct TrackView: View {
                             Circle()
                                 .frame(width: 80, height: 80)
                                 .foregroundColor(happyOrMad.madHappy == false ? Color.red : Color.blue)
-                                .offset(y: 20)
+                                .offset(y: 10)
                                 
                             Image(systemName: "play.fill").resizable()
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(Color.black)
-                                .offset(y: 20)
+                                .offset(y: 10)
                         }
                     }
                     else {
@@ -86,12 +87,12 @@ struct TrackView: View {
                             Circle()
                                 .frame(width: 80, height: 80)
                                 .foregroundColor(happyOrMad.madHappy == false ? Color.red : Color.blue)
-                                .offset(y: 20)
+                                .offset(y: 10)
                             Image(systemName: "pause.fill")
                                 .resizable()
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(Color.black)
-                                .offset(y: 20)
+                                .offset(y: 10)
                         }
                     }
                     

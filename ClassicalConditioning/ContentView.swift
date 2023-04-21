@@ -61,6 +61,9 @@ struct ContentView: View {
                         Image(systemName: "info")
                     }
                     .tag(2)
+                    .onAppear {
+                        UITabBar.appearance().backgroundColor = .white
+                    }
             }
            // .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             
