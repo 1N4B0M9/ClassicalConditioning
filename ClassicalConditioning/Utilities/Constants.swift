@@ -22,7 +22,7 @@ extension Color {
 }
 
 struct Constants {
-    static let TitleFont : Font = Font(UIFont(name: "Space Grotesk", size: 35) ?? UIFont.systemFont(ofSize: 35))
+    static let TitleFont : Font = Font(UIFont(name: "HelveticaNeue-Bold", size: 25) ?? UIFont.systemFont(ofSize: 35))
     static let textFont : Font = Font(UIFont(name: "Space Grotesk", size: 16) ?? UIFont.systemFont(ofSize: 18))
     static let HeaderFont : Font = Font(UIFont(name: "Space Grotesk", size: 18) ?? UIFont.systemFont(ofSize: 25))
 
