@@ -25,6 +25,17 @@ struct TrackView: View {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(happyOrMad.madHappy == false ? Color.red : Color.blue)
                         .frame(height: 150)
+                        .padding(10)
+                    VStack {
+                        HStack {
+                            Text("Time: ---")
+                            Text("Cadence: ---")
+                        }
+                        HStack {
+                            Text("Distance: ---")
+                            Text("Steps: ---")
+                        }
+                    }
                     
                 }
               
@@ -62,12 +73,12 @@ struct TrackView: View {
                             Circle()
                                 .frame(width: 80, height: 80)
                                 .foregroundColor(happyOrMad.madHappy == false ? Color.red : Color.blue)
-                                .offset(y: 30)
+                                .offset(y: 20)
                                 
                             Image(systemName: "play.fill").resizable()
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(Color.black)
-                                .offset(y: 30)
+                                .offset(y: 20)
                         }
                     }
                     else {
@@ -75,12 +86,12 @@ struct TrackView: View {
                             Circle()
                                 .frame(width: 80, height: 80)
                                 .foregroundColor(happyOrMad.madHappy == false ? Color.red : Color.blue)
-                                .offset(y: 30)
+                                .offset(y: 20)
                             Image(systemName: "pause.fill")
                                 .resizable()
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(Color.black)
-                                .offset(y: 30)
+                                .offset(y: 20)
                         }
                     }
                     
