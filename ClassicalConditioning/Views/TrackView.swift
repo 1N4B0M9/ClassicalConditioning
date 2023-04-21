@@ -27,7 +27,7 @@ struct TrackView: View {
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(happyOrMad.madHappy == false ? Color.red : Color.blue)
                                 .frame(height: 50)
-                                .padding()
+                                .padding(5)
                             Text("Time: ---")
                                 .foregroundColor(Color.white)
                                 
@@ -38,7 +38,7 @@ struct TrackView: View {
                                 RoundedRectangle(cornerRadius: 20)
                                     .fill(happyOrMad.madHappy == false ? Color.red : Color.blue)
                                     .frame(height: 50)
-                                    .padding()
+                                    .padding(5)
 
                             Text("Cadence: ---")
                                     .foregroundColor(Color.white)
@@ -55,7 +55,7 @@ struct TrackView: View {
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(happyOrMad.madHappy == false ? Color.red : Color.blue)
                                 .frame(height: 50)
-                                .padding()
+                                .padding(5)
 
                             Text("Distance: ---")
                                 .foregroundColor(Color.white)
@@ -64,7 +64,7 @@ struct TrackView: View {
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(happyOrMad.madHappy == false ? Color.red : Color.blue)
                                 .frame(height: 50)
-                                .padding()
+                                .padding(5)
 
                             Text("Steps: ---")
                                 .foregroundColor(Color.white)
