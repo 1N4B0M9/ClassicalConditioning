@@ -61,16 +61,31 @@ struct TrackView: View {
                 } label: {
                    
                             
-                        if onoff.oof == false {
-                            Image(systemName: "play.fill")
-                                .frame(width: 75, height: 75)
+                    if onoff.oof == false {
+                        ZStack{
+                            Circle()
+                                .frame(width: 80, height: 80)
+                                .foregroundColor(happyOrMad.madHappy == false ? Color.red : Color.blue)
+                                .offset(y: -20)
+                            Image(systemName: "play.fill").resizable()
+                                .frame(width: 20, height: 20)
                                 .foregroundColor(Color.black)
+                                .offset(y: -20)
                         }
-                        else {
-                            Image(systemName: "pause.circle.fill")
-                                .frame(width: 75, height: 75)
+                    }
+                    else {
+                        ZStack{
+                            Circle()
+                                .frame(width: 80, height: 80)
+                                .foregroundColor(happyOrMad.madHappy == false ? Color.red : Color.blue)
+                                .offset(y: -20)
+                            Image(systemName: "pause.fill")
+                                .resizable()
+                                .frame(width: 20, height: 20)
                                 .foregroundColor(Color.black)
+                                .offset(y: -20)
                         }
+                    }
                     
                    
                 }
