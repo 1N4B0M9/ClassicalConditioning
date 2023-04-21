@@ -104,21 +104,26 @@ struct TrackView: View {
     
     private struct DisplayView: View {
         @ObservedObject var tracker: Tracker
-        
+        @EnvironmentObject var happyOrMad: HappyOrMad
         var body: some View {
-            VStack {
-                HStack {
-                    Text("Time: \($tracker.timeSince.wrappedValue)")
-                    Text("Cadence: \($tracker.cadence.wrappedValue ?? 0, specifier: "%.3f")")
-
-
+            ZStack {
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(happyOrMad.madHappy == false ? Color.red : Color.blue)
+                    .frame(height: 150)
+                    .padding(10)
+                VStack {
+                    HStack {
+                        Text("Time: \($tracker.timeSince.wrappedValue)")
+                        Text("Cadence: \($tracker.cadence.wrappedValue ?? 0, specifier: "%.3f")")
+                    }
+                    HStack {
+                        Text("Distance: \($tracker.distance.wrappedValue ?? 0)")
+                        Text("Steps: \($tracker.steps.wrappedValue ?? 0)")
+                    }
                 }
-                HStack {
-                    Text("Distance: \($tracker.distance.wrappedValue ?? 0)")
-                    Text("Steps: \($tracker.steps.wrappedValue ?? 0)")
-
-                }
+                
             }
+            
         }
     }
     
