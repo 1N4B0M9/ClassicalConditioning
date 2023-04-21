@@ -39,6 +39,10 @@ class LocationManager : NSObject, ObservableObject {
         manager.requestWhenInUseAuthorization()
     }
 }
+
+/**
+ A utility used to dertermine if we have permission to access the user's location
+ */
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
@@ -56,9 +60,15 @@ extension LocationManager: CLLocationManagerDelegate {
             break
         }
     }
+    
+    /**
+     A function used to set the user's location
+     
+     - Parameter: manger - the current instance of the location manager
+     - Parameter: locations - the user's locations over time
+     */
     func locationManager(_ manager : CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {return}
         self.userLocation = location
-        
     }
 }
