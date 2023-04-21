@@ -23,8 +23,18 @@ struct TrackView: View {
             else {
                 VStack {
                     HStack {
-                        Text("Time: ---")
-                        Text("Cadence: ---")
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20)
+                                .fill(happyOrMad.madHappy == false ? Color.red : Color.blue)
+                                .frame(height: 50)
+                            Text("Time: ---")
+                                .foregroundColor(Color.white)
+
+                        }
+                        ZStack {
+                            Text("Cadence: ---")
+
+                        }
 
 
                     }
@@ -70,7 +80,7 @@ struct TrackView: View {
                             Image(systemName: "play.fill").resizable()
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(Color.black)
-                                .offset(y: -20)
+                                .offset(y: 10)
                         }
                     }
                     else {
@@ -83,13 +93,12 @@ struct TrackView: View {
                                 .resizable()
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(Color.black)
-                                .offset(y: -20)
+                                .offset(y: 10)
                         }
                     }
                     
                    
                 }
-                Spacer()
             }
            
         }

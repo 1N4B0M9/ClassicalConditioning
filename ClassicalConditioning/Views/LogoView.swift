@@ -6,6 +6,8 @@ struct LogoView: View {
     @State private var verticalOffset: CGFloat = 0
     @EnvironmentObject var madOrHappy: HappyOrMad
     @State private var coolor = false
+    @EnvironmentObject var onoff: onOrOff
+
     
     var body: some View {
         ZStack {
@@ -41,7 +43,9 @@ struct LogoView: View {
                             verticalOffset += 40
                         }
                     }
-                    madOrHappy.madHappy.toggle()
+                    if onoff.oof == false {
+                        madOrHappy.madHappy.toggle()
+                    }
                 }
         }
     }
