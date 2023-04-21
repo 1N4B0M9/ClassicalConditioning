@@ -37,18 +37,28 @@ struct TestRunDisplay: View {
 
         }
     }
-    var body: some View {
+    init() {
+          // Set the background color of the navigation bar
+        //UITableView.appearance().backgroundColor = UIColor(Color.red)
+       // UITableViewCell.appearance().backgroundColor = UIColor(Color.red)
         
+    }
+    var body: some View {
+       
+          
         NavigationView {
+            
+            
             List {
             
             ForEach(self.$manager.trackers) { output in
                 NavigationLink {
                     Group {
                         VStack {
-                            Text("steps: \(output.wrappedValue.steps)")
-                            Text("averageCadence: \(output.wrappedValue.averageCadence, specifier: "%.3f")") //specifier used to round to three decimal places
-                            Text("distance: \(output.wrappedValue.distance)")
+                            Text("Steps: \(output.wrappedValue.steps)")
+                            Text("Average Cadence: \(output.wrappedValue.averageCadence, specifier: "%.3f")") //specifier used to round to three decimal places
+                            Text("Distance: \(output.wrappedValue.distance)")
+                            Text("Time: \(output.wrappedValue.seconds)")
                             if output.wrappedValue.locationCords.count == 0 {
                                 Text("No Enough Data")
                             }
@@ -65,10 +75,12 @@ struct TestRunDisplay: View {
                 } label : {
                     Text("\(getName()) Run \(TrackerManager.instance.indexOf(output.wrappedValue) ?? -1)")
                 }
+                .listRowBackground(madOrHappy.madHappy == false ? Color.red : Color.blue)
                
                 
             }
             }
+            
         }
         
     }

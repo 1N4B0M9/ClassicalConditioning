@@ -34,13 +34,13 @@ struct ContentView: View {
         */
         ZStack {
             
-            Color.DarkBlue
-                .ignoresSafeArea()
                // .onAppear() {
                 
                     
 
                // }
+            
+            
             TabView(selection: $selectedTab) {
                 MapView()
                     .tabItem {
@@ -52,7 +52,6 @@ struct ContentView: View {
                 HomeView()
                     .tabItem {
                         Image(systemName: "house" )
-
                     }
                         .tag(1)
             
@@ -63,6 +62,11 @@ struct ContentView: View {
                     }
                     .tag(2)
             }
+           // .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            
+                
+
+
             
             
         }

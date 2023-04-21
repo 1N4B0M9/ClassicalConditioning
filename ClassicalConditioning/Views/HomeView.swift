@@ -17,14 +17,20 @@ struct HomeView: View {
             
             if madOrHappy.madHappy == false {
                // RadialGradient(gradient: Gradient(colors: [.white, .red]), center: .center, startRadius: 2, endRadius: 650)
-                Color.red
+                LinearGradient(gradient: Gradient(colors: [.red, .white]), startPoint: .top, endPoint: .bottom)
                     .ignoresSafeArea()
+                
+
+                //Color.red
                 
             }
             else {
                // RadialGradient(gradient: Gradient(colors: [.white, .blue]), center: .center, startRadius: 2, endRadius: 650)
                 
-                Color.blue
+              //  Color.blue
+                LinearGradient(gradient: Gradient(colors: [.blue, .white]), startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea()
+
                     .ignoresSafeArea()
 
             }

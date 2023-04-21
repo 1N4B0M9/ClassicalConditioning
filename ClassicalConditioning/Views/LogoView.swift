@@ -12,7 +12,9 @@ struct LogoView: View {
             Circle()
                 .fill(.white)
                 .frame(width: 350, height: 350, alignment: .center)
-                .shadow(color: .black, radius: 5, x: 0, y: 0)
+                //.shadow(color: .black, radius: 5, x: 0, y: 0)
+                .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: -5)
+
             Image($madOrHappy.madHappy.wrappedValue ? "happy" : "mad")
                 .resizable()
                 .aspectRatio(contentMode: .fit)

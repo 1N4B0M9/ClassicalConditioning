@@ -20,13 +20,32 @@ struct TrackView: View {
             if let track = tracker {
                 DisplayView(tracker: track)
             }
+            else {
+                VStack {
+                    HStack {
+                        Text("Time: ---")
+                        Text("Cadence: ---")
+
+
+                    }
+                    HStack {
+                        Text("Distance: ---")
+                        Text("Steps: ---")
+
+                    }
+                }
+            }
             HStack {
+                
                 Button {
                     if onoff.oof == false {
                         onoff.oof = true
                         if tracker == nil {
                             tracker = Tracker(happyOrMad: happyOrMad)
                         }
+                        Sound.instance.play(happyOrMad.madHappy)
+
+
                     }
                     else {
                         onoff.oof = false
@@ -36,24 +55,28 @@ struct TrackView: View {
                             self.tracker = nil
                         }
                     }
-                    Sound.instance.play(false)
+
+                   
                     
                 } label: {
-                    if onoff.oof == false {
-                        Image(systemName: "play.fill")
-                            .frame(width: 50, height: 50)
-                    }
-                    else {
-                        Image(systemName: "pause.circle.fill")
-                            .frame(width: 50, height: 50)
-
-                    }
+                   
+                            
+                        if onoff.oof == false {
+                            Image(systemName: "play.fill")
+                                .frame(width: 75, height: 75)
+                                .foregroundColor(Color.black)
+                        }
+                        else {
+                            Image(systemName: "pause.circle.fill")
+                                .frame(width: 75, height: 75)
+                                .foregroundColor(Color.black)
+                        }
+                    
+                   
                 }
                 Spacer()
             }
-            .frame(width: UIScreen.screenWidth-30, height: 100)
-            .border(.gray, width: 4)
-            .cornerRadius(10)
+           
         }
     }
     
@@ -61,7 +84,19 @@ struct TrackView: View {
         @ObservedObject var tracker: Tracker
         
         var body: some View {
-            Text($tracker.timeSince.wrappedValue)
+            VStack {
+                HStack {
+                    Text("Time: \($tracker.timeSince.wrappedValue)")
+                    Text("Cadence: \($tracker.cadence.wrappedValue ?? 0, specifier: "%.3f")")
+
+
+                }
+                HStack {
+                    Text("Distance: \($tracker.distance.wrappedValue ?? 0)")
+                    Text("Steps: \($tracker.steps.wrappedValue ?? 0)")
+
+                }
+            }
         }
     }
     

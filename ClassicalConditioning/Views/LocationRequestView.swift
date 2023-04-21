@@ -8,25 +8,50 @@
 import SwiftUI
 
 struct LocationRequestView: View {
+    @EnvironmentObject var madOrHappy : HappyOrMad
+
     var body: some View {
         ZStack {
-            Color.red
-                .ignoresSafeArea()
+            if madOrHappy.madHappy == false {
+               // RadialGradient(gradient: Gradient(colors: [.white, .red]), center: .center, startRadius: 2, endRadius: 650)
+                LinearGradient(gradient: Gradient(colors: [.red, .white]), startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea()
+
+                //Color.red
+                
+            }
+            else {
+               // RadialGradient(gradient: Gradient(colors: [.white, .blue]), center: .center, startRadius: 2, endRadius: 650)
+                
+              //  Color.blue
+                LinearGradient(gradient: Gradient(colors: [.blue, .white]), startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea()
+
+                    .ignoresSafeArea()
+
+            }
             VStack {
                 Button{
                     LocationManager.shared.requestLocation()
 
                 } label : {
-                    Text("Allow Location")
-                        .padding()
-                        .font(.headline)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 20)
+                                        .fill(Color.white)
+                                        .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: -5)
+                                        .frame(height: 80)
+                                        .padding(20)
+
+                        Text("Share Your Location to Track Your Runs")
+                            .padding()
+                            .font(.headline)
+                            .foregroundColor(Color.black)
+                            
+                    }
+                   
                     
                 }
-                Button{
-                    
-                } label : {
-                    Text("Maybe Later")
-                }
+            
             }
             
            
