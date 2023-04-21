@@ -26,7 +26,6 @@ struct TrackView: View {
                         .fill(happyOrMad.madHappy == false ? Color.red : Color.blue)
                         .frame(height: 150)
                         .padding(10)
-                        .opacity(0.8)
                     VStack {
                         HStack {
                             Text("Time: ---")
