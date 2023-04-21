@@ -75,7 +75,7 @@ struct TestRunDisplay: View {
                 } label : {
                     Text("\(getName()) Run \(TrackerManager.instance.indexOf(output.wrappedValue) ?? -1)")
                 }
-                .listRowBackground(madOrHappy.madHappy == false ? Color.red : Color.blue)
+                .listRowBackground(madOrHappy.madHappy == false ? Color.customRed : Color.customBlue)
                
                 
             }

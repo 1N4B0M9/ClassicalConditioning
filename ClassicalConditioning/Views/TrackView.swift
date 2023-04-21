@@ -23,7 +23,7 @@ struct TrackView: View {
             else {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
-                        .fill(happyOrMad.madHappy == false ? Color.red : Color.blue)
+                        .fill(happyOrMad.madHappy == false ? Color.customRed : Color.customBlue)
                         .frame(height: 150)
                         .padding(10)
                     VStack {
@@ -31,15 +31,23 @@ struct TrackView: View {
                             Text("Time: ---")
                                 //.font(.system(size: 36))
                                 .font(Constants.TitleFont)
+                                .foregroundColor(Color.white)
+
 
                             Text("Cadence: ---")
                                 .font(Constants.TitleFont)
+                                .foregroundColor(Color.white)
+
                         }
                         HStack {
                             Text("Distance: ---")
                                 .font(Constants.TitleFont)
+                                .foregroundColor(Color.white)
+
                             Text("Steps: ---")
                                 .font(Constants.TitleFont)
+                                .foregroundColor(Color.white)
+
                         }
                     }
                     
@@ -78,26 +86,29 @@ struct TrackView: View {
                         ZStack{
                             Circle()
                                 .frame(width: 80, height: 80)
-                                .foregroundColor(happyOrMad.madHappy == false ? Color.red : Color.blue)
+                                .foregroundColor(happyOrMad.madHappy == false ? Color.customRed : Color.customBlue)
                                 .offset(y: 10)
                                 
                             Image(systemName: "play.fill").resizable()
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(Color.black)
                                 .offset(y: 10)
+                                .foregroundColor(Color.white)
+
                         }
                     }
                     else {
                         ZStack{
                             Circle()
                                 .frame(width: 80, height: 80)
-                                .foregroundColor(happyOrMad.madHappy == false ? Color.red : Color.blue)
+                                .foregroundColor(happyOrMad.madHappy == false ? Color.customRed : Color.customBlue)
                                 .offset(y: 10)
                             Image(systemName: "pause.fill")
                                 .resizable()
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(Color.black)
                                 .offset(y: 10)
+                                .foregroundColor(Color.white)
                         }
                     }
                     
@@ -114,7 +125,7 @@ struct TrackView: View {
         var body: some View {
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(happyOrMad.madHappy == false ? Color.red : Color.blue)
+                    .fill(happyOrMad.madHappy == false ? Color.customRed : Color.customBlue)
                     .frame(height: 150)
                     .padding(10)
                 VStack {

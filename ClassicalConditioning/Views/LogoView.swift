@@ -21,7 +21,7 @@ struct LogoView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 400, height: 400)
-                .foregroundColor(coolor ? .yellow : .red)
+                .foregroundColor(coolor ? .yellow : .customRed)
                 .rotation3DEffect(
                     .degrees(isFlipped ? 360 : 0),
                     axis: (x: 0, y: 1, z: 0)
