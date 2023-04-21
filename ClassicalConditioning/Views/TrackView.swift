@@ -21,59 +21,17 @@ struct TrackView: View {
                 DisplayView(tracker: track)
             }
             else {
-                VStack {
-                    HStack {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(happyOrMad.madHappy == false ? Color.red : Color.blue)
-                                .frame(height: 50)
-                                .padding(5)
-                            Text("Time: ---")
-                                .foregroundColor(Color.white)
-                                
-
-                        }
-                        ZStack {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 20)
-                                    .fill(happyOrMad.madHappy == false ? Color.red : Color.blue)
-                                    .frame(height: 50)
-                                    .padding(5)
-
-                            Text("Cadence: ---")
-                                    .foregroundColor(Color.white)
-                                
-
-                            }
-
-                        }
-
-
-                    }
-                    HStack {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(happyOrMad.madHappy == false ? Color.red : Color.blue)
-                                .frame(height: 50)
-                                .padding(5)
-
-                            Text("Distance: ---")
-                                .foregroundColor(Color.white)
-                        }
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(happyOrMad.madHappy == false ? Color.red : Color.blue)
-                                .frame(height: 50)
-                                .padding(5)
-
-                            Text("Steps: ---")
-                                .foregroundColor(Color.white)
-                        }
-
-                    }
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(happyOrMad.madHappy == false ? Color.red : Color.blue)
+                        .frame(height: 150)
+                    
                 }
+              
             }
-            HStack {
+                        
+
+
                 
                 Button {
                     if onoff.oof == false {
@@ -127,7 +85,7 @@ struct TrackView: View {
                     }
                     
                    
-                }
+                
             }
            
         }
