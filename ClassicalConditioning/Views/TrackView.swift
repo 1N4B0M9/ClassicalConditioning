@@ -26,7 +26,7 @@ struct TrackView: View {
                         ZStack {
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(happyOrMad.madHappy == false ? Color.red : Color.blue)
-                                .frame(height: 50)
+                                .frame(width: 70, height: 50)
                             Text("Time: ---")
                                 .foregroundColor(Color.white)
 
