@@ -11,32 +11,35 @@ struct TestRunDisplay: View {
     @ObservedObject private var manager = TrackerManager.instance
     @State var i = 0
     @EnvironmentObject var madOrHappy : HappyOrMad
-    func getName () -> String {
-        var m : [String] = ["Awful", "Dreadful", "Horrible", "Abysmal", "Atrocious", "Ghastly", "Appalling", "Gruesome", "Dire", "Frightful", "Catastrophic", "Infernal", "Miserable", "Repugnant", "Unbearable","Wretched"]
-        var h : [String] = ["Awesome",
-                            "Astonishing",
-                            "Breathtaking",
-                            "Extraordinary",
-                            "Incredible",
-                            "Phenomenal",
-                            "Splendid",
-                            "Spectacular",
-                            "Marvelous",
-                            "Wonderful",
-                            "Fabulous",
-                            "Remarkable",
-                            "Exquisite",
-                            "Majestic",
-                            "Stupendous",
-                            "Sublime"]
-        if madOrHappy.madHappy == false {
-            return m[Int.random(in: 0..<15)]
-        }
-        else {
-            return h[Int.random(in: 0..<15)]
-
-        }
+    
+    private static let m : [String] = ["Awful", "Dreadful", "Horrible", "Abysmal", "Atrocious", "Ghastly", "Appalling", "Gruesome", "Dire", "Frightful", "Catastrophic", "Infernal", "Miserable", "Repugnant", "Unbearable","Wretched"]
+    private static let h : [String] = ["Awesome",
+                        "Astonishing",
+                        "Breathtaking",
+                        "Extraordinary",
+                        "Incredible",
+                        "Phenomenal",
+                        "Splendid",
+                        "Spectacular",
+                        "Marvelous",
+                        "Wonderful",
+                        "Fabulous",
+                        "Remarkable",
+                        "Exquisite",
+                        "Majestic",
+                        "Stupendous",
+                        "Sublime"]
+    
+    /**
+     A function that provides a random positive or negitive adjective to describe the proformance of a run
+     
+     - Perameter: madOrHappy - a boolean that is true when the adjective should be positive and false when it should be negative
+     - Returns: a random positive or negitive adjective to describe the proformance of a run
+     */
+    private static func getName(_ madOrHappy: Bool) -> String {
+        madOrHappy ? h[Int.random(in: 0..<15)] : m[Int.random(in: 0..<15)]
     }
+    
     init() {
           // Set the background color of the navigation bar
         //UITableView.appearance().backgroundColor = UIColor(Color.red)
@@ -73,7 +76,7 @@ struct TestRunDisplay: View {
                     }
                     
                 } label : {
-                    Text("\(getName()) Run \(TrackerManager.instance.indexOf(output.wrappedValue) ?? -1)")
+                    Text("\(TestRunDisplay.getName(self.madOrHappy.madHappy)) Run \(TrackerManager.instance.indexOf(output.wrappedValue) ?? -1)")
                 }
                 .listRowBackground(madOrHappy.madHappy == false ? Color.customRed : Color.customBlue)
                

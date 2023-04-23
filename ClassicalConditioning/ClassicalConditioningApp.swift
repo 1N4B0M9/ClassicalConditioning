@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ The main class of the app
+ */
 @main
 struct ClassicalConditioningApp: App {
     @StateObject var madOrHappy : HappyOrMad = HappyOrMad()

@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ A view used to request location permissions from the user
+ */
 struct LocationRequestView: View {
     @EnvironmentObject var madOrHappy : HappyOrMad
 

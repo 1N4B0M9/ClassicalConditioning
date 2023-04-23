@@ -9,6 +9,10 @@ import SwiftUI
 import MapKit
 import CoreLocation
 import CoreLocationUI
+
+/**
+ A view user to show the location of a run that was stored persistantly
+ */
 struct PersistantMapView: View {
     @State private var region = MKCoordinateRegion()
     @State var tracking: MapUserTrackingMode = .follow

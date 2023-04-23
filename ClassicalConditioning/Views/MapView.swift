@@ -9,12 +9,17 @@ import SwiftUI
 import MapKit
 import CoreLocation
 import CoreLocationUI
+
+/**
+ A view to display the surroundings of a user
+ */
 struct MapView: View {
     @ObservedObject var locationManager = LocationManager.shared
     @State private var region = MKCoordinateRegion()
     @State var tracking: MapUserTrackingMode = .follow
     @ObservedObject var locup = LocationUpdates()
     @EnvironmentObject var onoff : onOrOff
+    
     var body: some View {
         Group {
             if locationManager.userLocation == nil {

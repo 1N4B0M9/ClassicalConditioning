@@ -10,11 +10,16 @@ import CoreMotion
 import Foundation
 import AVKit
 
+/**
+ The main view
+ */
 class Sound {
     
+    /**
+     The singleton instance of the class
+     */
     static let instance = Sound()
     
-    private var player: AVAudioPlayer?
     private var lastSound: SoundOption?
     
     enum SoundOption: String {
@@ -24,6 +29,7 @@ class Sound {
     private init() {
         let session = AVAudioSession.sharedInstance()
         
+        //set category so the audio is played even if the ringer is off
         do {
             try session.setCategory(.playback)
         } catch let error {
@@ -31,6 +37,11 @@ class Sound {
         }
     }
     
+    /**
+     A function that plays a random sound based on if the prompt should be positive or negtive
+     
+     - Perameter: happyOfMad - a boolean that is true if the prompt should be positive or false if it should be negitive
+     */
     func play(_ happyOrMad: Bool) {
         print("play audio") //debug
         let audio = self.randomSound(happyOrMad: happyOrMad)
@@ -42,12 +53,8 @@ class Sound {
         }
         
         do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player?.play()
-            
-            if player == nil {
-                print("player is null") //debug
-            }
+            let player = try AVAudioPlayer(contentsOf: url)
+            player.play()
             
             self.lastSound = audio
         } catch let error {
@@ -56,6 +63,12 @@ class Sound {
         print("audio played") //debug
     }
     
+    /**
+     A function that selects a random sound based on if the prompt should be positive or negtive
+     
+     - Perameter: happyOfMad - a boolean that is true if the prompt should be positive or false if it should be negitive
+     - Returns: the name of the prompt
+     */
     func randomSound(happyOrMad: Bool) -> SoundOption {
         let prefix = happyOrMad ? "h" : "m"
         var index = Int.random(in: 1...16)
@@ -70,6 +83,3 @@ class Sound {
         return SoundOption.init(rawValue: raw())!
     }
 }
-
-// Use  Sound.instance.play(sound: .v1) to play the sound. Replace v1 with the name of the sound you're using.
-// add sounds you want to use with the exact name in the the SoundOption enum

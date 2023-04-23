@@ -8,6 +8,9 @@
 import SwiftUI
 import CoreLocation
 
+/**
+ A view used to start a new run
+ */
 struct TrackView: View {
     @Binding var cords: [CLLocationCoordinate2D]
     @State var tracker: Tracker?

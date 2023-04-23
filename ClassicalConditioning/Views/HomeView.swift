@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ The starting main view of the app
+ */
 struct HomeView: View {
     @State private var anim = false
     @EnvironmentObject var madOrHappy : HappyOrMad

@@ -1,5 +1,8 @@
 import SwiftUI
 
+/**
+ A view that is the main logo of the app
+ */
 struct LogoView: View {
     @State private var isFlipped = false
     @State private var bounceEffect: CGFloat = 1.0

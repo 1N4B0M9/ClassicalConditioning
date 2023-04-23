@@ -8,6 +8,10 @@
 import SwiftUI
 import AVFoundation
 import CoreMotion
+
+/**
+ The main view
+ */
 struct ContentView: View {
     @State private var selectedTab = 1
 

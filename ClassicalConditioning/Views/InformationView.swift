@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ A view that displays and is able to alter the apps settings
+ */
 struct InformationView: View {
     @EnvironmentObject var madOrHappy : HappyOrMad
 
@@ -28,7 +31,7 @@ struct InformationView: View {
             
                 
             VStack {
-            TestRunDisplay()
+                TestRunDisplay()
             }
         }
         .animation(Animation.easeInOut.speed(0.25), value : madOrHappy.madHappy)
@@ -40,5 +43,6 @@ struct InformationView: View {
 struct InformationView_Previews: PreviewProvider {
     static var previews: some View {
         InformationView()
+            .environmentObject(HappyOrMad())
     }
 }
