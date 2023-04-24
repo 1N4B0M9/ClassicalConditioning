@@ -61,7 +61,7 @@ struct TestRunDisplay: View {
                             Text("Steps: \(output.wrappedValue.steps)")
                             Text("Average Cadence: \(output.wrappedValue.averageCadence, specifier: "%.3f")") //specifier used to round to three decimal places
                             Text("Distance: \(output.wrappedValue.distance)")
-                            Text("Time: \(output.wrappedValue.seconds)")
+                            Text("Time: \(output.wrappedValue.seconds) seconds")
                             if output.wrappedValue.locationCords.count == 0 {
                                 Text("No Enough Data")
                             }
