@@ -29,20 +29,6 @@ class LocationUpdates : ObservableObject {
             }
            
             coord.append(CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.longitude ?? 0 ))
-            /*
-            if index == 1 {
-                drawLine(coord1: coord[0], coord2: coord[0])
-                //maps.overlay(ShapeStyle(drawLine(coord1: coord[0], coord2: coord[0]))
-                maps.addOverlay(drawLine(coord1: coord[0], coord2: coord[0]))
-                
-            }
-            else {
-                maps.addOverlay(drawLine(coord1: coord[index], coord2: coord[index-1]))
-            }
-             */
-            
-        
-            //long.append(locationManager.userLocation?.coordinate.latitude ?? 0)
         }
     }
     
@@ -68,7 +54,5 @@ class LocationUpdates : ObservableObject {
 
         let routeLine = MKPolyline(coordinates:[blueLocation1,blueLocation2], count:2)
         return routeLine
-       // lines.append(routeLine)
-        //self.mapView.add(routeLine)
     }
 }

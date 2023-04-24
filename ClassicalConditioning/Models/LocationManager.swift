@@ -15,15 +15,7 @@ class LocationManager : NSObject, ObservableObject {
     private let manager = CLLocationManager()
     @Published var userLocation: CLLocation?
     @Published var region = MKCoordinateRegion()
-  //  @State private var region = MKCoordinateRegion(
-        // center: CLLocationCoordinate2D(latitude: 37.334_900,
-                                    //    longitude: -122.009_020),
-       //  latitudinalMeters: 750,
-        // longitudinalMeters: 750
-   //  )
-   // func setCoordinates(){
-     //   region.center = CLLocationCoordinate2D(latitude: userLocation?.coordinate.latitude ?? 0, longitude: userLocation?.coordinate.longitude ?? 0)
-    //}
+
     static let shared = LocationManager()
     
     override init(){

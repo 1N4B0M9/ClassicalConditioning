@@ -15,6 +15,7 @@ struct HomeView: View {
     @EnvironmentObject var madOrHappy : HappyOrMad
     @ObservedObject var locup = LocationUpdates()
     @EnvironmentObject var onoff : onOrOff
+    
     var body: some View {
         ZStack{
             

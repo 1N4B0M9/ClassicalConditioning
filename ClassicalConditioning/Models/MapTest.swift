@@ -104,27 +104,16 @@ struct MapViews : UIViewRepresentable {
         print(coord1)
         print(coord2)
         return lines
-       // lines.append(routeLine)
-        //self.mapView.add(routeLine)
     }
     
     /**
      A custom implementatio of a context coordinator
      */
     class Coordinator: NSObject, MKMapViewDelegate {
-       // @EnvironmentObject var madOrHappy : HappyOrMad
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             if let polyline = overlay as? MKMultiPolyline {
-               // let renderer = MKMultiPolylineRenderer(polyline: polyline)
+               
                 let renderer = MKMultiPolylineRenderer(multiPolyline: polyline)
-             //   if madOrHappy.madHappy == true {
-                 //   renderer.strokeColor = UIColor.blue
-
-             //   }
-              //  else {
-              //      renderer.strokeColor = UIColor.red
-              //  }
-                
                 renderer.strokeColor = UIColor.blue
                 renderer.lineWidth = 3.0
                 return renderer

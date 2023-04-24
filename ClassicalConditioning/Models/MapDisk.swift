@@ -35,17 +35,11 @@ struct MapViewDisk : UIViewRepresentable {
         mapView.delegate = context.coordinator
         mapView.region = reg
         mapView.showsUserLocation = true
-        if coords.count > 2{
-         for i in 0..<coords.count-1 {
         
-            mapView.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1], lineArr: &polylineArr))
-               // print("Test Init")
-               // print(coords[i])
-               // print(coords[i+1])
-               // print("______________")
-              //  print("Helllo")
-           }
-
+        if coords.count > 2 {
+            for i in 0..<coords.count-1 {
+                mapView.addOverlay(drawLine(coord1: coords[i], coord2: coords[i+1], lineArr: &polylineArr))
+            }
         }
         
         
@@ -59,21 +53,8 @@ struct MapViewDisk : UIViewRepresentable {
      - Parameter: context - the context in which the view needs to be updated
      */
     func updateUIView(_ mapView: MKMapView, context: Context) {
-        //view.delegate = context.coordinator
-        
         if coords.count > 2 {
-            //for i in 0..<coords.count-1 {
-            //mapView.removeOverlays(mapView.overlays)
-            //test
-            
             mapView.addOverlay(drawLine(coord1: coords[coords.count-2], coord2: coords[coords.count-1], lineArr: &polylineArr))
-
-
-               //print("Print test update")
-              // print(coords[i])
-             //  print(coords[i+1])
-             //  print("_______________")
-            //}
         }
 
     }
@@ -113,18 +94,9 @@ struct MapViewDisk : UIViewRepresentable {
      A custom implementatio of a context coordinator
      */
     class Coordinator: NSObject, MKMapViewDelegate {
-       // @EnvironmentObject var madOrHappy : HappyOrMad
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             if let polyline = overlay as? MKMultiPolyline {
-               // let renderer = MKMultiPolylineRenderer(polyline: polyline)
                 let renderer = MKMultiPolylineRenderer(multiPolyline: polyline)
-             //   if madOrHappy.madHappy == true {
-                 //   renderer.strokeColor = UIColor.blue
-
-             //   }
-              //  else {
-              //      renderer.strokeColor = UIColor.red
-              //  }
                 
                 renderer.strokeColor = UIColor.blue
                 renderer.lineWidth = 3.0

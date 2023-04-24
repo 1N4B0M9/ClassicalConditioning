@@ -34,10 +34,9 @@ struct LocationRequestView: View {
 
             }
             VStack {
-                Button{
+                Button {
                     LocationManager.shared.requestLocation()
-
-                } label : {
+                } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 20)
                                         .fill(Color.white)
@@ -51,13 +50,8 @@ struct LocationRequestView: View {
                             .foregroundColor(Color.black)
                             
                     }
-                   
-                    
                 }
-            
             }
-            
-           
         }
     }
 }

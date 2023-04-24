@@ -22,8 +22,7 @@ struct TrackView: View {
         VStack {
             if let track = tracker {
                 DisplayView(tracker: track)
-            }
-            else {
+            } else {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20)
                         .fill(happyOrMad.madHappy == false ? Color.customRed : Color.customBlue)
@@ -42,6 +41,7 @@ struct TrackView: View {
                                 .foregroundColor(Color.white)
 
                         }
+                        
                         HStack {
                             Text("Distance: ---")
                                 .font(Constants.TitleFont)
@@ -53,78 +53,60 @@ struct TrackView: View {
 
                         }
                     }
-                    
                 }
-              
             }
-                        
-
-
                 
-                Button {
-                    if onoff.oof == false {
-                        onoff.oof = true
-                        if tracker == nil {
-                            tracker = Tracker(happyOrMad: happyOrMad)
-                        }
-                        Sound.instance.play(happyOrMad.madHappy)
-
-
+            Button {
+                if onoff.oof == false {
+                    onoff.oof = true
+                    if tracker == nil {
+                        tracker = Tracker(happyOrMad: happyOrMad)
                     }
-                    else {
-                        onoff.oof = false
-                        if let tracker = tracker {
-                            tracker.stop(cords)
-                            locup.stop()
-                            self.tracker = nil
-                        }
+                    Sound.instance.play(happyOrMad.madHappy)
+                } else {
+                    onoff.oof = false
+                    if let tracker = tracker {
+                        tracker.stop(cords)
+                        locup.stop()
+                        self.tracker = nil
                     }
-
-                   
-                    
-                } label: {
-                   
+                }
+            } label: {
+                if onoff.oof == false {
+                    ZStack{
+                        Circle()
+                            .frame(width: 80, height: 80)
+                            .foregroundColor(happyOrMad.madHappy == false ? Color.customRed : Color.customBlue)
+                            .offset(y: 10)
                             
-                    if onoff.oof == false {
-                        ZStack{
-                            Circle()
-                                .frame(width: 80, height: 80)
-                                .foregroundColor(happyOrMad.madHappy == false ? Color.customRed : Color.customBlue)
-                                .offset(y: 10)
-                                
-                            Image(systemName: "play.fill").resizable()
-                                .frame(width: 20, height: 20)
-                                .foregroundColor(Color.black)
-                                .offset(y: 10)
-                                .foregroundColor(Color.white)
-
-                        }
+                        Image(systemName: "play.fill").resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(Color.black)
+                            .offset(y: 10)
+                            .foregroundColor(Color.white)
                     }
-                    else {
-                        ZStack{
-                            Circle()
-                                .frame(width: 80, height: 80)
-                                .foregroundColor(happyOrMad.madHappy == false ? Color.customRed : Color.customBlue)
-                                .offset(y: 10)
-                            Image(systemName: "pause.fill")
-                                .resizable()
-                                .frame(width: 20, height: 20)
-                                .foregroundColor(Color.black)
-                                .offset(y: 10)
-                                .foregroundColor(Color.white)
-                        }
+                } else {
+                    ZStack{
+                        Circle()
+                            .frame(width: 80, height: 80)
+                            .foregroundColor(happyOrMad.madHappy == false ? Color.customRed : Color.customBlue)
+                            .offset(y: 10)
+                        Image(systemName: "pause.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(Color.black)
+                            .offset(y: 10)
+                            .foregroundColor(Color.white)
                     }
-                    
-                   
-                
+                }
             }
-           
         }
     }
     
     private struct DisplayView: View {
         @ObservedObject var tracker: Tracker
         @EnvironmentObject var happyOrMad: HappyOrMad
+        
         var body: some View {
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
@@ -139,7 +121,6 @@ struct TrackView: View {
                         Text("Cadence: \($tracker.cadence.wrappedValue ?? 0, specifier: "%.3f")")
                             .font(Constants.TitleFont)
                             .foregroundColor(Color.white)
-
                     }
                     HStack {
                         Text("Distance: \($tracker.distance.wrappedValue ?? 0)")
@@ -149,13 +130,9 @@ struct TrackView: View {
                         Text("Steps: \($tracker.steps.wrappedValue ?? 0)")
                             .font(Constants.TitleFont)
                             .foregroundColor(Color.white)
-
                     }
-                    
                 }
-                
             }
-            
         }
     }
     

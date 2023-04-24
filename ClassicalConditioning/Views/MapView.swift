@@ -22,9 +22,7 @@ struct MapView: View {
     
     var body: some View {
         Group {
-            if locationManager.userLocation == nil {
-                LocationRequestView()
-            } else {
+            if locationManager.userLocation != nil {
                 Group {
                     if onoff.oof == true {
                         VStack {
@@ -32,23 +30,19 @@ struct MapView: View {
                             MapViews(coords: locup.coord).onAppear {
                                 if locationManager.userLocation?.coordinate.latitude != nil && locationManager.userLocation?.coordinate.longitude != nil {
                                     region.center = CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.longitude ?? 0)
-                                        
                                 }
                             }
                         }
-                    }
-                    else {
+                    } else {
                         Map(coordinateRegion: $region, showsUserLocation: true).onAppear {
-                                if locationManager.userLocation?.coordinate.latitude != nil && locationManager.userLocation?.coordinate.longitude != nil {
-                                    region.center = CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.longitude ?? 0)
-                                    
-                                }
+                            if locationManager.userLocation?.coordinate.latitude != nil && locationManager.userLocation?.coordinate.longitude != nil {
+                                region.center = CLLocationCoordinate2D(latitude: locationManager.userLocation?.coordinate.latitude ?? 0, longitude: locationManager.userLocation?.coordinate.longitude ?? 0)
                             }
-                       
-                           
+                        }
                     }
                 }
-                
+            } else {
+                LocationRequestView()
             }
         }
     }
